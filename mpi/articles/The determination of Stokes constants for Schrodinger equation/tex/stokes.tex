@@ -154,7 +154,7 @@ A=1-|R|^2-|T|^2=\frac{4 e^{\pi c}}{(1+2e^{\pi c})^2}.
 \begin{figure}
 \centering
 \noindent
-\includegraphics[scale=.5]{comparison.jpg}
+\includegraphics[scale=.5]{stuff/comparison.jpg}
 \caption{Absorption in the Budden potential}
 \label{cmprsn}
 \end{figure} 
@@ -181,7 +181,7 @@ where $\sigma$ stands for a Taylor series. There is a single valued solution \mb
 \begin{figure}
 \centering
 \noindent
-\includegraphics[scale=.5]{diagram.jpg}
+\includegraphics[scale=.5]{stuff/diagram.jpg}
 \caption{Stokes diagram for the Budden problem; Stokes lines are bold and dashed}
 \label{diagram}
 \end{figure} 
@@ -264,6 +264,42 @@ Now one can finally write an expression for the absorption coefficient:
 A=1-|R|^2-|T|^2=1-(1-e^{-\pi c})^2-e^{-\pi c}=e^{-\pi c}(1-e^{-\pi c}).    \label{absorp}
 \end{eqnarray}
 The expression (\ref{absorp}) agrees with the analytical result obtained in \cite[p 234]{rwbook}.
+
+\section{A case of an equation without an exact solution \label{UHR}}
+The example of the Budden problem is, certainly, a rare example of the problem which can be completely solved. In most cases we will not be able to solve an equation analogous to Eq.\ref{frobresult} exactly because of large amount of unknowns and lack of other equations. But since such an equation is highly non trivial, it can be used to elucidate unobvious features of a solution even in a such situations. To illustrate it, let`s study the following equation:
+\begin{eqnarray}
+\frac{d^2y}{dz^2} + \frac{Y^2-z^2}{z}y = 0.  \label{uhreq}
+\end{eqnarray}
+Such an equation describes an absorption of an extraordinary electromagnetic wave in the vicinity of an upper-hybrid resonance providing the wave propagates along the electron concentration gradient and an external magnetic field is weak $(Y \ll 1)$. Physics of the process is irrelevant for the purpose of this paper so we allow $Y$ to take any values.
+
+An effective Stokes diagram for Eq.\ref{uhreq} is shown on Fig.\ref{uhr_sd}. To obtain a brunching structure preserving equation, let`s find Frobenius indexes for Eq.\ref{uhreq}. According to Eq.\ref{chareq}, $f_1=0$ and $f_2=1$, and the equation is
+\begin{eqnarray}
+Tr(CS[s_+]W[w]S[s_0]W[-w^*]S[s_-])=2,  
+\end{eqnarray}
+or, using an explicit form of the operators,
+\begin{eqnarray}
+s_0e^{2Re(w)} + s_+e^{2iIm(w)} + s_-e^{-2iIm(w)} +s_-s_0s_+e^{2Re(w)}=2i.   \label{uhr_frob}
+\end{eqnarray}
+
+To reduce the number of independent unknowns we use a conjugation symmetry of Eq.\ref{uhreq} exactly as we did in a case of the Budden problem. A result is analogous and typical for an equation with the real-valued potential: $s_0=-s_0^*$, $s_+=-s_-^*$. Taking into consideration that the reflection and absorption coefficients in this case have the same expressions in terms of the Stokes constants as in the previous example, let`s define three independent real unknowns $p, \rho$ and $\phi$ by $s_0=2ip$ and $s_-=-\rho e^{i\phi}$. In terms of the new variables Eq.\ref{uhr_frob} can be rewritten as
+\begin{eqnarray}
+p (1-\rho^2) e^{2Re(w)} - \rho sin(\phi-2Im(w)) - 1 = 0,   \label{realFrobEq}
+\end{eqnarray}
+where $\rho=|R|$ and $\phi=Arg(R)$. It is simpler than the initial one, but it is still the only one equation with three real unknowns and it cannot be solved exactly.
+
+Let's try to solve it in case of almost full reflection, $1-\rho \ll 1$. In this case we can express the absorption coefficient $A=1-|R|^2=1-\rho^2$ right away:
+\begin{eqnarray}
+A=p^{-1}(1 + sin(\phi-2Im(w)))e^{-2Re(w)}. \label{allRefl}
+\end{eqnarray}
+An assumption $1-\rho \ll 1$ induce a relation $A \ll 1$, and according to Eq.\ref{allRefl} this is true if $Re(w) \gg 1$. But this last inequality allows us to use an approximation of isolated singularities - in a limit of large values of $w$ $p$ approaches 1/2 and $\phi$ approaches $-\pi/2$, and
+\begin{eqnarray}
+A=4sin^2(Im(w))e^{-2Re(w)}.   \label{ais}
+\end{eqnarray}
+The expression shows how the absorption coefficient behaves for large values of $Y$. The most important feature of this result is a footprint of an interference in the system - there are strict zeros of absorption for $Im(w)=\pi n$. This non trivial result could not be obtained in another way - an approximation of isolated singularities ignores the interference because it knows nothing about the actual structure of the potential. A comparison of Eq.\ref{ais} with the numerical result and a simple approximation of isolated singularities is shown on Fig.\ref{uhr_comp}.
+
+
+
+
 
 \section{Conclusion \label{con}}
 The example of the Budden potential shows that use of a series representation of a solution gives an additional equation for the Stokes constants. Since the equation reflects actual branching structure of a general solution it can correctly describe the behaviour of the Stokes constants even in the case of non-isolated singularities. Also, different symmetries of a potential can be used to reduce the number of independent Stokes constants.
