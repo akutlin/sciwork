@@ -55,7 +55,7 @@ of the presented ideas in a case of a real physical problem.
 \section{Introduction \label{sec:intro}}
 Consider a stationary one-dimensional Schr\"odinger equation
 \begin{eqnarray}
-\frac{\rmd^2 y(z,\lmbd)}{\rmd z^2} + Q(z,\lmbd)y(z,\lmbd) = 0,   \label{eq:gen}
+\L(z,\lmbd)y(z,\lmbd)=0, \qquad \L(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:gen}
 \end{eqnarray}
 where $\lmbd$ is a set of the problem`s parameters. Throughout the paper 
 \mbox{$Q(z,\lmbd)$} will be referred to as a potential. It is often natural to describe two 
@@ -310,35 +310,57 @@ $\f(z,\lmbd)$, $\g(z,\lmbd)$ and $\h(z,\lmbd)$ such that
 \g:\{z\} \rightarrow \{z\}, \qquad
 \h:\{\lmbd\} \rightarrow \{\lmbd\}.
 \end{eqnarray}
-Now, if we rewrite \eref{eq:gen} in operator form
+We can define any set of operators $\{\f(z,\lmbd),\g(z,\lmbd),\h(z,\lmbd)\}$ as a symmetry 
+transformation of \eref{eq:gen}
+if for any its solution $y(z,\lmbd)$ there is another solution $\tilde{y}(z,\lmbd)$ such that
+$\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)$, i.e.
 \begin{eqnarray}
-\L(z,\lmbd)y(z,\lmbd)=0, \qquad \L(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:L}
+\L(z,\lmbd)y(z,\lmbd) \equiv 0 \ \Longrightarrow\  
+\L(z,\lmbd)\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd) \equiv 0.   \label{eq:symdef}
 \end{eqnarray}
-we can define any set of operators $\{\f,\g,\h\}$ as a symmetry transformation of \eref{eq:L} if
-\begin{eqnarray}
-\f(z,\lmbd)\L(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd)=\L(z,\lmbd)\f(z,\lmbd).   \label{eq:symdef}
-\end{eqnarray}
-For example, an Airy operator $\L_{Airy}(z) = \rmd^2/\rmd z^2 - z$ has two base symmetries: 
-$\{\g=\rme^{2 \rmi \pi/3}\unity,\f=\h=\unity\}$ and $\{\h=\unity,\f=\g=c.c.\}$, where $\unity$ 
+For example, an Airy equation $\rmd^2 y(z)/\rmd z^2 - z y(z) = 0$ has two base symmetries: 
+$\{\g=\rme^{2 \rmi \pi/3}\unity,\f=\h=\unity\}$ and $\{\f=\g=c.c.,\h=\unity\}$, where $\unity$ 
 is a unity operator and $c.c.$ stands 
 for complex conjugate. The main difference between these two symmetries is that the second 
 one changes a direction of a complex variable`s phase increase and the first one does not. 
 We will refer to the symmetries of the first kind as rotation symmetries and of the second 
 kind as conjugation symmetries.
 
-Definition \eref{eq:symdef} allows us to formulate the following statement: a linear solution space $\{y\}$ 
-of \eref{eq:L} is invariant under the symmetry transformation. Indeed, for every $y(z,\lmbd)$
-such that $\L(z,\lmbd)y(z,\lmbd)=0$ we can write
-\begin{eqnarray}
-0 \equiv \f\L(\g z,\h \lmbd)y(\g z,\h \lmbd)=
-\L(z,\lmbd)\f y(\g z,\h \lmbd),   \label{eq:invrnt}
-\end{eqnarray}
-i.e. if $y(z,\lmbd)$ is a solution of \eref{eq:L} 
-then $\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)$ is another its solution.
-It means that $\tilde{y}(z,\lmbd)$ as well as $y(z,\lmbd)$ can be written in the form \eref{eq:gensol}
+The symmetry transformation`s definition \eref{eq:symdef} means that 
+$\tilde{y}(z,\lmbd)$ as well as $y(z,\lmbd)$ can be written in the form \eref{eq:gensol}
 but with different coefficients $c_\pm$. This difference and, as a consequence, 
 restrictions on the Stokes constants can be obtained directly by applying
 the symmetry transformation to \eref{eq:phsint}, but we prefer more intuitive derivation.
+
+%Now, if we rewrite \eref{eq:gen} in operator form
+%\begin{eqnarray}
+%\L(z,\lmbd)y(z,\lmbd)=0, \qquad \L(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:L}
+%\end{eqnarray}
+%we can define any set of operators $\{\f,\g,\h\}$ as a symmetry transformation of \eref{eq:L} if
+%\begin{eqnarray}
+%\f(z,\lmbd)\L(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd)=\L(z,\lmbd)\f(z,\lmbd).   \label{eq:symdef}
+%\end{eqnarray}
+%For example, an Airy operator $\L_{Airy}(z) = \rmd^2/\rmd z^2 - z$ has two base symmetries: 
+%$\{\g=\rme^{2 \rmi \pi/3}\unity,\f=\h=\unity\}$ and $\{\h=\unity,\f=\g=c.c.\}$, where $\unity$ 
+%is a unity operator and $c.c.$ stands 
+%for complex conjugate. The main difference between these two symmetries is that the second 
+%one changes a direction of a complex variable`s phase increase and the first one does not. 
+%We will refer to the symmetries of the first kind as rotation symmetries and of the second 
+%kind as conjugation symmetries.
+%
+%Definition \eref{eq:symdef} allows us to formulate the following statement: a linear solution space $\{y\}$ 
+%of \eref{eq:L} is invariant under the symmetry transformation. Indeed, for every $y(z,\lmbd)$
+%such that $\L(z,\lmbd)y(z,\lmbd)=0$ we can write
+%\begin{eqnarray}
+%0 \equiv \f\L(\g z,\h \lmbd)y(\g z,\h \lmbd)=
+%\L(z,\lmbd)\f y(\g z,\h \lmbd),   \label{eq:invrnt}
+%\end{eqnarray}
+%i.e. if $y(z,\lmbd)$ is a solution of \eref{eq:L} 
+%then $\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)$ is another its solution.
+%It means that $\tilde{y}(z,\lmbd)$ as well as $y(z,\lmbd)$ can be written in the form \eref{eq:gensol}
+%but with different coefficients $c_\pm$. This difference and, as a consequence, 
+%restrictions on the Stokes constants can be obtained directly by applying
+%the symmetry transformation to \eref{eq:phsint}, but we prefer more intuitive derivation.
 
 Every symmetry transformation can be done in three consecutive steps: transformation 
 of the parameters $\h(z,\lmbd)$, transformation of the independent variable $\g(z,\lmbd)$ and 
@@ -378,8 +400,9 @@ Then, we do the same with the independent variable $z$ using $\g_{cont}(\nu)$. U
 transformation the Stokes domains change places and one Stokes line is replaced by another one 
 associated with some other Stokes constant $s'(\h\lmbd)$ (\fref{fig:rst}.3). Now we can see that
 every symmetry relation binds such Stokes constants whose domains can be overlapped by the $\g$ 
-operation. Due to the symmetry of the problem and, particularly, to the consequences of 
-\eref{eq:invrnt}, the final result of our second transformation can differ from the very initial 
+operation. Due to the invariance of the solution space of \eref{eq:gen} 
+under the symmetry transformation $\{\f(z,\lmbd),\g(z,\lmbd),\h(z,\lmbd)\}$, 
+the final result of our second step can differ from the very initial 
 configuration only by the basepoints` positions, and that is why $s'(\h\lmbd)$ 
 and $s(\lmbd)$ have to be equal accurate to the corresponding phase integral and the $\f$ 
 transformation.
