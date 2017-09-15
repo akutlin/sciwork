@@ -179,7 +179,6 @@ terms of $\psii$-vectors can be written as
 \end{eqnarray}
 This is analogous to the reconnection formula in the traditional Heading`s form of the continuation 
 rules and we will refer to the operator as a reconnection operator.
-%Sometimes we will use the symbol $\W(w)=\W \left[\phsintgrl{a}{b} \right]$ to underline a value of the phase integral. 
 
 Finally, we have to introduce a $\C$-operator associated with crossing a branch cut. The explicit form 
 of the operator depends on the phase integrand $\phsintgrnd$. Here we derive it for the simplest case  
@@ -320,7 +319,7 @@ we can define any set of operators $\{\f,\g,\h\}$ as a symmetry transformation o
 \f(z,\lmbd)\L(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd)=\L(z,\lmbd)\f(z,\lmbd).   \label{eq:symdef}
 \end{eqnarray}
 For example, an Airy operator $\L_{Airy}(z) = \rmd^2/\rmd z^2 - z$ has two base symmetries: 
-$\{\g=\rme^{2 \rmi \pi/3}\unity,\f=\h=\unity\}$ and $\{\g=\unity,\f=c.c.,\h=c.c.\}$, where $\unity$ 
+$\{\g=\rme^{2 \rmi \pi/3}\unity,\f=\h=\unity\}$ and $\{\h=\unity,\f=\g=c.c.\}$, where $\unity$ 
 is a unity operator and $c.c.$ stands 
 for complex conjugate. The main difference between these two symmetries is that the second 
 one changes a direction of a complex variable`s phase increase and the first one does not. 
@@ -338,7 +337,7 @@ i.e. if $y(z,\lmbd)$ is a solution of \eref{eq:L}
 then $\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)$ is another its solution.
 It means that $\tilde{y}(z,\lmbd)$ as well as $y(z,\lmbd)$ can be written in the form \eref{eq:gensol}
 but with different coefficients $c_\pm$. This difference and, as a consequence, 
-restrictions on the Stokes constants can be determined directly by applying
+restrictions on the Stokes constants can be obtained directly by applying
 the symmetry transformation to \eref{eq:phsint}, but we prefer more intuitive derivation.
 
 Every symmetry transformation can be done in three consecutive steps: transformation 
@@ -352,7 +351,7 @@ As it will be seen from the following discussion the parametrization of the
 continuous operators can be important for the final result. Also we will assume that $\f$ can 
 change the value of the Stokes constant but not the structure of the Stokes diagram and 
 that is why it is not necessary to parametrize it. To determine how $\f$ acts on the 
-Stokes constant it is enough to determine how it acts on the phase-integrals approximate 
+Stokes constant it is enough to determine how it acts on the phase-integral approximate 
 solution \eref{eq:gensol} and how it changes the coefficients $c_\pm$.
 
 \begin{figure}
@@ -377,9 +376,10 @@ transformation is shown in \fref{fig:rst}.2.
 
 Then, we do the same with the independent variable $z$ using $\g_{cont}(\nu)$. Under this 
 transformation the Stokes domains change places and one Stokes line is replaced by another one 
-associated with some other Stokes constant $s'(\h\lmbd)$ (\fref{fig:rst}.3). Due to the symmetry 
-of the problem and, particularly, to the consequences of \eref{eq:invrnt},
-the final result of these two transformations` composition can differ from the initial 
+associated with some other Stokes constant $s'(\h\lmbd)$ (\fref{fig:rst}.3). Now we can see that
+every symmetry relation binds such Stokes constants whose domains can be overlapped by the $\g$ 
+operation. Due to the symmetry of the problem and, particularly, to the consequences of 
+\eref{eq:invrnt}, the final result of our second transformation can differ from the very initial 
 configuration only by the basepoints` positions, and that is why $s'(\h\lmbd)$ 
 and $s(\lmbd)$ have to be equal accurate to the corresponding phase integral and the $\f$ 
 transformation.
@@ -407,7 +407,7 @@ the Stokes constant as a function of the problem`s parameters $\lmbd$.
 
 The relation discussed above must be considered as a main result of the present paper.
 It allows us to take a fresh look at the nature of the different Stokes constants. 
-Two different Stokes domains which can be overlaid by the transformations $\{\g,\h\}$ are 
+Two different Stokes domains which can be overlapped by the transformation $\g$ are 
 actually associated with the same effective Stokes constant but taken in the different 
 points of the parameters` space. In particular, every set of Stokes wedges can be described 
 by only one multidimensional analytical complex function $s(\lmbd)$.
@@ -466,14 +466,16 @@ multiplied by the known multivalued one.
 The best-known type of the phase-integral approximation is the WKBJ (and often simply WKB) approximation, 
 so named after Wentzel, Kramers, Brillouin, and Jeffreys \cite{wkb1,wkb2,wkb3,wkbj}. 
 It takes the form \eref{eq:phsint} with $\phsintgrnd = \sqrt{Q(z,\lmbd)}$. Since it is the simplest one
-we will use it all throughout this section.
+we will use it all throughout this section. Also in this section we will use the symbol 
+$\W[\w] \equiv \W \left[\phsintgrl{a}{b} \right] = \W[b,a]$ to underline a value of the phase integral. 
+
 
 Let us consider the Weber equation
 \begin{eqnarray}
 \frac{\rmd^2 y(z)}{\rmd z^2}+(z^2-\delta^2)y(z)=0
 \label{eq:weber}
 \end{eqnarray}
-with a boundary conditions of a presence of incident wave from the large negative $z$ and absence on such 
+with a boundary conditions of a presence of incident wave from the large negative $z$ and absence of such 
 a wave from the large positive $z$. We define the reflection (transmission) coefficient $R$ ($T$) as
 a ratio of the amplitudes of the reflected (transmitted) and incident waves. 
 Our aim now is to find these scattering characteristics.
@@ -486,16 +488,16 @@ The boundary conditions can be written in terms of $\psii$-vectors as
 where $\psii_0$ is a $\psii$-vector in an anti-Stokes wedge containing a ray $Arg(z)=0$.
 First of all, scattering characteristics must be written through the 
 Stokes constants. To do this, we must analytically continue our boundary 
-condition (\eref{eq:wbound}) to $z$ with $Arg(z)=\pi$. 
-Using \fref{fig:wsd} and the rules from Sec.\sref{sec:mtrxfrm} we write
+condition \eref{eq:wbound} to $z$ with $Arg(z)=\pi$. 
+Using \fref{fig:wsd} and the rules from \sref{sec:mtrxfrm} we write
 \begin{eqnarray}
 \psii_{\pi} = 
 \S \left[ s_{3/2} \right]
-\W \left[ \rmi w(\delta) \right] 
-\S^{\Tp} \left[ s_{1/2} \right] \psii_0 = 
-\rme^{\rmi w(\delta)} \left(\begin{array}{*{2}{c}} 1 \\ s_{3/2} \end{array}\right),
+\W \left[ \w(\delta) \right] 
+\S^{\Tp} \left[ s_{1/2} \right] \psii_0 \equiv 
+\rme^{\rmi \w(\delta)} \left(\begin{array}{*{2}{c}} 1 \\ s_{3/2} \end{array}\right),
 \end{eqnarray}
-where $w(\delta)=-\rmi\pi\delta^2/2$ is a phase integral calculated above the cut 
+where $\w(\delta)=-\rmi\pi\delta^2/2$ is a phase integral calculated above the cut 
 from $z=\delta$ to $z=-\delta$. Now we have to identify incident, reflected and transmitted waves. 
 Since $y_+ \propto e^{\rmi z^2/2}$ hence it is 
 an outgoing wave for $z \rightarrow +\infty$ as well as for $z \rightarrow -\infty$ and
@@ -503,7 +505,7 @@ an outgoing wave for $z \rightarrow +\infty$ as well as for $z \rightarrow -\inf
 R = \frac{1}{s_{3/2}},\ T=\rmi\frac{\rme^{-\rmi w}}{s_{3/2}}.
 \end{eqnarray}
 
-To find $s_{3/2}$ let`s try a traditional method described, for example, in \cite{white}. We can obtain desired equations for the Stokes constants using the single-valuedness of the general solution and analytically continue it around the origin far away from the interaction area:
+To find $s_{3/2}$, let`s try a traditional method described, for example, in \cite{white}. We can obtain desired equations for the Stokes constants using the single-valuedness of the general solution and analytically continue it around the origin far away from the interaction area:
 \begin{eqnarray}
 \unity = 
 \C^2
@@ -523,39 +525,48 @@ s_{1/2}s_{3/2} + e^{-2 \rmi w} + 1 = 0
 }.
 \label{eq:webtrad}
 \end{eqnarray}
-It is easy to see now that we cannot find $s_{3/2}$ from the system \eref{eq:webtrad} - 
+As we can see from the system, we cannot find $s_{3/2}$ using the traditional method - 
 we need at least one more restriction for the Stokes constants. In \cite{white} a 
-requirement of the flux conservation is used and it gives $s_{-1/2}=-s_{1/2}^*$ - it helps 
-to determine $|R|$, but its phase is unknown. Actually the flux conservation is a consequence 
-of the real-valuedness and analyticity of the potential $x^2-\delta^2$ and hence the same 
-relation can be obtained from the conjugation symmetry using \eref{eq:cnjgtn}. 
-But it is not the only consequence of the equation`s symmetry, so let`s write them all.
+requirement of the flux conservation is used as the restriction 
+and it gives $s_{-1/2}=-s_{1/2}^*$ - it helps to determine the absolute value of the
+reflection coefficient, but its phase stays unknown. This example shows that even in 
+a such simple situation as the Weber equation the traditional approach cannot fully 
+resolve the problem.
+ 
+Actually the flux conservation is a consequence of the real-valuedness and analyticity 
+of the potential $x^2-\delta^2$ and hence the same relation can be obtained from the 
+conjugation symmetry using \eref{eq:cnjgtn}. Moreover, first two equations from \eref{eq:webtrad} 
+are just a consequence of a symmetry $\{\g=\rme^{\rmi\pi}\unity,\h=\f=\unity\}$---and it is clear 
+because the symmetry is just a rotation and can be seen even from the usual analytical continuation. 
+So, the only original equation in the system \eref{eq:webtrad} is the last one---it cannot 
+be obtained from any other considerations. But these are not the only consequences of the 
+equation`s symmetries, so let`s write them all.
 
-First of all let`s try a rotation symmetry $\{\g=\rme^{\rmi\pi},\h=\f=\unity\}$ - 
-it can relate $s_{\pm 3/2}$ with $s_{\mp 1/2}$. Take, for example, $s_{3/2}$ and $s_{-1/2}$. 
-A basepoint of $s_{3/2}$ is chosen to be equal to $-\delta$ on the upper side of the cut 
-and can be written as $b(\delta)=\delta \rme^{\rmi\pi}$. 
-Obviously, $\g^{-1}b(\h\delta)=\rme^{-\rmi\pi}b(\delta)=\delta=a(\delta)$, where $a(\delta)$ 
-is a basepoint of $s_{-1/2}$. According to \eref{eq:gensym}, it means that
-\begin{eqnarray}
-\S\left[ s_{3/2}(\delta) \right] = 
-\W \left[ a(\delta), a(\delta) \right] 
-\S \left[ s_{-1/2}(\delta) \right]
-\W \left[ a(\delta), a(\delta) \right],
-\end{eqnarray}
-and
-\begin{eqnarray}
-s_{3/2}(\delta) = s_{-1/2}(\delta).
-\label{eq:websym_1}
-\end{eqnarray}
-But we have already achieved this result (\Eref{eq:webtrad}) earlier! And it is clear 
-because the corresponding symmetry is just a rotation - it can be seen even from the 
-usual analytical continuation. Similarly, we can obtain $s_{1/2}(\delta)=s_{-3/2}(\delta)$, 
-so, the only original equation in the system (\eref{eq:webtrad}) is the last one - 
-it cannot be obtained from any other considerations.
+%First of all let`s try a rotation symmetry $\{\g=\rme^{\rmi\pi},\h=\f=\unity\}$ - 
+%it can relate $s_{\pm 3/2}$ with $s_{\mp 1/2}$. Take, for example, $s_{3/2}$ and $s_{-1/2}$. 
+%A basepoint of $s_{3/2}$ is chosen to be equal to $-\delta$ on the upper side of the cut 
+%and can be written as $b(\delta)=\delta \rme^{\rmi\pi}$. 
+%Obviously, $\g^{-1}b(\h\delta)=\rme^{-\rmi\pi}b(\delta)=\delta=a(\delta)$, where $a(\delta)$ 
+%is a basepoint of $s_{-1/2}$. According to \eref{eq:gensym}, it means that
+%\begin{eqnarray}
+%\S\left[ s_{3/2}(\delta) \right] = 
+%\W \left[ a(\delta), a(\delta) \right] 
+%\S \left[ s_{-1/2}(\delta) \right]
+%\W \left[ a(\delta), a(\delta) \right],
+%\end{eqnarray}
+%and
+%\begin{eqnarray}
+%s_{3/2}(\delta) = s_{-1/2}(\delta).
+%\label{eq:websym_0}
+%\end{eqnarray}
+%But we have already achieved this result (\Eref{eq:webtrad}) earlier! And it is clear 
+%because the corresponding symmetry is just a rotation - it can be seen even from the 
+%usual analytical continuation. Similarly, we can obtain $s_{1/2}(\delta)=s_{-3/2}(\delta)$, 
+%so, the only original equation in the system (\eref{eq:webtrad}) is the last one - 
+%it cannot be obtained from any other considerations.
 
-Another rotation symmetry which can relate different Stokes constants is a symmetry 
-$\{\g=\h=\rmi,\f=\unity\}$ - it can overlay, for example, 
+The first nontrivial symmetry relation can be obtained from the rotation symmetry 
+$\{\g=\h=\rmi\unity,\f=\unity\}$. It can overlap, for example, Stokes domains associated with
 $s_{1/2}$ and $s_{-1/2}$. Both of the Stokes constants have the same 
 basepoint $a(\delta)=\delta$ and $\g^{-1}a(\h\delta)=(-\rmi)\rmi\delta=\delta$, so
 \begin{eqnarray}
@@ -567,27 +578,34 @@ basepoint $a(\delta)=\delta$ and $\g^{-1}a(\h\delta)=(-\rmi)\rmi\delta=\delta$, 
 or
 \begin{eqnarray}
 s_{1/2}(\rmi \delta) = s_{-1/2}(\delta).
-\label{eq:websym_2}
+\label{eq:websym_1}
 \end{eqnarray}
-Considering \eref{eq:websym_1} and another analogous relation, we can easily 
+Considering \eref{eq:webtrad}, we can 
 see now that all four Stokes wedges can be described by only one function as 
 was mentioned in the previous section. 
 
-Now let's take a look at the symmetry $\{\h=\rme^{\rmi\pi}\unity,\g=\f=\unity\}$ - as it was written in the previous section, such a symmetry gives rise to a functional equation which can help to illuminate a branching structure of the Stokes constant. 
-For definiteness we will talk about $s_{3/2}$. To understand what to choose as endpoints in the phase integrals in \eref{eq:func}, let`s parametrize $\h$ as $\h_{cont}(\mu)=\rme^{\rmi\pi\mu}\unity$ and look at \fref{fig:webrs}. Obviously, for $s_{3/2}$ a basepoint $a(\delta)=\delta \rme^{\rmi\pi}$ and the question is how it is changing under our transformation. Using ~\fref{fig:webrs} we see that finally it arrives at $z=\delta$, but the phase matters because it defines a branch of the integrand $\sqrt{Q(z,\delta)}$ and that is why 
-$a(\h\delta)=\delta \rme^{2\rmi\pi}$ and
+Now let's take a look at the another rotation symmetry $\{\h=\rme^{\rmi\pi}\unity,\g=\f=\unity\}$. 
+As it was written in the previous section, such a symmetry gives rise to a functional 
+equation which can help to illuminate a branching structure of the Stokes constant. 
+For definiteness we will talk about $s_{3/2}$. To understand what to choose as endpoints 
+in the phase integrals in \eref{eq:func}, let`s parametrize $\h$ as $\h_{cont}(\mu)=\rme^{\rmi\pi\mu}\unity$ 
+and look at \fref{fig:webrs}. For $s_{3/2}$ a basepoint $a(\delta)=\delta \rme^{\rmi\pi}$ 
+and the question is how it is changing under our transformation. Using \fref{fig:webrs} 
+we can see that finally it arrives at the point $z=\delta$, but the phase difference between the
+initial and the final positions matters because it defines an integration path.
+That is why we have to write $a(\h\delta)=\delta \rme^{2\rmi\pi}$ and
 \begin{eqnarray}
 \S \left[ s_{3/2}(\delta \rme^{\rmi\pi}) \right] = 
-\W \left[-\rmi w \right]
+\W \left[- \w \right]
 \S \left[ s_{3/2} (\delta) \right]
-\W \left[ \rmi w \right],
+\W \left[  \w \right],
 \end{eqnarray}
 or
 \begin{eqnarray}
-s_{3/2}(\delta \rme^{\rmi\pi})=s_{3/2}(\delta)\rme^{-2\rmi w}=s_{3/2}(\delta)e^{-\pi\delta^2}.
-\label{eq:websym_3}
+s_{3/2}(\delta \rme^{\rmi\pi})=s_{3/2}(\delta)\rme^{-2\rmi \w}=s_{3/2}(\delta)e^{-\pi\delta^2}.
+\label{eq:websym_2}
 \end{eqnarray}
-This functional equation can be easily solved by substitution 
+This functional equation can be solved by substitution 
 $s_{3/2}(\delta)=\rmi\delta^{\rmi\delta^2}f(\delta^2)$, where $f(\delta^2)$
 is single-valued in a sense $f(x)=f(x \rme^{2\rmi\pi})$.
 
@@ -600,7 +618,9 @@ under the continuous parameter`s transformation $\h_{cont}(\mu)=\rme^{\rmi\pi\mu
 \label{fig:webrs}
 \end{figure} 
 
-And, finally, consider a conjugation symmetry $\f=\g=\h=c.c.$. This symmetry relates the Stokes constants in the upper half plane of the complex plane with the constants in the lower half plane. For example, according to \eref{eq:cnjgtn},
+And, finally, consider a conjugation symmetry $\f=\g=\h=c.c.$. This symmetry relates the 
+Stokes constants in the upper half of the complex plane with the constants in the lower half. 
+In particular, according to \eref{eq:cnjgtn},
 \begin{eqnarray}
 \S \left[ -s_{1/2}^*(\delta^*) \right] = 
 \W \left[ b^*(\delta^*),a(\delta) \right]
@@ -610,33 +630,41 @@ And, finally, consider a conjugation symmetry $\f=\g=\h=c.c.$. This symmetry rel
 and, since $b(\delta)=a(\delta)=\delta$,
 \begin{eqnarray}
 s_{1/2}^*(\delta^*)=-s_{-1/2}(\delta).
-\label{eq:websym_4}
+\label{eq:websym_3}
 \end{eqnarray}
-For real values of $\delta$ \eref{eq:websym_4} is nothing but the law of the flux conservation mentioned above. But, for complex values, in conjunction with \eref{eq:websym_3} and \eref{eq:websym_1} it gives
+For real values of $\delta$ the last relation is nothing but the law of the flux conservation 
+mentioned above. But, for complex values, together with \eref{eq:websym_2} and \eref{eq:webtrad} 
+it gives
 \begin{eqnarray}
 s_{3/2}(\delta)=s_{-1/2}(\delta)=\rmi(\rmi \delta^2)^{\rmi \delta^2/2}p(\rmi \delta^2),
-\label{eq:websym_5}
+\label{eq:websym_4}
 \end{eqnarray}
-where $p(x)=p(x \rme^{2\rmi\pi})$ and $p(x)$ is real on the real axis. Now, using ~\eref{eq:websym_2} and the last equation from the system \eref{eq:webtrad}, we can write a functional equation for $p(x)$:
+where $p(x)=p(x \rme^{2\rmi\pi})$ and $p(x)$ is real on the real axis. Now, using \eref{eq:websym_1} 
+and the last equation from the system \eref{eq:webtrad}, we can write a functional equation for $p(x)$:
 \begin{eqnarray}
 p(x)p(-x)=2\cos(\pi x/2).
 \label{eq:pfunc}
 \end{eqnarray}
-This functional equation is similar to Euler`s reflection formula and can be reduced to it by the substitutions
-$x=1-2t$ and $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$, where $u(x)u(-x)=1$. The function $u(x)$ can be easily found from the boundary conditions for \eref{eq:pfunc}. Indeed, we know exactly \cite{white} that 
-$s(0)=\rmi\sqrt{2}$ and we can assume, according to the approximation of isolated singularities, that every Stokes constant approaches an imaginary unit as $\delta$ goes to plus infinity. Taking into consideration \eref{eq:websym_5}, we can say that
+This functional equation is similar to Euler`s reflection formula \cite{gamma} and can be reduced 
+to it by the substitutions $x=1-2t$ and $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$, where $u(x)u(-x)=1$. 
+The function $u(x)$ can be found from the boundary conditions of \eref{eq:pfunc}. Indeed, we know 
+exactly \cite{white} that $s(0)=\rmi\sqrt{2}$. We also can assume, according to the approximation of 
+isolated singularities\cite{white,ours}, that every Stokes constant approaches an imaginary 
+unit as $\delta$ goes to plus infinity. Taking into consideration \eref{eq:websym_4}, we can say that
 \begin{eqnarray}
 \cases{ 
 p(0) = \sqrt{2} \\
 p(x) \sim x^{-x/2}\ as\ x \rightarrow \pm \rmi \infty 
 }.  
 \end{eqnarray}
-Using also the asymptotics of gamma function, we can finally write that $u(x)=(2e)^{-x/2}$ and
+Using the asymptotics of gamma function and definition of $u(x)$, we can finally write 
+that $u(x)=(2 \rme)^{-x/2}$ and
 \begin{eqnarray}
 s_{3/2}(\delta)=\rmi(\rmi\delta^2)^{\rmi\delta^2/2}
 \frac{\sqrt{2\pi}(2\rme)^{-\rmi\delta^2/2}}{\Gamma(1/2+\rmi\delta^2/2)}.
 \end{eqnarray}
-This is an exact expression of the Stokes constant for the Weber problem - it can be verified using an exact solution of the \eref{eq:weber} as it was done in \cite{ours}.
+This is an exact expression of the Stokes constant for the Weber problem---it can be verified using 
+an exact solution of \eref{eq:weber} as it was done in \cite{ours}.
     
 %\section{Example 2: two-dimensional parameters` space and a black hole`s lifetime \label{BLCKHL}}
 
@@ -644,25 +672,31 @@ This is an exact expression of the Stokes constant for the Weber problem - it ca
 
 The method of phase integrals is a beautiful and powerful method of a linear ordinary 
 differential equations` asymptotic analysis, but its range of applicability is highly 
-restricted to relatively simple tasks. More complicated problems need additional equations 
-for the Stokes constants and that is why different kinds of approximations 
-\cite{white,ours} are usually used. The analysis, presented in this paper, 
-allows the reader to find functional relations between different Stokes constants 
-and thus to reduce the number of unknowns. We transformed Heading`s rules \cite{heading,white} 
-into the matrix form to achieve simplicity and automate the procedure of analytical continuation. 
+restricted to relatively simple problems; more complicated problems need additional equations 
+for the Stokes constants. The analysis, presented in this paper, allows the reader to find 
+functional relations between different Stokes constants and thus to reduce the number of unknowns.
+
+The main result of the present work is stated by \Eref{eq:gensym}. This result, 
+like any others obtained in the paper, is valid for any approximation of the 
+phase integral type, not only for WKBJ approximation. To obtain this result 
+we transformed Heading`s rules \cite{heading,white} into the matrix form; 
+it helped to achieve simplicity and automate the procedure of analytical continuation. 
 We also proposed the idea of an effective Stokes diagram which can be a useful tool 
-for simplifying the computations in case of complicated equations. Effective Stokes constants 
-are assumed to be analytical functions with respect to the problem`s parameters and undergo 
-the Stokes phenomenon when the effective Stokes line ceases to coincide with the usual one. 
-We showed that every differential equation has some trivial symmetries which generate nontrivial 
-functional equations for the Stokes constants. The functional equations are likely to be as complex 
-as the initial differential equation but can be used as a measure of the chosen approximation`s 
-accuracy. 
+for simplifying the computations in case of complicated equations. 
+We showed that the idea of the effective Stokes constant is crucial in context of symmetry relations;
+such relations cannot be written in a general case without this idea. 
+Effective Stokes constant is assumed to be analytical function with respect to 
+the parameters of the problem and undergo the Stokes phenomenon when the corresponding effective Stokes 
+line ceases to coincide with the usual one. We also showed that every differential 
+equation has some formal symmetries (e.g. $\{\h=\rme^{2\rmi\pi}\unity,\g=\f=\unity\}$) which may lead
+to nontrivial relations for the Stokes constants. 
 
-The main result of the present work is the \eref{eq:gensym}. This result, like any other obtained in 
-the article, is valid for any approximation of the phase integral type.
+The functional equations which can be obtained using \Eref{eq:gensym} are likely to be as 
+complex as the initial differential equation; however, they are strict and can be used as 
+a basis for the construction of perturbation theory (will be a matter of a separate paper).
 
-%\textbf{Acknowledgement}
+\ack
+This work was supported by the Russian Science Foundation (grant No~14-12-01007). 
 
 \section*{References}
 \begin{thebibliography}{30}
@@ -695,6 +729,10 @@ Wiley, NY (1962)
 \bibitem{wkb3} L. Brillion, C. R. Acad. Sci. Paris \textbf{183}, 24 (1926).
 
 \bibitem{wkbj} H. Jeffries, Philos. Mag. [7] 33, 451 (1942)
+
+\bibitem{gamma} M. Abramowitz and I. A. Stegun, eds., 
+{\it Handbook of Mathematical Functions With Formulas, Graphs, and Mathematical Tables}, 
+NBS Applied Mathematics Series \textbf{55}, National Bureau of Standards, Washington, DC (1964).
 
 \end{thebibliography}
 \end{document}
