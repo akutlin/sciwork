@@ -1,3 +1,4 @@
+\pdfminorversion=4
 \documentclass[12pt]{iopart}
 \usepackage{bm}
 \usepackage{graphicx}
@@ -13,7 +14,7 @@
 \def\L{\widehat{L}}
 \def\lmbd{\bm{\lambda}}
 \def\Tp{\mathrm{T}}
-\def\unity{\hat{\it 1}}
+\def\unity{1}
 \def\Re{\mathrm{Re}}
 \def\Im{\mathrm{Im}}
 \def\w{\omega}
@@ -47,7 +48,7 @@ of the presented ideas in a case of a real physical problem.
 \pacs{02.30.Hq,02.30.Mv}
 \submitto{\jpa}
 
-\noindent{\it Keywords\/}:phase-integral method, Stokes phenomenon, Stokes constants, connection matrixes
+\noindent{\it Keywords\/}: Stokes phenomenon, phase-integral method, Stokes constants
 
 %\maketitle
 
@@ -198,43 +199,36 @@ Analogous result was obtained in \cite{frbook}. Note that branching of the asymp
 %As you can see, the need for the introduction of the $\C$-operator connected with the branching of the asymptotic solutions has nothing to do with a real branching structure of an exact solution. So, keeping in mind this simple rule we will omit any such cuts in the Stokes diagram and use cuts only to determine branches of $\phsintgrnd$ which is necessary for correct definition of phase integrals. 
 
 \section{Effective Stokes diagram \label{sec:effsd}}
-Imagine we have a Stokes domain with several Stokes lines emerging from the common basepoint.
-Crossing this domain means multiple sequential applications of $\S$ or $\S^{\Tp}$ operators. But, as we
+Imagine a Stokes domain with several Stokes lines emerging from the common basepoint.
+Crossing this domain means multiple sequential applications of either $\S$ or $\S^{\Tp}$ operators. But, as we
 can see by a direct calculation, Stokes operators $\S$ as well as $\S^{\Tp}$ form a multiplicative
 group:
 \begin{eqnarray}
 \S[s_2]\S[s_1] = \S[s_2 + s_1], \qquad
 \S^{\Tp}[s_2]\S^{\Tp}[s_1] = \S^{\Tp}[s_2 + s_1].
 \end{eqnarray}
-It means that every such set of Stokes constants can be replaced by an effective one. It also means that
+It means that every such set of Stokes constants can be replaced by a single one. It also means that,
 for any particular problem, we will never need to know all these Stokes constants separately---the only
 thing that matters is their sum.
 
-Now let`s take a look at the reconnection operator $\W$. As it follows from 
-the properties of the integral defined in \cite{frpaper}, in a given Stokes domain, 
-these operators forms a multiplicative group too:
+Now consider the reconnection operator $\W$. As it follows from the properties of the phase integral, 
+these operators also form a multiplicative group:
 \begin{eqnarray}
 \W[c,b]\W[b,a] = \W[c,a].
 \end{eqnarray}
 And, completely analogous to the situation discussed above, every set of sequential changes of the basepoint
-can be described by the only one reconnection operator.
+can be described by a single reconnection operator.
 
 Finally, imagine a Stokes domain with multiple Stokes lines and multiple basepoints. Crossing this 
 domain in terms of $\S$ and $\W$ operators looks like
 \begin{eqnarray}
 \S[s_n]\W[a_n,a_{n-1}]\S[s_{n-1}]\W[a_{n-1},a_{n-2}]\ ...\ \S[s_1]\W[a_1,a_0]\S[s_0].
 \end{eqnarray}
-But we always can change the order of $\S$ and $\W$ operators because $\S[s']\W[b,a]=\W[b,a]\S[s'']$. Hence,
-every such set of operators can always be replaced by only one combination $\S \W$ or, 
-if someone prefers different ordering, $\W \S$. Consequently, every Stokes domain can be described by 
-only one effective Stokes constant despite the number of Stokes lines it contains. The difference between 
-this effective Stokes constant and the usual one appears in the limit of well-isolated singularities 
-when the usual Stokes constant approaches its limiting value, according to the approximation of 
-isolated singularities while the effective one does not. However, as long as every effective Stokes 
-constant can be expressed in terms of usual Stokes constants and corresponding phase integrals, we can 
-still use the approximation of isolated singularities when we need it. Similarly, every set of 
-anti-Stokes lines going in the same direction can be replaced by only one effective anti-Stokes line. 
-Such a line now is just a borderline separating different Stokes domains. 
+Note that for any $s'$ there is such $s''$ that $\S[s']\W[b,a]=\W[b,a]\S[s'']$, therefore
+we can change the order of $\S$ and $\W$ operators. Hence,
+every such set of operators can always be replaced by a single combination $\S[s_l] \W[a_n,a_0]$ or, 
+if someone prefers different ordering, $\W[a_n,a_0] \S[s_r]$. Consequently, every Stokes domain can 
+be described by the \textit{effective Stokes constant} $s$ despite the number of Stokes lines it contains. 
 
 \begin{figure}
 \centering
@@ -243,29 +237,34 @@ Such a line now is just a borderline separating different Stokes domains.
 \caption{
 Stokes diagrams for $q(z,E)=\sqrt{z^4-E}$
 
-1. A traditional Stokes diagram; dots mark the zeros of the phase integrand
+(a) A traditional Stokes diagram; dots mark the zeros of the phase integrand
 
-2. An effective Stokes diagram with a specified path of analytical continuation
+(b) An effective Stokes diagram with a specified path of analytical continuation $\gamma$
 
-3. An effective Stokes diagram with the same path of analytical continuation but different basepoints}
+(c) An effective Stokes diagram with the same path of analytical continuation but different basepoints}
 \label{fig:effsd_1}
 \end{figure} 
 
-A Stokes diagram consisting of effective Stokes and anti-Stokes lines will be referred to as 
-an effective Stokes diagram (figures \ref{fig:effsd_1},\ref{fig:effsd_2}). 
+The idea of the effective Stokes constant allows us to introduce a notion of the effective Stokes line.
+Since every Stokes domain can be described by the single effective Stokes constant, we can visualize this fact 
+by plotting a single effective Stokes line instead of a set of traditional Stokes lines. 
+Similarly, every set of anti-Stokes lines located in the same anti-Stokes
+domain can be replaced by a single effective anti-Stokes line; such a line now is just a borderline 
+separating different Stokes domains. A Stokes diagram consisting of effective Stokes and anti-Stokes 
+lines will be referred to as an effective Stokes diagram (figures \ref{fig:effsd_1},\ref{fig:effsd_2}). 
 As it follows from the previous discussion, effective diagram is not unique
-and can be plotted differently depending on the chosen path of analytical continuation; that is why
-it is usually convenient to specify the path right on the diagram. But even when the path is chosen we
+and can be plotted differently depending on the chosen path of analytical continuation (\fref{fig:effsd_2}); 
+that is why it is usually convenient to specify the path right on the diagram. But even when the path is chosen we
 are still free to vary our basepoints` locations. Actually, the effective Stokes line can connect any two 
 points of the corresponding Stokes domain if it does not destroy the topology of the entire 
 Stokes diagram, taking into account the specifics of a particular problem. 
 Choosing what points to connect by the effective Stokes line we will indicate what basepoints 
-will be used in the given Stokes domain. Also it can be useful to indicate values of the phase integrals 
-instead of plotting multiple branch cuts.
+will be used in the given Stokes domain (\fref{fig:effsd_1}). Also it can be useful to indicate 
+values of the phase integrals instead of plotting multiple branch cuts.
 
-One of the advantages of the effective Stokes diagram is that it is much simpler than the 
-usual one---almost every Stokes (anti-Stokes) domain contains only one Stokes (anti-Stokes) line. 
-Another advantage is that we can easily calculate how many independent unknowns our problem actually has. 
+%One of the advantages of the effective Stokes diagram is that it is much simpler than the 
+%usual one---almost every Stokes (anti-Stokes) domain contains only one Stokes (anti-Stokes) line. 
+%Another advantage is that we can easily calculate how many independent unknowns our problem actually has. 
 
 \begin{figure}
 \centering
@@ -274,11 +273,11 @@ Another advantage is that we can easily calculate how many independent unknowns 
 \caption{
 Stokes diagrams for $q(z,g)=\sqrt{-z + g^2/z}$
 
-1. A traditional Stokes diagram; star marks the pole of the phase integrand. 
+(a) A traditional Stokes diagram; star marks the pole of the phase integrand. 
 
-2. An effective Stokes diagram with a specified path of analytical continuation. 
+(b) An effective Stokes diagram with a specified path of analytical continuation $\gamma_1$. 
 
-3. An effective Stokes diagram with a different path of analytical continuation.
+(c) An effective Stokes diagram with a different path of analytical continuation $\gamma_2$.
 It is meaningful only if $g \gg 1$ and all the singularities are far away from each other---otherwise 
 the phase-integral approximation itself fails between the pole and the right zero and the whole theory
 becomes not applicable}
@@ -286,20 +285,25 @@ becomes not applicable}
 \end{figure}  
 
 The concept of the effective Stokes constant is crucial for the following discussion. 
-In contrast to the traditional one such Stokes constant is always a measurable quantity
+In contrast to the traditional one, such Stokes constant is always a computable quantity
 providing the phase-integral approximation is applicable; one 
 can easily calculate it by comparing asymptotics of an exact solution on the 
 neighbouring anti-Stokes lines. For the traditional Stokes constant, it is present only if the
 corresponding singularity is far away from any others. 
-For example, let`s take a look at \fref{fig:effsd_2}. Comparing \fref{fig:effsd_2}.1 with \fref{fig:effsd_2}.2,
+For example, let`s take a look at \fref{fig:effsd_2}. Comparing \fref{fig:effsd_2}(a) with \fref{fig:effsd_2}(b),
 one can notice that the effective Stokes constant $s$ is actually a combination of
 two traditional constants $s_1$ and $s_2$. If we want to calculate, for example, $s_1$, we have to continue 
-some solution of the corresponding equation analytically along the path shown in  \fref{fig:effsd_2}.3. Nevertheless,
+some solution of the corresponding equation analytically along the path shown in  \fref{fig:effsd_2}(c). Nevertheless,
 if the singularities are close to each other, the phase-integral approximation fails between the pole
 and the right zero and $s_1$ loses its meaning. However, the phase-integral approximation still holds
-far away from all the singularities and $s$ from \fref{fig:effsd_2} remains measurable and meaningful
-although $s_1$ and $s_2$ cease to exist. That is why any exact symmetry relation can be written only 
-for the effective Stokes constant.
+far away from all the singularities and $s$ from \fref{fig:effsd_2} remains computable and meaningful. 
+Certainly, assuming the effective Stokes constant to be analytical function of the problem`s parameters $\lmbd$
+and considering that every effective Stokes constant can be expressed in terms of the traditional constants 
+and corresponding phase integrals, we have to assume the traditional Stokes constant to be analytical
+function as well. Under this assumptions we can analytically continue every traditional Stokes constant
+from the area of the parameters` space where it is computable to the area where it is not. But even then
+the only meaning of such analytically continued function is just to be a 'part' of the effective Stokes constant.
+That is why any exact symmetry relation can be written only for the effective Stokes constant.
 
 \section{Symmetries and the corresponding connections between effective Stokes constants \label{sec:smmtrs}}
 Let`s define what we mean by a symmetry of a given equation. Here we introduce three operators
@@ -315,51 +319,23 @@ if for any its solution $y(z,\lmbd)$ there is another solution $\tilde{y}(z,\lmb
 $\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd)$, i.e.
 \begin{eqnarray}
 \L(z,\lmbd)y(z,\lmbd) \equiv 0 \ \Longrightarrow\  
-\L(z,\lmbd)\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd) \equiv 0.   \label{eq:symdef}
+\L(z,\lmbd) \left[ \f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd) \right] \equiv 0.   \label{eq:symdef}
 \end{eqnarray}
 For example, an Airy equation $\rmd^2 y(z)/\rmd z^2 - z y(z) = 0$ has two base symmetries: 
-$\{\g=\rme^{2 \rmi \pi/3}\unity,\f=\h=\unity\}$ and $\{\f=\g=c.c.,\h=\unity\}$, where $\unity$ 
-is a unity operator and $c.c.$ stands 
-for complex conjugate. The main difference between these two symmetries is that the second 
+$\{\g=\rme^{2 \rmi \pi/3},\f=\h=\unity\}$ and $\{\f=\g=c.c.,\h=\unity\}$, where 
+%$\unity$ is a unity operator and 
+$c.c.$ stands 
+for complex conjugation. The main difference between these two symmetries is that the second 
 one changes a direction of a complex variable`s phase increase and the first one does not. 
 We will refer to the symmetries of the first kind as rotation symmetries and of the second 
 kind as conjugation symmetries.
 
 The symmetry transformation`s definition \eref{eq:symdef} means that 
 $\tilde{y}(z,\lmbd)$ as well as $y(z,\lmbd)$ can be written in the form \eref{eq:gensol}
-but with different coefficients $c_\pm$. This difference and, as a consequence, 
-restrictions on the Stokes constants can be obtained directly by applying
-the symmetry transformation to \eref{eq:phsint}, but we prefer more intuitive derivation.
-
-%Now, if we rewrite \eref{eq:gen} in operator form
-%\begin{eqnarray}
-%\L(z,\lmbd)y(z,\lmbd)=0, \qquad \L(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:L}
-%\end{eqnarray}
-%we can define any set of operators $\{\f,\g,\h\}$ as a symmetry transformation of \eref{eq:L} if
-%\begin{eqnarray}
-%\f(z,\lmbd)\L(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd)=\L(z,\lmbd)\f(z,\lmbd).   \label{eq:symdef}
-%\end{eqnarray}
-%For example, an Airy operator $\L_{Airy}(z) = \rmd^2/\rmd z^2 - z$ has two base symmetries: 
-%$\{\g=\rme^{2 \rmi \pi/3}\unity,\f=\h=\unity\}$ and $\{\h=\unity,\f=\g=c.c.\}$, where $\unity$ 
-%is a unity operator and $c.c.$ stands 
-%for complex conjugate. The main difference between these two symmetries is that the second 
-%one changes a direction of a complex variable`s phase increase and the first one does not. 
-%We will refer to the symmetries of the first kind as rotation symmetries and of the second 
-%kind as conjugation symmetries.
-%
-%Definition \eref{eq:symdef} allows us to formulate the following statement: a linear solution space $\{y\}$ 
-%of \eref{eq:L} is invariant under the symmetry transformation. Indeed, for every $y(z,\lmbd)$
-%such that $\L(z,\lmbd)y(z,\lmbd)=0$ we can write
-%\begin{eqnarray}
-%0 \equiv \f\L(\g z,\h \lmbd)y(\g z,\h \lmbd)=
-%\L(z,\lmbd)\f y(\g z,\h \lmbd),   \label{eq:invrnt}
-%\end{eqnarray}
-%i.e. if $y(z,\lmbd)$ is a solution of \eref{eq:L} 
-%then $\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)$ is another its solution.
-%It means that $\tilde{y}(z,\lmbd)$ as well as $y(z,\lmbd)$ can be written in the form \eref{eq:gensol}
-%but with different coefficients $c_\pm$. This difference and, as a consequence, 
-%restrictions on the Stokes constants can be obtained directly by applying
-%the symmetry transformation to \eref{eq:phsint}, but we prefer more intuitive derivation.
+but with different coefficients $c_\pm$ and $\tilde{c}_\pm$ correspondingly. 
+This difference and, as a consequence, restrictions on the Stokes constants 
+can be obtained directly by applying the symmetry transformation to \eref{eq:phsint}, 
+but we prefer more intuitive derivation.
 
 Every symmetry transformation can be done in three consecutive steps: transformation 
 of the parameters $\h(z,\lmbd)$, transformation of the independent variable $\g(z,\lmbd)$ and 
@@ -368,7 +344,7 @@ Certainly, both rotation and conjugation symmetries can be discrete and
 usually are, but it is much more convenient to associate some continuous transformation 
 with it. This can be done by introducing of an auxiliary variable $\mu$ varying from $0$ 
 to $1$ such that, for example, $\g_{cont}(\mu)=\unity+\mu (\g-\unity)$, and $\g_{cont}(1)=\g$. 
-As it will be seen from the following discussion the parametrization of the 
+As it will be seen from the following discussion, the parametrization of the 
 continuous operators can be important for the final result. Also we will assume that $\f$ can 
 change the value of the effective Stokes constant but not the structure of the effective Stokes diagram and 
 that is why it is not necessary to parametrize it. To determine how $\f$ acts on the 
@@ -379,32 +355,32 @@ solution \eref{eq:gensol} and how it changes the coefficients $c_\pm$.
 \centering
 \noindent
 \includegraphics[width=\textwidth]{stuff/rs.png}
-\caption{Stokes diagram`s evolution due to the symmetry transformation}
+\caption{Effective Stokes diagram`s evolution corresponding to the symmetry transformation}
 \label{fig:rst}
 \end{figure}
 
 To understand a consequences of the symmetry`s presence look at \fref{fig:rst}. 
 First of all let`s keep track of the basepoints` movement under the continuous parameters` 
 transformation $\h_{cont}(\mu)$. Usually it is convenient to choose some singularity of the 
-potential as a basepoint, but the choice is not necessary for our discussion so we will assume 
+potential as a basepoint, but the choice is not necessary for our discussion and we will assume 
 only that it somehow depends on the set of the problem`s parameters $\lmbd$. As long as under 
 this assumption our basepoint $a=a(\h_{cont}(\mu)\lmbd)=a(\mu)$, like the others, is a function 
 of the auxiliary variable $\mu$, the whole effective Stokes diagram continuously changes preserving its 
 initial topology while $\mu$ varies from 0 to 1. Assuming also that every effective Stokes constant is 
 an analytical function of $\lmbd$, we finally arrive at the situation when each transformed effective Stokes 
 line associates with a new value of the same effective Stokes constant $s(\h\lmbd)$. The result of this 
-transformation is shown in \fref{fig:rst}.2. 
+transformation is shown in \fref{fig:rst}(b). 
 
 Then, we do the same with the independent variable $z$ using $\g_{cont}(\nu)$. Under this 
 transformation the Stokes domains change places and one effective Stokes line is replaced by another one 
-associated with some other effective Stokes constant $s'(\h\lmbd)$ (\fref{fig:rst}.3). Now we can see that
+associated with some other effective Stokes constant $s'(\h\lmbd)$ (\fref{fig:rst}(c)). Now we can see that
 every symmetry relation binds such Stokes constants whose domains can be overlapped by the $\g$ 
 operation. Due to the invariance of the solution space of \eref{eq:gen} 
 under the symmetry transformation $\{\f(z,\lmbd),\g(z,\lmbd),\h(z,\lmbd)\}$, 
 the final result of our second step can differ from the very initial 
 configuration only by the basepoints` positions, and that is why $s'(\h\lmbd)$ 
-and $s(\lmbd)$ have to be equal accurate to the corresponding phase integral and the $\f$ 
-transformation.
+and $s(\lmbd)$ have to be equal accurate to the corresponding reconnection operator
+and the $\f$ transformation.
 
 Now we are ready to write the final relation for the effective Stokes constants. A formula
 expressing this relation is shown below:
@@ -478,7 +454,7 @@ equation for the considered effective Stokes constant. Usually such equation hel
 a branching structure of the effective Stokes constant and write it as a new single-valued function 
 multiplied by the known multivalued one. 
 It is worth mention that even simple formal 
-symmetries like $\{\h=\rme^{2\rmi\pi}\unity,\g=\f=\unity\}$
+symmetries like $\{\h=\rme^{2\rmi\pi},\g=\f=\unity\}$
 can give nontrivial functional equations; it happens always when the reconnection operator
 differs from unity.
 
@@ -488,7 +464,8 @@ differs from unity.
 \centering
 \noindent
 \includegraphics[width=\textwidth]{stuff/wsd.png}
-\caption{Stokes field (1), anti-Stokes field (2) and a Stokes diagram (3) for the Weber equation \eref{eq:weber}}
+\caption{Stokes field (a), anti-Stokes field (b) and an effective Stokes diagram (c) 
+for the Weber equation \eref{eq:weber}}
 \label{fig:wsd}
 \end{figure} 
 
@@ -496,12 +473,12 @@ The best-known type of the phase-integral approximation is the WKBJ (and often s
 so named after Wentzel, Kramers, Brillouin, and Jeffreys \cite{wkb1,wkb2,wkb3,wkbj}. 
 It takes the form \eref{eq:phsint} with $\phsintgrnd = \sqrt{Q(z,\lmbd)}$. Since it is the simplest one
 we will use it all throughout this section. Also in this section we will use the symbol 
-$\W[\w] \equiv \W \left[\phsintgrl{a}{b} \right] = \W[b,a]$ to underline a value of the phase integral. 
+$\W[\w] \equiv \W \left[\phsintgrl{a}{b} \right] \equiv \W[b,a]$ to underline a value of the phase integral. 
 
 
 Let us consider the Weber equation
 \begin{eqnarray}
-\frac{\rmd^2 y(z)}{\rmd z^2}+(z^2-\delta^2)y(z)=0
+\frac{\rmd^2 y(z,\delta)}{\rmd z^2}+(z^2-\delta^2)y(z,\delta)=0
 \label{eq:weber}
 \end{eqnarray}
 with a boundary conditions of a presence of incident wave from the large negative $z$ and absence of such 
@@ -535,15 +512,18 @@ R = \frac{1}{s_{3/2}},\ T=\rmi\frac{\rme^{-\rmi w}}{s_{3/2}}.
 \label{eq:RT}
 \end{eqnarray}
 
-To find $s_{3/2}$, let`s try a traditional method described, for example, in \cite{white}. We can obtain desired equations for the Stokes constants using the single-valuedness of the general solution and analytically continue it around the origin far away from the interaction area:
+To find $s_{3/2}$, let`s try a traditional method described, for example, in \cite{frpaper, white}. 
+We can obtain desired equations for the Stokes constants using the single-valuedness of the general 
+solution and analytically continue it around the origin far away from the interaction area along the
+curve $\gamma$ (\fref{fig:wsd}(c)):
 \begin{eqnarray}
 \unity = 
 \C^2
 \S \left[ s_{3/2} \right]
-\W \left[ \rmi w \right] 
+\W \left[ \w \right] 
 \S^{\Tp} \left[ s_{1/2} \right]
 \S \left[ s_{-1/2} \right]
-\W \left[ \rmi w \right]
+\W \left[ \w \right]
 \S^{\Tp} \left[ s_{-3/2} \right],
 \end{eqnarray}
 from which follows
@@ -566,37 +546,14 @@ resolve the problem.
 Actually the flux conservation is a consequence of the real-valuedness and analyticity 
 of the potential $x^2-\delta^2$ and hence the same relation can be obtained from the 
 conjugation symmetry using \eref{eq:cnjgtn}. Moreover, first two equations from \eref{eq:webtrad} 
-are just a consequence of a symmetry $\{\g=\rme^{\rmi\pi}\unity,\h=\f=\unity\}$---and it is clear 
+are just a consequence of a symmetry $\{\g=\rme^{\rmi\pi},\h=\f=\unity\}$---and it is clear 
 because the symmetry is just a rotation and can be seen even from the usual analytical continuation. 
 So, the only original equation in the system \eref{eq:webtrad} is the last one---it cannot 
 be obtained from any other considerations. But these are not the only consequences of the 
 equation`s symmetries, so let`s write them all.
 
-%First of all let`s try a rotation symmetry $\{\g=\rme^{\rmi\pi},\h=\f=\unity\}$ - 
-%it can relate $s_{\pm 3/2}$ with $s_{\mp 1/2}$. Take, for example, $s_{3/2}$ and $s_{-1/2}$. 
-%A basepoint of $s_{3/2}$ is chosen to be equal to $-\delta$ on the upper side of the cut 
-%and can be written as $b(\delta)=\delta \rme^{\rmi\pi}$. 
-%Obviously, $\g^{-1}b(\h\delta)=\rme^{-\rmi\pi}b(\delta)=\delta=a(\delta)$, where $a(\delta)$ 
-%is a basepoint of $s_{-1/2}$. According to \eref{eq:gensym}, it means that
-%\begin{eqnarray}
-%\S\left[ s_{3/2}(\delta) \right] = 
-%\W \left[ a(\delta), a(\delta) \right] 
-%\S \left[ s_{-1/2}(\delta) \right]
-%\W \left[ a(\delta), a(\delta) \right],
-%\end{eqnarray}
-%and
-%\begin{eqnarray}
-%s_{3/2}(\delta) = s_{-1/2}(\delta).
-%\label{eq:websym_0}
-%\end{eqnarray}
-%But we have already achieved this result (\Eref{eq:webtrad}) earlier! And it is clear 
-%because the corresponding symmetry is just a rotation - it can be seen even from the 
-%usual analytical continuation. Similarly, we can obtain $s_{1/2}(\delta)=s_{-3/2}(\delta)$, 
-%so, the only original equation in the system (\eref{eq:webtrad}) is the last one - 
-%it cannot be obtained from any other considerations.
-
 The first nontrivial symmetry relation can be obtained from the rotation symmetry 
-$\{\g=\h=\rmi\unity,\f=\unity\}$. It can overlap, for example, Stokes domains associated with
+$\{\g=\h=\rmi,\f=\unity\}$. It can overlap, for example, Stokes domains associated with
 $s_{1/2}$ and $s_{-1/2}$. Both of the Stokes constants have the same 
 basepoint $a(\delta)=\delta$ and $\g^{-1}a(\h\delta)=(-\rmi)\rmi\delta=\delta$, so
 \begin{eqnarray}
@@ -614,11 +571,11 @@ Considering \eref{eq:webtrad}, we can
 see now that all four Stokes wedges can be described by only one function as 
 was mentioned in the previous section. 
 
-Now let's take a look at the another rotation symmetry $\{\h=\rme^{\rmi\pi}\unity,\g=\f=\unity\}$. 
+Now let's take a look at the another rotation symmetry $\{\h=\rme^{\rmi\pi},\g=\f=\unity\}$. 
 As it was written in the previous section, such a symmetry gives rise to a functional 
 equation which can help to illuminate a branching structure of the Stokes constant. 
 For definiteness we will talk about $s_{3/2}$. To understand what to choose as endpoints 
-in the phase integrals in \eref{eq:func}, let`s parametrize $\h$ as $\h_{cont}(\mu)=\rme^{\rmi\pi\mu}\unity$ 
+in the phase integrals in \eref{eq:func}, let`s parametrize $\h$ as $\h_{cont}(\mu)=\rme^{\rmi\pi\mu}$ 
 and look at \fref{fig:webrs}. For $s_{3/2}$ a basepoint $a(\delta)=\delta \rme^{\rmi\pi}$ 
 and the question is how it is changing under our transformation. Using \fref{fig:webrs} 
 we can see that finally it arrives at the point $z=\delta$, but the phase difference between the
@@ -644,7 +601,7 @@ is single-valued in a sense $f(x)=f(x \rme^{2\rmi\pi})$.
 \noindent
 \includegraphics[width=\textwidth]{stuff/wrs.png}
 \caption{Evolution of the Stokes field and effective Stokes lines 
-under the continuous parameter`s transformation $\h_{cont}(\mu)=\rme^{\rmi\pi\mu}\unity$}
+under the continuous parameter`s transformation $\h_{cont}(\mu)=\rme^{\rmi\pi\mu}$}
 \label{fig:webrs}
 \end{figure} 
 
@@ -676,7 +633,7 @@ p(x)p(-x)=2\cos(\pi x/2).
 \label{eq:pfunc}
 \end{eqnarray}
 This functional equation is similar to Euler`s reflection formula \cite{gamma} and can be reduced 
-to it by the substitutions $x=1-2t$ and $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$, where $u(x)u(-x)=1$. 
+to it by substitutions $x=1-2t$ and $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$, where $u(x)u(-x)=1$. 
 The function $u(x)$ can be found from the boundary conditions of \eref{eq:pfunc}. Indeed, we know 
 exactly \cite{white} that $s_{3/2}(0)=\rmi\sqrt{2}$. We also can assume, according to the approximation of 
 isolated singularities\cite{white,ours}, that every Stokes constant approaches an imaginary 
@@ -699,24 +656,6 @@ the Weber problem---it can be verified using
 an exact solution of \eref{eq:weber} as it was done in \cite{ours}. 
 Now the desired scattering characteristics \eref{eq:RT} can be found.
 
-It is interesting to investigate \eref{eq:s3/2} from the perspective of the approximation
-of isolated singularities. It is clear that $\lim_{\delta\to +\infty} s_{3/2}(\delta) = \rmi$,
-but it is also clear that there is some phase of the complex parameter $\delta$ when the approximation
-fails and $s_{3/2}(\delta)$ changes its limiting value. As it can be inferred from \fref{fig:webrs},
-$s_{3/2}$ approaches imaginary unit for large values of $\delta$ if and only if
-$-3\pi/4 < Arg(\delta) < \pi/4$. Indeed, this range of phases can be separated into the three intervals:
-$-3\pi/4 < Arg(\delta) < -\pi/2$, $-\pi/2 \leq Arg(\delta) \leq 0$ and $0 < Arg(\delta) < \pi/4$.
-For the first interval our effective Stokes line can be expressed in terms of the traditional constants
-as $s' + s''\rme^{\pi\delta^2}$ and approaches imaginary unit for large values of $\delta$ because 
-$\Re(\delta^2)$ is a large negative number and $s'$ approaches $'\rmi'$ according to the approximation 
-of isolated singularities. For the second interval the effective Stokes line completely coincide with
-the traditional one. Finally, for the third interval it can be expressed in terms of
-the traditional Stokes constants as $s'' + s'\rme^{-\pi\delta^2}$ and, thereby, also
-approaches imaginary unit for large values of $\delta$ since $\Re(\delta^2)$ is a large positive number.
-Relation \eref{eq:s3/2} is in a perfect agreement with the reasoning.
-    
-%\section{Example 2: two-dimensional parameters` space and a black hole`s lifetime \label{BLCKHL}}
-
 \section{Conclusion \label{sec:cnclsns}}
 
 The method of phase integrals is a beautiful and powerful method of a linear ordinary 
@@ -737,7 +676,7 @@ such relations cannot be written in a general case without this idea.
 Effective Stokes constant is assumed to be analytical function with respect to 
 the parameters of the problem. 
 We also showed that every differential 
-equation has some formal symmetries (e.g. $\{\h=\rme^{2\rmi\pi}\unity,\g=\f=\unity\}$) which may lead
+equation has some formal symmetries (e.g. $\{\h=\rme^{2\rmi\pi},\g=\f=\unity\}$) which may lead
 to nontrivial relations for the Stokes constants. 
 
 The functional equations which can be obtained using \Eref{eq:gensym} are likely to be as 
