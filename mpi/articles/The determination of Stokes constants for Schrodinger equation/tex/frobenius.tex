@@ -1,91 +1,48 @@
-%% ****** Start of file apstemplate.tex ****** %
-%%
-%%
-%%   This file is part of the APS files in the REVTeX 4 distribution.
-%%   Version 4.1r of REVTeX, August 2010
-%%
-%%
-%%   Copyright (c) 2001, 2009, 2010 The American Physical Society.
-%%
-%%   See the REVTeX 4 README file for restrictions and more information.
-%%
-%
-% This is a template for producing manuscripts for use with REVTEX 4.0
-% Copy this file to another name and then work on that file.
-% That way, you always have this original template file to use.
-%
-% Group addresses by affiliation; use superscriptaddress for long
-% author lists, or if there are many overlapping affiliations.
-% For Phys. Rev. appearance, change preprint to twocolumn.
-% Choose pra, prb, prc, prd, pre, prl, prstab, prstper, or rmp for journal
-%  Add 'draft' option to mark overfull boxes with black boxes
-%  Add 'showpacs' option to make PACS codes appear
-%  Add 'showkeys' option to make keywords appear
-%\documentclass[aps,prl,preprint,groupedaddress]{revtex4-1}
-\documentclass[aps,prl,preprint,superscriptaddress]{revtex4}
-%\documentclass[aps,prl,reprint,groupedaddress]{revtex4-1}
-
-% You should use BibTeX and apsrev.bst for references
-% Choosing a journal automatically selects the correct APS
-% BibTeX style file (bst file), so only uncomment the line
-% below if necessary.
-%\bibliographystyle{apsrev4-1}
+\documentclass[aip,jmp,reprint]{revtex4-1}
 \usepackage{graphicx}
-\usepackage{float}
-\usepackage{subfig}
-\usepackage{textcomp}
-\usepackage[none]{hyphenat}
-\setcounter{secnumdepth}{3}
 
+\def\S{\widehat{S}}
+\def\W{\widehat{W}}
+\def\C{\widehat{C}}
+\def\f{\hat{f}}
+\def\g{\hat{g}}
+\def\h{\hat{h}}
+\def\psii{\bm\psi}
+\def\L{\widehat{L}}
+\def\lmbd{\bm{\lambda}}
+\def\Tp{\mathrm{T}}
+\def\unity{\hat{\it 1}}
+\def\Re{\mathrm{Re}}
+\def\Im{\mathrm{Im}}
+\def\w{\omega}
+
+\newcommand\phsintgrnd[1][z]{q(#1,\lmbd)}
+\newcommand\predexp[1][z]{q(#1,\lmbd)^{-1/2}}
+\newcommand\phsintgrl[3][z]{\int_{#2}^{#3} \phsintgrnd[#1] \rmd #1}
 
 \begin{document}
 
-% Use the \preprint command to place your local institutional report
-% number in the upper righthand corner of the title page in preprint mode.
-% Multiple \preprint commands are allowed.
-% Use the 'preprintnumbers' class option to override journal defaults
-% to display numbers if necessary
-%\preprint{}
-
-%Title of paper
-\title{The determination of Stokes constants for Schr\"{o}dinger equation with non-analytic potential}
-
-% repeat the \author .. \affiliation  etc. as needed
-% \email, \thanks, \homepage, \altaffiliation all apply to the current
-% author. Explanatory text should go in the []'s, actual e-mail
-% address or url should go in the {}'s for \email and \homepage.
-% Please use the appropriate macro foreach each type of information
-
-% \affiliation command applies to all authors since the last
-% \affiliation command. The \affiliation command should follow the
-% other information
-% \affiliation can be followed by \email, \homepage, \thanks as well.
+\title{On a new nontrivial exact relation for the Stokes constants for a solution of 
+a linear second-order ODE with non-analytic coefficients}
 \author{Anton Kutlin}
-%\email[]{Your e-mail address}
-%\homepage[]{Your web page}
-%\thanks{}
-%\altaffiliation{}
-\affiliation{Institute of Applied Physics of Russian Academy of Sciences, 46 Ulyanov str., 603950 Nizhny Novgorod, Russia}
-
-%Collaboration name if desired (requires use of superscriptaddress
-%option in \documentclass). \noaffiliation is required (may also be
-%used with the \author command).
-%\collaboration can be followed by \email, \homepage, \thanks as well.
-%\collaboration{}
-%\noaffiliation
+\email{anton.kutlin@gmail.com}
+\affiliation{Institute of Applied Physics of Russian Academy of Sciences, 
+46 Ulyanov str., 603950 Nizhny Novgorod, Russia}
 
 \date{\today}
 
 \begin{abstract}
-In many cases of practical interest it is not necessary to know a solution of a differential equation precisely and enough to determine only some characteristics of the solution such as the absorption coefficient or energy eigenvalues. For this purpose in case of a differential equation of the Schr\"{o}dinger type the method of Phase Integrals is commonly used. A cornerstone of the method is the Stokes constants. There are a very few cases in which it is possible to determine the constants precisely, so approximate methods must be used. If the solution does not have any branch points it is possible to write equations for the constants using analytical continuation around the origin and requiring the solution to be single valued. This can be done in case of a single algebraic branch point with minor variations, but it is still difficult to do this when the solution has an infinite number of sheets or several branch points. The present work is devoted to demonstrate some ideas regarding this problem.
+We consider an ordinary linear second-order differential equation with non-analytical coefficients.
+We propose a universal technique based on the Frobenius method which allows to obtain new nontrivial 
+exact relation between Stokes constants providing the differential equation has one regular singular point.
+The well-known Budden problem is solved using this technique as an illustration of the possible usage
+of the technique. We also propose a way to write approximate relations between Stokes constants 
+if the equation has multiple regular singular points located far away from each other.
 \end{abstract}
 
-% insert suggested PACS numbers in braces on next line
-\pacs{}
-% insert suggested keywords - APS authors don't need to do this
-\keywords{Method of Phase Integrals, WKB, WKBJ, Stokes phenomenon, Stokes constants, the Budden problem, symmetry relations, Frobenius series, branching structure}
+\pacs{02.30.Hq,02.30.Mv}
+\keywords{Stokes phenomenon, phase-integral method, Frobenius method}
 
-%\maketitle must follow title, authors, abstract, \pacs, and \keywords
 \maketitle
 
 \section{introduction \label{intro}}
@@ -117,52 +74,17 @@ For several singular points associated with an analytic potential it is still po
 
 Solutions of equation (\ref{wkbeqn}) with a non-analytic potential are not single valued and usually have both algebraic and logarithmic branch points, so there is no possibility of requiring the function to be single valued to write equations for the Stokes constants. The approximation of using Stokes constants  for isolated singularities can give an estimate, but the results are correct only in the limit of large separation of singularities. Inasmuch as the most interesting cases from the physical point of view often imply small separation, this problem needs further investigation.
 
-The simplest example of an equation with a non-analytic potential is the Budden potential.
-In section \ref{budden} the potential is studied using the approximation of isolated singularities and compared with an exact solution.  
-In section \ref{frob} the possibility of using a local series expansion to achieve an equation for the Stokes constants is discussed. 
-In section \ref{symmetries} symmetry relations are found which can relate different Stokes constants.
-In section \ref{summury} transmission and absorption values for the Budden problem are given without obtaining the solution of the differential equation.
-And, finally, in section \ref{con} are the conclusions. 
+The paper is organized as follows.
+In section \ref{sec:frob} we derive an exact equation for the Stokes constants in case of the differential
+equation with the only one regular singular point. 
+In section \ref{sec:budden} our technique is used to solve the well-known Budden problem. Also this
+section contains a comparison of our result with an exact one and the result obtained with use
+of the approximation of isolated singularities.
+In section \ref{sec:approx} the possibility of writing approximate equation in case of multiple 
+regular singular points discussed.
+And, finally, in section \ref{sec:con} are the conclusions. 
 
-\section{The Budden Problem \label{budden}}
-
-We consider the standard problem treating the penetration and resonant absorption of an electromagnetic wave, analyzed by Budden\cite{white-chen,budden}. The differential equation is
-\begin{eqnarray}
-\frac{d^2y}{dz^2} + (1+c/z)y = 0.  \label{budeq}
-\end{eqnarray}
-The Budden potential has a first order zero or cutoff  at \mbox{$z=-c$} and a resonance or first order pole at \mbox{$z=0$}. One can find that the pole should be rounded from below. This condition is equivalent to the Landau prescription for the pole to describe Landau
-damping. Note that the singularity at \mbox{$z=-c$} is an artifact of the WKBJ
-analysis. The differential equation has only a pole at \mbox{$z=0$}, and thus a
-single cut of the solution extending upward from this point.
-
-The Budden problem is a problem of determination of the absorption in the Budden potential. It can be solved exactly using an integral representation. A detailed  analysis of the problem can be found in \cite[pp~230-235]{rwbook}. Since the aim of this paper is to discuss asymptotic methods of solving such problems, a solution of the Budden problem using an approximation of isolated singularities is shown below.
-
-Following \cite{heading}, define \mbox{$(a,z) = Q^{-1/4}e^{i\int_a^z Q^{1/2} dz}$} and \mbox{$[a,b] = e^{i\int_a^b Q^{1/2} dz}$}. Corresponding with (\ref{wkbsol}), the equation (\ref{budeq}) has \mbox{$y_+=e^{iz}$} and \mbox{$y_-=e^{-iz}$} as its WKBJ asymptotic.  Begin with a solution representing an outgoing wave at large positive $z$. According to \cite[p.~95]{rwbook}, using the approximation of isolated singularities one can obtain for \mbox{$Arg(z)=-\pi$} that
-\begin{eqnarray}
-y=i([0,-c]+[-c,0]/2)(z,-c) +([0,-c]-[-c,0]/2)(-c,z).
-\end{eqnarray}
-Since \mbox{$[0,-c]=e^{\frac{\pi c}{2}}$}, reflection and transmission coefficients are
-\begin{eqnarray}
-R=-i\frac{2e^{\frac{\pi c}{2}}-e^{-\frac{\pi c}{2}}}{2e^{\frac{\pi c}{2}}+e^{-\frac{\pi c}{2}}},\ 
-T=-i\frac{2}{2e^{\frac{\pi c}{2}}+e^{-\frac{\pi c}{2}}},
-\end{eqnarray}
-and for absorption
-\begin{eqnarray}
-A=1-|R|^2-|T|^2=\frac{4 e^{\pi c}}{(1+2e^{\pi c})^2}.
-\end{eqnarray}
-
-\begin{figure}
-\centering
-\noindent
-\includegraphics[scale=.5]{stuff/comparison.jpg}
-\caption{Absorption in the Budden potential}
-\label{cmprsn}
-\end{figure} 
-
-Comparing the expression with the one from an exact solution (see Fig.\ref{cmprsn}) it is easy to see that they behave similarly when \mbox{$c\geq1$}, but not when \mbox{$c\ll 1$}. The limit of \mbox{$c\rightarrow 0$} is clearly wrong; in this limit \mbox{$Q=1$}
-and there should be no reflection or absorption. The error is due to using the Stokes constants which do not preserve the global structure of the solution with a branch point. In the next section we consider how to correct this. 
-
-\section{Deriving an equation for the Stokes constants using a series representation \label{frob}}
+\section{The exact equation for the Stokes constants in case of one regular singular point \label{frob}}
 The pole of the Budden potential is a regular singular point. It is a well known fact\cite[pp~68-76]{bender} that if \mbox{$z=0$} is a regular singular point of $Q(z)$ than the general solution of Eq.\ref{wkbeqn} can be written in the form
 \begin{eqnarray}
 y=A y_1+B y_2=
@@ -205,6 +127,44 @@ RS=-(1-e^{-\pi c})^2.   \label{frobresult}
 \end{eqnarray}
 
 The values of the Stokes constants for isolated singularities can approximately satisfy expression (\ref{frobresult}) only for large values of $c$. This explains why the approximation from the previous section could not give a correct result for \mbox{$c\ll 1$}. But this still does not determine  the absorption coefficient because of unknown relations between $R$ and $S$. In the next section we derive such relations.
+
+\section{The Budden Problem \label{budden}}
+
+We consider the standard problem treating the penetration and resonant absorption of an electromagnetic wave, analyzed by Budden\cite{white-chen,budden}. The differential equation is
+\begin{eqnarray}
+\frac{d^2y}{dz^2} + (1+c/z)y = 0.  \label{budeq}
+\end{eqnarray}
+The Budden potential has a first order zero or cutoff  at \mbox{$z=-c$} and a resonance or first order pole at \mbox{$z=0$}. One can find that the pole should be rounded from below. This condition is equivalent to the Landau prescription for the pole to describe Landau
+damping. Note that the singularity at \mbox{$z=-c$} is an artifact of the WKBJ
+analysis. The differential equation has only a pole at \mbox{$z=0$}, and thus a
+single cut of the solution extending upward from this point.
+
+The Budden problem is a problem of determination of the absorption in the Budden potential. It can be solved exactly using an integral representation. A detailed  analysis of the problem can be found in \cite[pp~230-235]{rwbook}. Since the aim of this paper is to discuss asymptotic methods of solving such problems, a solution of the Budden problem using an approximation of isolated singularities is shown below.
+
+Following \cite{heading}, define \mbox{$(a,z) = Q^{-1/4}e^{i\int_a^z Q^{1/2} dz}$} and \mbox{$[a,b] = e^{i\int_a^b Q^{1/2} dz}$}. Corresponding with (\ref{wkbsol}), the equation (\ref{budeq}) has \mbox{$y_+=e^{iz}$} and \mbox{$y_-=e^{-iz}$} as its WKBJ asymptotic.  Begin with a solution representing an outgoing wave at large positive $z$. According to \cite[p.~95]{rwbook}, using the approximation of isolated singularities one can obtain for \mbox{$Arg(z)=-\pi$} that
+\begin{eqnarray}
+y=i([0,-c]+[-c,0]/2)(z,-c) +([0,-c]-[-c,0]/2)(-c,z).
+\end{eqnarray}
+Since \mbox{$[0,-c]=e^{\frac{\pi c}{2}}$}, reflection and transmission coefficients are
+\begin{eqnarray}
+R=-i\frac{2e^{\frac{\pi c}{2}}-e^{-\frac{\pi c}{2}}}{2e^{\frac{\pi c}{2}}+e^{-\frac{\pi c}{2}}},\ 
+T=-i\frac{2}{2e^{\frac{\pi c}{2}}+e^{-\frac{\pi c}{2}}},
+\end{eqnarray}
+and for absorption
+\begin{eqnarray}
+A=1-|R|^2-|T|^2=\frac{4 e^{\pi c}}{(1+2e^{\pi c})^2}.
+\end{eqnarray}
+
+\begin{figure}
+\centering
+\noindent
+\includegraphics[scale=.5]{stuff/comparison.jpg}
+\caption{Absorption in the Budden potential}
+\label{cmprsn}
+\end{figure} 
+
+Comparing the expression with the one from an exact solution (see Fig.\ref{cmprsn}) it is easy to see that they behave similarly when \mbox{$c\geq1$}, but not when \mbox{$c\ll 1$}. The limit of \mbox{$c\rightarrow 0$} is clearly wrong; in this limit \mbox{$Q=1$}
+and there should be no reflection or absorption. The error is due to using the Stokes constants which do not preserve the global structure of the solution with a branch point. In the next section we consider how to correct this. 
 
 \section{Symmetry relations for Stokes constants \label{symmetries}}
 The Budden potential is real on the real axis. This property implies special symmetry relations between the Stokes constants  and thereby reduces the number of independent Stokes constants.
@@ -305,9 +265,6 @@ The expression shows how the absorption coefficient behaves for large values of 
 The example of the Budden potential shows that use of a series representation of a solution gives an additional equation for the Stokes constants. Since the equation reflects actual branching structure of a general solution it can correctly describe the behaviour of the Stokes constants even in the case of non-isolated singularities. Also, different symmetries of a potential can be used to reduce the number of independent Stokes constants.
 
 Certainly this does not guarantee that the relations discussed above are enough to determine all of the Stokes constants. It is possible to combine the ideas outlined in this paper with other approximation such as the use of constants for isolated singularities or isolated pairs of singularities.
-
-\textbf{Acknowledgement}
-The work is supported by the Russian Science Foundation (project \textnumero 15-02-07600-a). The author would like to express his immense grateful to Dr.~R.B.White for the assistance in writing this article and for his fascinating book about asymptotic analysis. He also thanks Dr.~E.D.Gospodchikov for discussions which finally led the author to the idea of writing this paper. Last but not least, the author shows his gratitude to his close friend, Mikhail Mlodik, for his constant support and useful advices.
 
 \begin{thebibliography}{10}
 \bibitem{wkbj} G. Wentzel, Zeit. f. Phys. 38, 518 (1926), H. A. Kramers,
