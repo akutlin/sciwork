@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{bm}
+\usepackage[english]{babel}
 
 \def\rmi{\mathrm{i}}
 \def\rme{\mathrm{e}}
@@ -11,7 +12,7 @@
 \def\psii{\bm\psi}
 \def\T{\mathrm{T}}
 \def\Tr{\mathrm{Tr}}
-\def\mytextwidth{0.47\textwidth}
+\def\mytextwidth{0.45\textwidth}
 
 %\def\S{\widehat{S}}
 %\def\W{\widehat{W}}
@@ -55,28 +56,38 @@ if the equation has multiple regular singular points located far away from each 
 
 \maketitle
 
-\section{introduction \label{sec:intro}}
+\section{Introduction \label{sec:intro}}
 Consider an arbitrary ordinary linear differential equation written in the form of 
 a stationary one-dimensional Schr\"odinger equation:
 \begin{eqnarray}
-\frac{d^2y}{dz^2} + Q(z)y = 0,   \label{eq:gen}
+\frac{\rmd^2 y}{\rmd z^2} + Q(z)y = 0.   \label{eq:gen}
 \end{eqnarray}
-where $Q(z)$ will be referred to as a potential. Its approximate local solution could be obtained
-with use of the phase integral approximation. Provided that 
+The function $Q(z)$ will be referred to as a potential. An approximate local solution 
+of equation \eqref{eq:gen} could be obtained with use of the phase integral approximation\cite{frbook}. 
+Provided that 
 \begin{eqnarray}
 \varepsilon = q^{-3/2} \rmd^2 q^{-1/2}/\rmd z^2  + (Q - q^2)/q \ll 1,   \label{eq:cond}
 \end{eqnarray}
-in the most general form a solution of \eqref{eq:gen} can be approximated by
+in the most general form the solution of \eqref{eq:gen} can be approximated by
+\begin{subequations}
 \begin{eqnarray}
-y = c_+y_+ + c_-y_-, \\ \label{eq:gensol}
-y_\pm = \predexp \exp [\pm \rmi \w(z)], \quad \w(z)=\phsintgrl[\xi]{(z_0)}{z},   \label{eq:phsint}
+y = c_+y_+ + c_-y_-, \label{eq:gensol}
+\\
+y_\pm = \predexp \exp [\pm \rmi \w(z)], \label{eq:phsint}
+\\
+\w(z)=\phsintgrl[\xi]{(z_0)}{z},
 \end{eqnarray}
-where the explicit form of $q(z)$ depends on the order of the approximation.
+\end{subequations}
+where the explicit form of $q(z)$ depends on the particular type of the approximation.
 The function $\w(z)$ is the phase integral, and therefore we call $\phsintgrnd[\xi]$ 
 the phase integrand. A meaning of the brackets in the lower limit of integration is a 
 bit tricky; such a notation was introduced by Fr\"omans \cite{frpaper} to make
 phase integral look similar for all orders of approximation. In the first order this integral 
 is just a usual integral from $z_0$ to $z$. 
+
+Clearly, the inequality \eqref{eq:cond} is not valid in a vicinity of poles or zeros of 
+the phase integrand. Such points will be referred to as singular points and the 
+vicinity of a singularity will be referred to as the interaction area.
 
 Any phase-integral type solution \eqref{eq:phsint} is a local, not global solution of \eqref{eq:gen}. 
 The method of phase integrals allows the construction of a globally defined 
@@ -91,12 +102,12 @@ differ from one domain of the complex plane to another
 changes happen on the so-called Stokes lines and have a form of a single-parameter 
 linear transform\cite{heading}. The parameter associated with a particular Stokes line 
 is called the Stokes constant. Knowing all Stokes constants associated with a particular 
-potential gives the ability\cite{heading,rwbook} to obtain a globally defined approximate solution 
-of \eqref{eq:gen}. A standard technique\cite{frpaper} used to obtain
+equation gives the ability to obtain a globally defined approximate solution 
+of \eqref{eq:gen} (see \onlinecite{heading,rwbook}). A standard technique\cite{frpaper} used to obtain
 equations for the Stokes constants is based on the assumption of a single-valuedness of
-an exact general solution. This assumption fails for equations with regular singular points, thus
-the only way to solve such equations is to use some approximation for the Stokes constants
-(e.g. the approximation of isolated singularities). In the present paper we provide a universal
+an exact general solution. This assumption fails for equations with regular singular points\cite{cbbook}, thus
+the only way to solve such equations is to use some approximation for the Stokes constants\cite{rwbook, ours}
+(e.g. the approximation of isolated singularities\cite{rwbook}). In the present paper we provide a universal
 technique to write equations for the Stokes constants. In case of a differential equation with
 a single regular singular point our equation is exact.
 
@@ -106,19 +117,24 @@ equation with the only one regular singular point.
 In section \ref{sec:budden} our technique is used to solve the well-known Budden problem. Also this
 section contains a comparison of our result with an exact one and the result obtained with use
 of the approximation of isolated singularities.
-%In section \ref{sec:approx} the possibility of writing approximate equation in case of multiple 
-%regular singular points discussed.
+In section \ref{sec:approx} the possibility of writing approximate equation in case of multiple 
+regular singular points is discussed.
 And, finally, in section \ref{sec:con} are the conclusions. 
 
 \section{The exact equation for the Stokes constants in case of a single regular singular point \label{sec:frob}}
 Consider equation \eqref{eq:gen} with a single regular singular point. Without loss of generality
-we can place the singularity into the origin of the complex plane. A general solution of such equation 
-can be written in a form of Frobenius series:
+we can place the singularity into the origin of the complex plane. A general solution of such an equation 
+can be written in a form of the Frobenius series\cite{cbbook}:
+\begin{subequations}
+\label{eq:frobform}
 \begin{eqnarray}
-y(z) = A y_1(z)+B y_2(z), \\
-y_1(z) = z^{f_1}\sum_{n=0}^{\infty}{a_n z^n}, \\
-y_2(z) = z^{f_2}\sum_{n=0}^{\infty}{b_n z^n} + K \ln(z) y_1(z),    \label{eq:fgensol}
+y(z) = A y_1(z)+B y_2(z), \label{eq:fgensol}
+\\
+y_1(z) = z^{f_1}\sum_{n=0}^{\infty}{a_n z^n}, \label{eq:fy_1}
+\\
+y_2(z) = z^{f_2}\sum_{n=0}^{\infty}{b_n z^n} + K \ln(z) y_1(z), \label{eq:fy_2}
 \end{eqnarray}
+\end{subequations}
 where $A$ and $B$ are arbitrary constants depending on particular boundary/initial conditions,  
 $f_{1,2}$, $a_n$, $b_n$ and $K$ are coefficients determined by direct substitution of this form into the 
 differential equation, and $a_0=b_0=1$ by convention. Particularly, this substitution gives
@@ -127,52 +143,53 @@ an indicial equation for the Frobenius indexes $f_1$ and $f_2$:
 f(f-1)+Q_{-2}=0,   \label{eq:indicial}
 \end{eqnarray}
 where $Q_{-2}$ is a coefficient before the inverse square of the complex variable $z$ in the Laurent series
-of the potential around the pole. Since $z=0$ is the only singular point of the potential, the Taylor 
-series from the general solution \eqref{eq:fgensol} have infinite radii of convergence and the
-Frobenius form of the solution is valid for any point of the entire complex plane.
+of the potential. Since $z=0$ is the only singular point of the equation \eqref{eq:gen}, the Taylor 
+series from \eqref{eq:fy_1} and \eqref{eq:fy_2} have infinite radii of convergence and the
+Frobenius form \eqref{eq:frobform} is valid for any point of the entire complex plane.
 
 Now consider a solution \eqref{eq:fgensol} with $A=1$ and $B=0$, i.e. $y(z)=y_1(z)$. 
 As it can be seen from a substitution \mbox{$z \rightarrow z \rme^{2 \rmi \pi}$}, 
-such solution is an eigenfunction of the operator of
-$2\pi-$rotation about the origin with the eigenvalue $\lambda = \rme^{2 \rmi \pi f_1}$.  
-Suppose that for some values of $z$ in the vicinity of complex infinity 
+such a solution is an eigenfunction of the $2\pi-$rotation operator about the origin; 
+corresponding eigenvalue is equal to $\rme^{2 \rmi \pi f_1}$.  
+Then, suppose that for some values of $z$ in the vicinity of the complex infinity 
 the solution can be written asymptotically in the form \eqref{eq:gensol} as
 \begin{eqnarray}
 y_1(z) \sim a_+y_+(z) + a_-y_-(z).
 \end{eqnarray}
-Now, using Heading`s rules of analytical continuation and a single-valuedness of squared phase integrand,
-we can write that
+Using Heading`s rules of analytical continuation\cite{heading, rwbook} and a single-valuedness 
+of squared phase integrand, we can write that
 \begin{eqnarray}
-y_1(z \rme^{2 \rmi \pi}) \sim b_+y_+(z) + b_-y_-(z).
+y_1(z \rme^{2 \rmi \pi}) \sim b_+y_+(z) + b_-y_-(z),
 \end{eqnarray}
-The coefficients $b_{\pm}$ are known in terms of the Stokes constants, phase integrals and 
-the coefficients $a_{\pm}$.
-Taking into consideration a linearity of equation \eqref{eq:gen}, the connection between $a_{\pm}$
-and $b_{\pm}$ can be written in a simple matrix form as
+where coefficients $b_{\pm}$ are expressed in terms of the Stokes constants, phase integrals and 
+the coefficients $a_{\pm}$. Taking into consideration a linearity of equation \eqref{eq:gen}, 
+the connection between $a_{\pm}$ and $b_{\pm}$ can be written in a simple matrix form as
 \begin{eqnarray}
 \psii_b = \R \psii_a,
 \end{eqnarray}
 where $\psii_a = [{a_+,a_-}]^{\T}$, $\psii_b = [{b_+,b_-}]^{\T}$ and 'T' denotes the transpose operation.
-The matrix $\R$ represents the $2\pi-$rotation operator; it is expressed in terms of
-the Stokes constants and corresponding phase integrals. According to the reasoning above we can conclude
-that we know exactly one of the matrix`s eigenvalues---the eigenvalue is equal to $\rme^{2 \rmi \pi f_1}$.
-Actually, we know another eigenvalue too. As it can be inferred from, for example, the matrix formulation 
-of the Heading`s rules, $\det\R=1$ and the second eigenvalue is equal to $\rme^{-2 \rmi \pi f_1}$.
+The matrix $\R$ represents the $2\pi-$rotation operator; it is known in terms of
+the Stokes constants and corresponding phase integrals. 
 
-Now we can finally write the desired exact equation for the Stokes constants:
+According to the reasoning above we can conclude
+that we know exactly one of the $2\pi-$rotation matrix`s eigenvalues---the eigenvalue is 
+equal to $\rme^{2 \rmi \pi f_1}$. Actually, we know another eigenvalue too. 
+As it can be inferred from, for example, the matrix formulation 
+of the Heading`s rules\cite{aksymm}, $\det\R=1$ and the second eigenvalue is equal 
+to $\rme^{-2 \rmi \pi f_1}$. Now we can finally write the desired exact equation for the Stokes constants:
 \begin{eqnarray}
 \Tr\R = \rme^{2 \rmi \pi f_1} + \rme^{-2 \rmi \pi f_1}.
 \label{eq:main}
 \end{eqnarray}
-This equation reflects an actual brunching structure of the general solution of equation \eqref{eq:gen}.
+In contrast to any known approximation, this equation reflects an actual brunching structure 
+of the general solution of equation \eqref{eq:gen}.
 
 It is worth mentioning that $K$ from equation \eqref{eq:fgensol} may or may not be equal to zero. In the
 former case one can notice that we can infer the second eigenvalue of $\R$ right from the
 Frobenius form solution; it is equal to $\rme^{2 \rmi \pi f_2}$. Then one can propose to write two
 separate equations using two different eigenvalues instead of a single equation \eqref{eq:main}.
-Actually, these two equations will not be independent; particularly, it can be seen right from the
-indicial equation \eqref{eq:indicial}. Indeed, an explicit form of these two eigenvalues
-can be written as
+Actually, these two equations will not be independent; it can be seen right from the
+indicial equation \eqref{eq:indicial}. Indeed, an explicit form of these two eigenvalues is
 \begin{eqnarray}
 \lambda_{1,2} = - \exp(\pm \rmi \sqrt{1 - 4 Q_{-2}}),
 \end{eqnarray}
@@ -207,7 +224,7 @@ a ratio of the complex amplitudes of the reflected (transmitted) and incident wa
 An absorption coefficient can be defined now as $A = 1 - |R|^2 - |T|^2$. Our aim in this
 section is to find the absorption coefficient.
 
-To calculate the absorption coefficient using the phase integral method, we must express 
+To calculate the absorption using the phase integral method, we must express 
 reflection and transmission coefficients in terms of the Stokes constants. 
 For this purpose we must analytically continue our solution from the large positive $z$,
 where we know its asymptotic due to our boundary condition \eqref{eq:bbound}, to
@@ -217,20 +234,27 @@ complex plane---it follows from the prescription of the absorption`s positivenes
 \begin{figure}
 \centering
 \noindent
-\includegraphics[width=\mytextwidth]{stuff/diagram.jpg}
+\includegraphics[width=\mytextwidth]{stuff/sd.png}
 \caption{Stokes diagram for the Budden problem; Stokes lines are bold and dashed}
 \label{fig:diagram}
 \end{figure} 
 
 The analytical continuation could be done with use of the Heading`s rules. 
-Following Heading\cite{heading}, define $(a,z) = Q^{-1/2}e^{i\int_a^z Q^{1/2} dz}$ 
-and $[a,b] = e^{i\int_a^b Q^{1/2} dz}$. Let's place the cut between $z=0$ and $z=-c$ 
+Following Heading\cite{heading}, define $(a,z)$ and $[a,b]$ as
+\begin{eqnarray}
+(a,z) = Q^{-1/4}\exp \left( \rmi \int_a^z \sqrt{Q} \rmd z \right),
+\\
+\left[a,b\right] = \exp \left( \rmi \int_a^b \sqrt{Q} \rmd z \right). 
+\end{eqnarray}
+Let's place the cut between $z=0$ and $z=-c$ 
 along the real axis as shown on Fig.\ref{fig:diagram}. Begin from the large positive $z$ 
 with $y=(0,z)$ we obtain:
 \begin{eqnarray}
-1.\ (0,z)_d=[0,-c](-c,z)_s \nonumber\\
-2.\ [0,-c](-c,z)_d \nonumber\\
-3.\ [0,-c](-c,z)_d - s_-[0,-c](z,-c)_s \nonumber,
+1.(0,z)_d=[0,-c](-c,z)_s \nonumber
+\\
+2.[0,-c](-c,z)_d \nonumber
+\\
+3.[0,-c](-c,z)_d - s_-[0,-c](z,-c)_s \nonumber,
 \end{eqnarray}
 where $s_-$ is a Stokes constant corresponding to the lower half of the complex plane. 
 All integrals here were evaluated below the cut and give $[0,-c]=e^{\frac{\pi c}{2}}$. As it
@@ -245,12 +269,16 @@ equation \eqref{eq:main} obtained in the previous section. The $2\pi-$rotation o
 can be found from the analytical continuation of the general solution of \eqref{eq:budden}
 around the origin. Starting with $y=a_+(0,z) + a_-(z,0)$ from large positive $z$, 
 one can obtain that
-\begin{eqnarray}
-y(z \rme^{-2 \rmi \pi}) = b_+(0,z) + b_-(z,0),\\
-b_+ = \rme^{c \pi} (1 + s_+s_-)a_+ - s_+a_-,\\
-b_- = s_- a_+ + \rme^{-c \pi} a_-,
+\begin{subequations}
 \label{eq:R}
+\begin{eqnarray}
+y(z \rme^{-2 \rmi \pi}) = b_+(0,z) + b_-(z,0),
+\\
+b_+ = \rme^{c \pi} (1 + s_+s_-)a_+ - s_+a_-,
+\\
+b_- = s_- a_+ + \rme^{-c \pi} a_-, 
 \end{eqnarray}
+\end{subequations}
 %\begin{eqnarray}
 %1.\ a_+(0,z)_d+a_-(z,0)_s=a_+[0,-c](-c,z)_s + a_-(z,-c)_d[-c,0] \nonumber\\
 %2.\ a_+[0,-c](-c,z)_d + a_-[-c,0](z,-c)_s \nonumber\\
@@ -270,44 +298,143 @@ s_+s_- = - (1-\rme^{- \pi c})^2.
 This nontrivial exact equation couldn't have been obtained from any other considerations. But we
 still have only one equation and two unknowns. To proceed further we have to find one another
 relation between the Stokes constants; and it could be done with use of the symmetry 
-of equation \eqref{eq:budden}. The Budden equation has a real potential on the real axis and
-this fact allows to write\cite{symmetries} that
+of equation \eqref{eq:budden}. The Budden potential is real on the real axis and
+this fact allows to write\cite{aksymm} that
 \begin{eqnarray}
 s_+ = -s_-^*.
-\label{eq:symmerty}
+\label{eq:symmetry}
 \end{eqnarray}
-Now, considering equations \eqref{eq:scattr}, \eqref{eq:fbudres} and \eqref{eq:symmerty}, we can
+Now, considering equations \eqref{eq:scattr}, \eqref{eq:fbudres} and \eqref{eq:symmetry}, we can
 finally write that
 \begin{eqnarray}
 A = e^{-\pi c}(1-e^{-\pi c}).
 \label{eq:fabsorp}
 \end{eqnarray}
-The expression \eqref{eq:fabsorp} agrees with the analytical result\cite{rwbook}.
-
-It could be useful to compare exact expression \eqref{eq:fabsorp} with an approximate result 
-obtained with use of approximation of isolated singularities. According to the 
-approximation\cite{rwbook}, reflection and transmission coefficients are
-\begin{eqnarray}
-R=-i\frac{2e^{\frac{\pi c}{2}}-e^{-\frac{\pi c}{2}}}{2e^{\frac{\pi c}{2}}+e^{-\frac{\pi c}{2}}}, \quad 
-T=-i\frac{2}{2e^{\frac{\pi c}{2}}+e^{-\frac{\pi c}{2}}},
-\end{eqnarray}
-and for absorption
-\begin{eqnarray}
-A = \frac{4 e^{\pi c}}{(1+2e^{\pi c})^2}.
-\end{eqnarray}
+The expression \eqref{eq:fabsorp} agrees with the exact analytical result\cite{rwbook}.
 
 \begin{figure}
 \centering
 \noindent
-\includegraphics[width=\mytextwidth]{stuff/comparison.jpg}
+\includegraphics[width=\mytextwidth]{stuff/absorp.png}
 \caption{Absorption in the Budden potential}
-\label{cmprsn}
+\label{fig:absorp}
 \end{figure} 
 
-Comparing these two expressions for absorption we can see that they behave similarly when $c\geq1$, 
-but not when $c \sim 1$. The limit of $c\rightarrow 0$ is clearly wrong; in this limit $Q=1$
-and there should be no reflection or absorption. The error is due to using the Stokes constants 
+It is worth mentioning that equations \eqref{eq:fbudres} and \eqref{eq:symmetry} do not allow us
+to find a complex phase of the Stokes constants and, thus, a phase of the reflection coefficient.
+However, this problem could be solved with use of the symmetry relations described in 
+Ref.\onlinecite{aksymm}. Completely analogous to the example of the Weber equation presented in
+Ref.\onlinecite{aksymm}, the Stokes constants for the Budden problem could be found exactly combining
+the symmetry relations and the technique described in the present paper.
+
+It could be useful to compare expression \eqref{eq:fabsorp} with an approximate result 
+obtained with use of approximation of isolated singularities (Fig.\ref{fig:absorp}). According to the 
+approximation\cite{rwbook}, reflection and transmission coefficients are
+\begin{eqnarray}
+R_{approx}=-i\frac{2e^{\frac{\pi c}{2}}-e^{-\frac{\pi c}{2}}}{2e^{\frac{\pi c}{2}}+e^{-\frac{\pi c}{2}}},
+\\
+T_{approx}=-i\frac{2}{2e^{\frac{\pi c}{2}}+e^{-\frac{\pi c}{2}}},
+\end{eqnarray}
+and for absorption
+\begin{eqnarray}
+A_{approx} = \frac{4 e^{\pi c}}{(1+2e^{\pi c})^2}.
+\end{eqnarray}
+
+Comparing these two expressions for absorption we can see that they behave similarly when $c \geq 1$, 
+but not when $c \ll 1$. The limit of $c\rightarrow 0$ is clearly wrong; in this limit $Q=1$
+and there should be no reflection or absorption. The error is due to the use of the Stokes constants 
 which do not preserve the global structure of the solution with a branch point. 
+
+\section{Approximate equation for the Stokes constants in case of multiple singular regular points \label{sec:approx}}
+
+Now consider equation \eqref{eq:gen} with multiple singular regular points and place one of the points
+into the origin of the complex plane. A solution of such an equation still can be written in
+the Frobenius form \eqref{eq:frobform}, but the Taylor series in \eqref{eq:fy_1} and \eqref{eq:fy_2}
+are necessarily converge only up to the nearest pole of the potential\cite{cbbook}. This fact
+prevents us from the writing any exact equation in the manner of Sec.\ref{sec:frob} because
+we cannot infer any information about the $2\pi-$rotation operator. However, providing some
+zeros of the potential grouped around the singular regular point forming a cluster and this cluster is
+well-isolated from any other singularities, we can analytically continue our general solution
+around this cluster and write an equation analogous to equation \eqref{eq:main}. This equation
+is approximate since it completely ignores a presence of the singularities do not belong to
+the cluster under the consideration; the equation becomes more and more precise as the cluster
+becomes more and more isolated. 
+
+Here we are to clarify what we mean by a 'well-isolation'. We will call the cluster
+well-isolated if for any anti-Stokes line emerging from the cluster there is a point $z$ belonging 
+to the line such that $\varepsilon(z)$ from condition \eqref{eq:cond} is sufficiently small. In other words,
+we claim that our approximate equation for the cluster is applicable providing a phase integral
+approximation itself is applicable for any point of the path chosen for the analytical continuation 
+around the cluster.
+ 
+\section{Conclusion \label{sec:con}}
+The method of phase integrals is a beautiful and powerful method of a linear ordinary 
+differential equations` asymptotic analysis, but its range of applicability is highly 
+restricted to relatively simple problems; more complicated problems need additional equations 
+for the Stokes constants. Traditional equations for the Stokes constants, proposed by Fr\"omans\cite{frpaper},
+are based on the assumption of a single-valuedness of a general solution. This assumption clearly fails
+in case of a differential equation with regular singular points. We provide an alternative universal
+technique based on the Frobenius method which allows to overcome this difficulty and to obtain the 
+desired equation even in case of the regular singular point`s presence. 
+Our technique let the reader write an exact algebraic equation in case
+of a single regular singular point and an approximate equation when there are more than one such points.
+
+To conclude with, we have to mention that our method is formally applicable to equations without any regular
+singular points; in this case equation \eqref{eq:main} takes the form $\Tr \R = 2$. Certainly, this equation,
+as well as two more, can be obtained from the traditional approach. However, we claim that this is the only equation
+directly connected with the analytical continuation around the cluster of singularities; as it was shown,
+for example, in Ref.\onlinecite{aksymm}, two remaining equations can be obtained from the symmetry relations.
+
+
+
+
+
+\begin{acknowledgments}
+This work was supported by the Russian Science Foundation (grant No~XXXXXXXXXX). 
+\end{acknowledgments}
+
+\begin{thebibliography}{30}
+
+\bibitem{frbook} Fr\"oman N. and Fr\"oman P.O. \textit{Physical Problems Solved by the Phase-Integral Method} (Cambridge: Cambridge University Press, 2002)
+
+\bibitem{frpaper} Fr\"oman N., Fr\"oman P.O. and Lundborg B. \textit{The Stokes constants for a cluster of transition
+points} Math. Proc. Cambridge Philos. Soc. \textbf{104} (1988), 153-179.
+
+\bibitem{zwaan} Zwaan A., \textit{Intensit\"aten im Ca-Funkenspektrum}, Academish proefschrift thesis (Utrecht, 1929)
+
+\bibitem{stokes} Stokes, G. G., Trans. Camb. Phil. Soc. \textbf{10}, 105 (1857).
+
+\bibitem{heading} J. Heading. {\it An Introduction to Phase Integral Methods} 
+Wiley, NY (1962)
+
+\bibitem{rwbook} R. B. White, {\it Asymptotic Analysis of Differential Equations}, Imperial College Press, 2010.
+
+\bibitem{cbbook} C. M. Bender, S. A. Orszag, \textit{Advanced Mathematical methods for
+Scientists and Engineers} (Springer, 1999), pp 68-76.
+
+\bibitem{ours} R.B. White, A.Kutlin {\it Bound state energies using Phase integral methods} 
+
+\bibitem{white-chen} R. B. White, and F. F. Chen, {Plasma Physics} \textbf{16}(7), 565 (1974).
+
+\bibitem{budden} Budden, K. G., Phil. Trans. Royal Soc. London 290, 405 (1979).
+
+\bibitem{aksymm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, 
+Math. Proc. Camb. Phil. Soc. \textbf{104}, 181–191
+
+\bibitem{wkb1} G. Wentzel, Zeit. f. Phys. \textbf{38}, 518 (1926).
+
+\bibitem{wkb2} H. A. Kramers, Zeit. f. Phys. \textbf{39}, 828 (1926).
+
+\bibitem{wkb3} L. Brillion, C. R. Acad. Sci. Paris \textbf{183}, 24 (1926).
+
+\bibitem{wkbj} H. Jeffries, Philos. Mag. [7] 33, 451 (1942)
+
+%\bibitem{gamma} M. Abramowitz and I. A. Stegun, eds., 
+%{\it Handbook of Mathematical Functions With Formulas, Graphs, and Mathematical Tables}, 
+%NBS Applied Mathematics Series \textbf{55}, National Bureau of Standards, Washington, DC (1964).
+
+\end{thebibliography}
+\end{document}
 
 %\section{A case of an equation without an exact solution \label{UHR}}
 %The example of the Budden problem is, certainly, a rare example of the problem which can be completely solved. In most cases we will not be able to solve an equation analogous to Eq.\ref{frobresult} exactly because of large amount of unknowns and lack of other equations. But since such an equation is highly non trivial, it can be used to elucidate unobvious features of a solution even in a such situations. To illustrate it, let`s study the following equation:
@@ -340,55 +467,3 @@ which do not preserve the global structure of the solution with a branch point.
 %A=4sin^2(Im(w))e^{-2Re(w)}.   \label{ais}
 %\end{eqnarray}
 %The expression shows how the absorption coefficient behaves for large values of $Y$. The most important feature of this result is a footprint of an interference in the system - there are strict zeros of absorption for $Im(w)=\pi n$. This non trivial result could not be obtained in another way - an approximation of isolated singularities ignores the interference because it knows nothing about the actual structure of the potential. A comparison of Eq.\ref{ais} with the numerical result and a simple approximation of isolated singularities is shown on Fig.\ref{uhr_comp}.
-
-
-\section{Conclusion \label{sec:con}}
-The example of the Budden potential shows that use of a series representation of a solution gives an additional equation for the Stokes constants. Since the equation reflects actual branching structure of a general solution it can correctly describe the behaviour of the Stokes constants even in the case of non-isolated singularities. Also, different symmetries of a potential can be used to reduce the number of independent Stokes constants.
-
-Certainly this does not guarantee that the relations discussed above are enough to determine all of the Stokes constants. It is possible to combine the ideas outlined in this paper with other approximation such as the use of constants for isolated singularities or isolated pairs of singularities.
-
-\begin{thebibliography}{30}
-
-\bibitem{frbook} Fr\"oman N. and Fr\"oman P.O. \textit{Physical Problems Solved by the Phase-Integral Method} (Cambridge: Cambridge University Press, 2002)
-
-\bibitem{frpaper} Fr\"oman N., Fr\"oman P.O. and Lundborg B. \textit{The Stokes constants for a cluster of transition
-points} Math. Proc. Cambridge Philos. Soc. \textbf{104} (1988), 153-179.
-
-\bibitem{zwaan} Zwaan A., \textit{Intensit\"aten im Ca-Funkenspektrum}, Academish proefschrift thesis (Utrecht, 1929)
-
-\bibitem{stokes} Stokes, G. G., Trans. Camb. Phil. Soc. \textbf{10}, 105 (1857).
-
-\bibitem{white-chen} R. B. White, and F. F. Chen, {Plasma Physics} \textbf{16}(7), 565 (1974).
-
-\bibitem{budden} Budden, K. G., Phil. Trans. Royal Soc. London 290, 405 (1979).
-
-\bibitem{rwbook} R. B. White,
- {\it Asymptotic Analysis of Differential Equations}, Imperial College Press, 2010.
-
-\bibitem{heading} J. Heading. {\it An Introduction to Phase Integral Methods} 
-Wiley, NY (1962)
-
-\bibitem{ours} R.B. White, A.Kutlin {\it Bound state energies using Phase integral methods} 
-
-%\bibitem{froman1} Fr\"oman, N., and Fr\"oman, P. O., 1974, Ann Phys (NY) 83, 103–107. (Review: Zentralblatt
-%f¨ur Mathematik und ihre Grenzgebiete, Mathematics Abstracts 279, 190–191, 1974.)
-%
-%\bibitem{froman2} Fr\"oman, N., and Fr\"oman, P. O., 1974, Nuovo Cim 20B, 121–132.
-
-\bibitem{symm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, 
-Math. Proc. Camb. Phil. Soc. \textbf{104}, 181–191
-
-\bibitem{wkb1} G. Wentzel, Zeit. f. Phys. \textbf{38}, 518 (1926).
-
-\bibitem{wkb2} H. A. Kramers, Zeit. f. Phys. \textbf{39}, 828 (1926).
-
-\bibitem{wkb3} L. Brillion, C. R. Acad. Sci. Paris \textbf{183}, 24 (1926).
-
-\bibitem{wkbj} H. Jeffries, Philos. Mag. [7] 33, 451 (1942)
-
-\bibitem{gamma} M. Abramowitz and I. A. Stegun, eds., 
-{\it Handbook of Mathematical Functions With Formulas, Graphs, and Mathematical Tables}, 
-NBS Applied Mathematics Series \textbf{55}, National Bureau of Standards, Washington, DC (1964).
-
-\end{thebibliography}
-\end{document}
