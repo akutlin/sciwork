@@ -1,8 +1,12 @@
-\pdfminorversion=4
-\documentclass[12pt]{iopart}
+\documentclass[atmp]{ipart_v1}
 \usepackage{bm}
 \usepackage{graphicx}
-\usepackage{cite}
+\usepackage{caption}
+%\usepackage{cite}
+
+\def\rmd{\mathrm{d}}
+\def\rme{\mathrm{e}}
+\def\rmi{\mathrm{i}}
 
 \def\S{\widehat{S}}
 \def\W{\widehat{W}}
@@ -19,16 +23,21 @@
 \def\Im{\mathrm{Im}}
 \def\w{\omega}
 
+\newcommand\eref[1]{\eqref{#1}}
+\newcommand\Eref[1]{Equation \ref{#1}}
+\newcommand\fref[1]{figure \ref{#1}}
+\newcommand\sref[1]{section \ref{#1}}
+
 \newcommand\phsintgrnd[1][z]{q(#1,\lmbd)}
 \newcommand\predexp[1][z]{q(#1,\lmbd)^{-1/2}}
 \newcommand\phsintgrl[3][z]{\int_{#2}^{#3} \phsintgrnd[#1] \rmd #1}
 
 \begin{document}
-\title[Effective Stokes diagram and symmetry relations for effective Stokes constants]{Effective Stokes diagram, symmetry relations and functional equations for effective Stokes constants}
-\author{Anton Kutlin}
+\title[Symmetry relations for effective Stokes constants]{Effective Stokes diagram, symmetry relations and functional equations for effective Stokes constants}
+\author[A.G. Kutlin]{A.G. Kutlin}
 
-\address{Institute of Applied Physics of Russian Academy of Sciences, 46 Ulyanov str., 603950 Nizhny Novgorod, Russia}
-\ead{anton.kutlin@gmail.com}
+%\address{Institute of Applied Physics of Russian Academy of Sciences, 46 Ulyanov str., 603950 Nizhny Novgorod, Russia}
+%\ead{anton.kutlin@gmail.com}
 
 
 %\date{\today}
@@ -45,26 +54,25 @@ the effective Stokes constants. This work also contains an example of possible u
 of the presented ideas in a case of a real physical problem.
 \end{abstract}
 
-\pacs{02.30.Hq,02.30.Mv}
-\submitto{\jpa}
+%\pacs{02.30.Hq,02.30.Mv}
 
-\noindent{\it Keywords\/}: Stokes phenomenon, phase-integral method, Stokes constants
+%\noindent{\it Keywords\/}: Stokes phenomenon, phase-integral method, Stokes constants
 
-%\maketitle
+\maketitle
 
 \section{Introduction \label{sec:intro}}
 Consider an arbitrary ordinary linear differential equation written in the form of 
 a stationary one-dimensional Schr\"odinger equation:
-\begin{eqnarray}
-\L(z,\lmbd)y(z,\lmbd)=0, \qquad \L(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:gen}
-\end{eqnarray}
+\begin{equation}
+\L(z,\lmbd)y(z,\lmbd)=0, \quad \L(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:gen}
+\end{equation}
 where $\lmbd$ is a set of the problem`s parameters. Throughout the paper 
 $Q(z,\lmbd)$ will be referred to as a potential. It is often natural to describe two 
 linearly independent solutions of \eref{eq:gen} using so-called phase-integral 
 approximation. In the notation of Fr\"omans \cite{frbook}, it can be written as
-\begin{eqnarray}
-y_\pm = \predexp \exp [\pm \rmi \w(z)], \qquad \w(z)=\phsintgrl[\xi]{(z_0)}{z}.   \label{eq:phsint}
-\end{eqnarray}
+\begin{equation}
+y_\pm = \predexp \exp [\pm \rmi \w(z)], \quad \w(z)=\phsintgrl[\xi]{(z_0)}{z}.   \label{eq:phsint}
+\end{equation}
 The function $\w(z)$ is the phase integral, and therefore we call $\phsintgrnd[\xi]$ 
 the phase integrand. Also we will refer to $z_0$ as a basepoint. A meaning of the brackets in the 
 lower limit of integration is a bit tricky; such a notation was introduced by Fr\"omans \cite{frpaper} to make
@@ -72,13 +80,13 @@ phase integral look similar for all orders of approximation. In the first order 
 a usual integral from $z_0$ to $z$. 
 
 Provided that 
-\begin{eqnarray}
+\begin{equation}
 \varepsilon = q^{-3/2} \rmd^2 q^{-1/2}/\rmd z^2  + (Q - q^2)/q \ll 1,   \label{eq:cond}
-\end{eqnarray}
+\end{equation}
 a general solution of \eref{eq:gen} can be approximated by
-\begin{eqnarray}
+\begin{equation}
 y = c_+y_+ + c_-y_-. \label{eq:gensol}
-\end{eqnarray}
+\end{equation}
 Clearly, the inequality \eref{eq:cond} is not valid in a vicinity of poles or zeros of 
 the phase integrand. Such points will be referred to as singular points and the 
 vicinity of a singularity will be referred to as the interaction area.
@@ -152,19 +160,19 @@ these rules into the matrix form for ease of reference.
 
 Let's define a two-dimensional vector space consisting of vectors
 %\[
-\begin{eqnarray}
+\begin{equation}
 \psii= \left(\begin{array}{*{2}{c}} c_+ \\ c_- \end{array}\right).
-\end{eqnarray}
+\end{equation}
 %\]
 Then assume that we have two neighbouring anti-Stokes domains $1$ and $2$, and there are 
 corresponding $\psii$-vectors in the domains. Assume also that $y_+$ is dominant in the Stokes 
 domain containing a borderline separating these anti-Stokes domains. 
 In this situation we can relate $\psii_1$ and $\psii_2$ through the Stokes 
 operator $\S$ in the following way:
-\begin{eqnarray}
-\psii_2 = \S[\pm s] \psii_1, \qquad 
+\begin{equation}
+\psii_2 = \S[\pm s] \psii_1, \quad 
 \S[\pm s] = \left(\begin{array}{*{2}{c}} 1 & 0 \\ \pm s & 1 \end{array}\right),    
-\end{eqnarray}
+\end{equation}
 where $s$ is a Stokes constant. The sign of the Stokes constant as well as its value 
 depends on the chosen base of approximate solutions $y_\pm$ and particularly on the 
 basepoint $z_0$. We will use a plus sign if we cross the Stokes line in a counterclockwise 
@@ -175,13 +183,13 @@ denotes the transpose operation.
 Obviously, $\psii$-vector in a given anti-Stokes domain depends on the chosen basepoint too. 
 As it follows from \eref{eq:phsint}, a change of the basepoint from $z_0=a$ to $z_0=b$ in 
 terms of $\psii$-vectors can be written as
-\begin{eqnarray}
-\psii^{(b)} = \W[b,a] \psii^{(a)}, \qquad 
+\begin{equation}
+\psii^{(b)} = \W[b,a] \psii^{(a)}, \quad 
 \W[b,a] =  
 \left(\begin{array}{*{2}{c}}
 \rme^{\rmi \phsintgrl{(a)}{(b)}} & 0 \\ 0 & \rme^{-\rmi \phsintgrl{(a)}{(b)}} 
 \end{array}\right).
-\end{eqnarray}
+\end{equation}
 This is analogous to the reconnection formula in the traditional Heading`s form of the continuation 
 rules and we will refer to the operator as a reconnection operator.
 
@@ -196,10 +204,10 @@ slow $\predexp$ dependency and the phase integral in the exponent of the asympto
 base. Specifically, to implement these changes we have to replace $\predexp$ by $(-\rmi)^k \predexp$ 
 and $\int \phsintgrnd \rmd z$ by $(-1)^k \int \phsintgrnd \rmd z$. In compact matrix form 
 it can be written as
-\begin{eqnarray}
-\psii_2 = \C^k \psii_1, \qquad
+\begin{equation}
+\psii_2 = \C^k \psii_1, \quad
 \C =  \left(\begin{array}{*{2}{c}} 0 & -\rmi \\ -\rmi & 0 \end{array}\right).    \label{eq:C}
-\end{eqnarray}
+\end{equation}
 Analogous result was obtained in \cite{frbook}. Note that branching of the asymptotic solutions has nothing to do with an actual branching  of  an exact solution.
 %As you can see, the need for the introduction of the $\C$-operator connected with the branching of the asymptotic solutions has nothing to do with a real branching structure of an exact solution. So, keeping in mind this simple rule we will omit any such cuts in the Stokes diagram and use cuts only to determine branches of $\phsintgrnd$ which is necessary for correct definition of phase integrals. 
 
@@ -208,27 +216,27 @@ Imagine a Stokes domain with several Stokes lines emerging from the common basep
 Crossing this domain means multiple sequential applications of either $\S$ or $\S^{\Tp}$ operators. But, as we
 can see by a direct calculation, Stokes operators $\S$ as well as $\S^{\Tp}$ form a multiplicative
 group:
-\begin{eqnarray}
-\S[s_2]\S[s_1] = \S[s_2 + s_1], \qquad
+\begin{equation}
+\S[s_2]\S[s_1] = \S[s_2 + s_1], \quad
 \S^{\Tp}[s_2]\S^{\Tp}[s_1] = \S^{\Tp}[s_2 + s_1].
-\end{eqnarray}
+\end{equation}
 It means that every such set of Stokes constants can be replaced by a single one. It also means that,
 for any particular problem, we will never need to know all these Stokes constants separately---the only
 thing that matters is their sum.
 
 Now consider the reconnection operator $\W$. As it follows from the properties of the phase integral, 
 these operators also form a multiplicative group:
-\begin{eqnarray}
+\begin{equation}
 \W[c,b]\W[b,a] = \W[c,a].
-\end{eqnarray}
+\end{equation}
 And, completely analogous to the situation discussed above, every set of sequential changes of the basepoint
 can be described by a single reconnection operator.
 
 Finally, imagine a Stokes domain with multiple Stokes lines and multiple basepoints. Crossing this 
 domain in terms of $\S$ and $\W$ operators looks like
-\begin{eqnarray}
+\begin{equation}
 \S[s_n]\W[a_n,a_{n-1}]\S[s_{n-1}]\W[a_{n-1},a_{n-2}]\ ...\ \S[s_1]\W[a_1,a_0]\S[s_0].
-\end{eqnarray}
+\end{equation}
 Note that for any $s'$ there is such $s''$ that $\S[s']\W[b,a]=\W[b,a]\S[s'']$, therefore
 we can change the order of $\S$ and $\W$ operators. Hence,
 every such set of operators can always be replaced by a single combination $\S[s_l] \W[a_n,a_0]$ or, 
@@ -241,11 +249,11 @@ be described by the \textit{effective Stokes constant} $s$ despite the number of
 \includegraphics[width=\textwidth]{stuff/effsd_1.png}
 \caption{
 Stokes diagrams for $q(z,E)=\sqrt{z^4-E}$
-
+\\
 (a) A traditional Stokes diagram; dots mark the zeros of the phase integrand
-
+\\
 (b) An effective Stokes diagram with a specified path of analytical continuation $\gamma$
-
+\\
 (c) An effective Stokes diagram with the same path of analytical continuation but different basepoints}
 \label{fig:effsd_1}
 \end{figure} 
@@ -277,11 +285,11 @@ values of the phase integrals instead of plotting multiple branch cuts.
 \includegraphics[width=\textwidth]{stuff/effsd_2.png}
 \caption{
 Stokes diagrams for $q(z,g)=\sqrt{-z + g^2/z}$
-
+\\
 (a) A traditional Stokes diagram; star marks the pole of the phase integrand. 
-
+\\
 (b) An effective Stokes diagram with a specified path of analytical continuation $\gamma_1$. 
-
+\\
 (c) An effective Stokes diagram with a different path of analytical continuation $\gamma_2$.
 It is meaningful only if $g \gg 1$ and all the singularities are far away from each other---otherwise 
 the phase-integral approximation itself fails between the pole and the right zero and the whole theory
@@ -313,19 +321,19 @@ That is why any exact symmetry relation can be written only for the effective St
 \section{Symmetries and the corresponding connections between effective Stokes constants \label{sec:smmtrs}}
 Let`s define what we mean by a symmetry of a given equation. Here we introduce three operators
 $\f(z,\lmbd)$, $\g(z,\lmbd)$ and $\h(z,\lmbd)$ such that
-\begin{eqnarray}
-\f:\{y\} \rightarrow \{y\}, \qquad
-\g:\{z\} \rightarrow \{z\}, \qquad
+\begin{equation}
+\f:\{y\} \rightarrow \{y\}, \quad
+\g:\{z\} \rightarrow \{z\}, \quad
 \h:\{\lmbd\} \rightarrow \{\lmbd\}.
-\end{eqnarray}
+\end{equation}
 We can define any set of operators $\{\f(z,\lmbd),\g(z,\lmbd),\h(z,\lmbd)\}$ as a symmetry 
 transformation of \eref{eq:gen}
 if for any its solution $y(z,\lmbd)$ there is another solution $\tilde{y}(z,\lmbd)$ such that
 $\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd)$, i.e.
-\begin{eqnarray}
+\begin{equation}
 \L(z,\lmbd)y(z,\lmbd) \equiv 0 \ \Longrightarrow\  
 \L(z,\lmbd) \left[ \f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd) \right] \equiv 0.   \label{eq:symdef}
-\end{eqnarray}
+\end{equation}
 For example, an Airy equation $\rmd^2 y(z)/\rmd z^2 - z y(z) = 0$ has two base symmetries: 
 $\{\g=\rme^{2 \rmi \pi/3},\f=\h=\unity\}$ and $\{\f=\g=c.c.,\h=\unity\}$, where 
 %$\unity$ is a unity operator and 
@@ -389,14 +397,13 @@ and the $\f$ transformation.
 
 Now we are ready to write the final relation for the effective Stokes constants. A formula
 expressing this relation is shown below:
-\begin{eqnarray}
-\fl 
+\begin{equation}
 \S^{(\Tp)} \left[ \f s'(\h\lmbd) \right] = 
 \W \left[ \g^{-1}a'(\h\lmbd),a(\lmbd) \right]
 \S^{(\Tp)} \left[ s(\lmbd) \right]
 \W \left[ a(\lmbd), \g^{-1} a'(\h\lmbd) \right],
 \label{eq:gensym}
-\end{eqnarray}
+\end{equation}
 where $\S^{(\Tp)}$ can be either $\S$ or $\S^{\Tp}$. The choice in the right hand side 
 of \eref{eq:gensym} must be made on the basis of general rules from \sref{sec:mtrxfrm}: 
 we use $\S$ for the Stokes domain associated with $s(\lmbd)$ if $y_+$ is dominant 
@@ -418,13 +425,13 @@ by only one multidimensional analytical complex function $s(\lmbd)$.
 Now let us take a closer look at the important special case of a complex conjugation symmetry. 
 For every potential which is real on the real axes the symmetry $\f=\g=\h=c.c.$ holds, 
 i.e. $\L^*(z^*,\lmbd^*)=\L(z,\lmbd)$ and
-\begin{eqnarray}
+\begin{equation}
 \S^{(\Tp)} \left[ -s'^*(\lmbd^*) \right] = 
 \W \left[ a'^*(\lmbd^*),a(\lmbd) \right]
 \S^{(\Tp)} \left[ s(\lmbd) \right]
 \W \left[ a(\lmbd),a'^*(\lmbd^*) \right].
 \label{eq:cnjgtn}
-\end{eqnarray}
+\end{equation}
 A minus sign before the effective Stokes constant in the left hand side of \eref{eq:cnjgtn} is a result 
 of the conjugation symmetry. It appears for any transformation $\g$ which changes the direction 
 of a complex variable`s phase increase (\fref{fig:cst}). Strictly speaking, there should be two 
@@ -447,13 +454,13 @@ If furthermore $s=s'$ we get an important and extremely simple relation $s^*(\lm
 i.e. such effective Stokes constant is purely imaginary providing $\lmbd$ is real.
 
 Another important case of \eref{eq:gensym} is a case with $\g=\unity$:
-\begin{eqnarray}
+\begin{equation}
 \S^{(\Tp)} \left[ \f s(\h\lmbd) \right] = 
 \W \left[ a(\h\lmbd),a(\lmbd) \right]
 \S^{(\Tp)} \left[ s(\lmbd) \right]
 \W \left[ a(\lmbd),a(\h\lmbd) \right].
 \label{eq:func}
-\end{eqnarray}
+\end{equation}
 Such case is relevant for every potential. The obtained relation is a functional 
 equation for the considered effective Stokes constant. Usually such equation helps to illuminate 
 a branching structure of the effective Stokes constant and write it as a new single-valued function 
@@ -482,46 +489,46 @@ $\W[\w] \equiv \W \left[\phsintgrl{a}{b} \right] \equiv \W[b,a]$ to underline a 
 
 
 Let us consider the Weber equation
-\begin{eqnarray}
+\begin{equation}
 \frac{\rmd^2 y(z,\delta)}{\rmd z^2}+(z^2-\delta^2)y(z,\delta)=0
 \label{eq:weber}
-\end{eqnarray}
+\end{equation}
 with a boundary conditions of a presence of incident wave from the large negative $z$ and absence of such 
 a wave from the large positive $z$. We define the reflection (transmission) coefficient $R$ ($T$) as
 a ratio of the amplitudes of the reflected (transmitted) and incident waves. 
 Our aim now is to find these scattering characteristics.
 
 The boundary conditions can be written in terms of $\psii$-vectors as
-\begin{eqnarray}
+\begin{equation}
 \psii_0 = \left(\begin{array}{*{2}{c}} 1 \\ 0 \end{array}\right),
 \label{eq:wbound}
-\end{eqnarray}
+\end{equation}
 where $\psii_0$ is a $\psii$-vector in an anti-Stokes wedge containing a ray $Arg(z)=0$.
 First of all, scattering characteristics must be written through the 
 Stokes constants. To do this, we must analytically continue our boundary 
 condition \eref{eq:wbound} to $z$ with $Arg(z)=\pi$. 
 Using \fref{fig:wsd} and the rules from \sref{sec:mtrxfrm} we write
-\begin{eqnarray}
+\begin{equation}
 \psii_{\pi} = 
 \S \left[ s_{3/2} \right]
 \W \left[ \w(\delta) \right] 
 \S^{\Tp} \left[ s_{1/2} \right] \psii_0 \equiv 
 \rme^{\rmi \w(\delta)} \left(\begin{array}{*{2}{c}} 1 \\ s_{3/2} \end{array}\right),
-\end{eqnarray}
+\end{equation}
 where $\w(\delta)=-\rmi\pi\delta^2/2$ is a phase integral calculated above the cut 
 from $z=\delta$ to $z=-\delta$. Now we have to identify incident, reflected and transmitted waves. 
 Since $y_+ \propto e^{\rmi z^2/2}$ hence it is 
 an outgoing wave for $z \rightarrow +\infty$ as well as for $z \rightarrow -\infty$ and
-\begin{eqnarray}
+\begin{equation}
 R = \frac{1}{s_{3/2}},\ T=\rmi\frac{\rme^{-\rmi w}}{s_{3/2}}.
 \label{eq:RT}
-\end{eqnarray}
+\end{equation}
 
 To find $s_{3/2}$, let`s try a traditional method described, for example, in \cite{frpaper, white}. 
 We can obtain desired equations for the Stokes constants using the single-valuedness of the general 
 solution and analytically continue it around the origin far away from the interaction area along the
 curve $\gamma$ (\fref{fig:wsd}(c)):
-\begin{eqnarray}
+\begin{equation}
 \unity = 
 \C^2
 \S \left[ s_{3/2} \right]
@@ -530,16 +537,16 @@ curve $\gamma$ (\fref{fig:wsd}(c)):
 \S \left[ s_{-1/2} \right]
 \W \left[ \w \right]
 \S^{\Tp} \left[ s_{-3/2} \right],
-\end{eqnarray}
+\end{equation}
 from which follows
-\begin{eqnarray}
-\cases{
+\begin{equation}
+\begin{cases}
 s_{1/2} = s_{-3/2}\\
 s_{3/2} = s_{-1/2}\\ 
 s_{1/2}s_{3/2} + e^{-2 \rmi w} + 1 = 0
-}.
 \label{eq:webtrad}
-\end{eqnarray}
+\end{cases}.
+\end{equation}
 As we can see from the system, we cannot find $s_{3/2}$ using the traditional method - 
 we need at least one more restriction for the Stokes constants. In \cite{white} a 
 requirement of the flux conservation is used as the restriction 
@@ -561,17 +568,17 @@ The first nontrivial symmetry relation can be obtained from the rotation symmetr
 $\{\g=\h=\rmi,\f=\unity\}$. It can overlap, for example, Stokes domains associated with
 $s_{1/2}$ and $s_{-1/2}$. Both of the Stokes constants have the same 
 basepoint $a(\delta)=\delta$ and $\g^{-1}a(\h\delta)=(-\rmi)\rmi\delta=\delta$, so
-\begin{eqnarray}
+\begin{equation}
 \S \left[ s_{1/2}(\rmi \delta) \right] = 
 \W \left[ a(\delta), a(\delta) \right]
 \S \left[ s_{-1/2}(\delta) \right]
 \W \left[ a(\delta), a(\delta) \right],
-\end{eqnarray}
+\end{equation}
 or
-\begin{eqnarray}
+\begin{equation}
 s_{1/2}(\rmi \delta) = s_{-1/2}(\delta).
 \label{eq:websym_1}
-\end{eqnarray}
+\end{equation}
 Considering \eref{eq:webtrad}, we can 
 see now that all four Stokes wedges can be described by only one function as 
 was mentioned in the previous section. 
@@ -586,17 +593,17 @@ and the question is how it is changing under our transformation. Using \fref{fig
 we can see that finally it arrives at the point $z=\delta$, but the phase difference between the
 initial and the final positions matters because it defines an integration path.
 That is why we have to write $a(\h\delta)=\delta \rme^{2\rmi\pi}$ and
-\begin{eqnarray}
+\begin{equation}
 \S \left[ s_{3/2}(\delta \rme^{\rmi\pi}) \right] = 
 \W \left[- \w \right]
 \S \left[ s_{3/2} (\delta) \right]
 \W \left[  \w \right],
-\end{eqnarray}
+\end{equation}
 or
-\begin{eqnarray}
+\begin{equation}
 s_{3/2}(\delta \rme^{\rmi\pi})=s_{3/2}(\delta)\rme^{-2\rmi \w}=s_{3/2}(\delta)e^{-\pi\delta^2}.
 \label{eq:websym_2}
-\end{eqnarray}
+\end{equation}
 This functional equation can be solved by substitution 
 $s_{3/2}(\delta)=\rmi\delta^{\rmi\delta^2}f(\delta^2)$, where $f(\delta^2)$
 is single-valued in a sense $f(x)=f(x \rme^{2\rmi\pi})$.
@@ -613,49 +620,49 @@ under the continuous parameter`s transformation $\h_{cont}(\mu)=\rme^{\rmi\pi\mu
 And, finally, consider a conjugation symmetry $\f=\g=\h=c.c.$. This symmetry relates the 
 Stokes constants in the upper half of the complex plane with the constants in the lower half. 
 In particular, according to \eref{eq:cnjgtn},
-\begin{eqnarray}
+\begin{equation}
 \S \left[ -s_{1/2}^*(\delta^*) \right] = 
 \W \left[ b^*(\delta^*),a(\delta) \right]
 \S \left[ s_{-1/2}(\delta) \right]
 \W \left[ a(\delta),b^*(\delta^*) \right],
-\end{eqnarray}
+\end{equation}
 and, since $b(\delta)=a(\delta)=\delta$,
-\begin{eqnarray}
+\begin{equation}
 s_{1/2}^*(\delta^*)=-s_{-1/2}(\delta).
 \label{eq:websym_3}
-\end{eqnarray}
+\end{equation}
 For real values of $\delta$ the last relation is nothing but the law of the flux conservation 
 mentioned above. But, for complex values, together with \eref{eq:websym_2} and \eref{eq:webtrad} 
 it gives
-\begin{eqnarray}
+\begin{equation}
 s_{3/2}(\delta)=s_{-1/2}(\delta)=\rmi(\rmi \delta^2)^{\rmi \delta^2/2}p(\rmi \delta^2),
 \label{eq:websym_4}
-\end{eqnarray}
+\end{equation}
 where $p(x)=p(x \rme^{2\rmi\pi})$ and $p(x)$ is real on the real axis. Now, using \eref{eq:websym_1} 
 and the last equation from the system \eref{eq:webtrad}, we can write a functional equation for $p(x)$:
-\begin{eqnarray}
+\begin{equation}
 p(x)p(-x)=2\cos(\pi x/2).
 \label{eq:pfunc}
-\end{eqnarray}
+\end{equation}
 This functional equation is similar to Euler`s reflection formula \cite{gamma} and can be reduced 
 to it by substitutions $x=1-2t$ and $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$, where $u(x)u(-x)=1$. 
 The function $u(x)$ can be found from the boundary conditions of \eref{eq:pfunc}. Indeed, we know 
 exactly \cite{white} that $s_{3/2}(0)=\rmi\sqrt{2}$. We also can assume, according to the approximation of 
 isolated singularities\cite{white,ours}, that every Stokes constant approaches an imaginary 
 unit as $\delta$ goes to plus infinity. Taking into consideration \eref{eq:websym_4}, we can say that
-\begin{eqnarray}
-\cases{ 
+\begin{equation}
+\begin{cases} 
 p(0) = \sqrt{2} \\
 p(x) \sim x^{-x/2}\ as\ x \rightarrow \pm \rmi \infty 
-}.  
-\end{eqnarray}
+\end{cases}.  
+\end{equation}
 Using the asymptotics of gamma function and definition of $u(x)$, we can finally write 
 that $u(x)=(2 \rme)^{-x/2}$ and
-\begin{eqnarray}
+\begin{equation}
 s_{3/2}(\delta)=\rmi(\rmi\delta^2)^{\rmi\delta^2/2}
 \frac{\sqrt{2\pi}(2\rme)^{-\rmi\delta^2/2}}{\Gamma(1/2+\rmi\delta^2/2)}.
 \label{eq:s3/2}
-\end{eqnarray}
+\end{equation}
 This is an exact expression of the effective Stokes constant for 
 the Weber problem---it can be verified using 
 an exact solution of \eref{eq:weber} as it was done in \cite{ours}. 
@@ -688,10 +695,9 @@ The functional equations which can be obtained using \Eref{eq:gensym} are likely
 complex as the initial differential equation; however, they are strict and can be used as 
 a basis for the construction of perturbation theory (will be a matter of a separate paper).
 
-\ack
+\section*{Acknowledgments}
 This work was supported by the Russian Science Foundation (grant No~14-12-01007). 
 
-\section*{References}
 \begin{thebibliography}{30}
 
 \bibitem{frbook} Fr\"oman N. and Fr\"oman P.O. \textit{Physical Problems Solved by the Phase-Integral Method} (Cambridge: Cambridge University Press, 2002)
