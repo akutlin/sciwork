@@ -53,12 +53,13 @@ of the presented ideas in a case of a real physical problem.
 %\maketitle
 
 \section{Introduction \label{sec:intro}}
-Consider a stationary one-dimensional Schr\"odinger equation
+Consider an arbitrary ordinary linear differential equation written in the form of 
+a stationary one-dimensional Schr\"odinger equation:
 \begin{eqnarray}
 \L(z,\lmbd)y(z,\lmbd)=0, \qquad \L(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:gen}
 \end{eqnarray}
 where $\lmbd$ is a set of the problem`s parameters. Throughout the paper 
-\mbox{$Q(z,\lmbd)$} will be referred to as a potential. It is often natural to describe two 
+$Q(z,\lmbd)$ will be referred to as a potential. It is often natural to describe two 
 linearly independent solutions of \eref{eq:gen} using so-called phase-integral 
 approximation. In the notation of Fr\"omans \cite{frbook}, it can be written as
 \begin{eqnarray}
@@ -82,7 +83,7 @@ Clearly, the inequality \eref{eq:cond} is not valid in a vicinity of poles or ze
 the phase integrand. Such points will be referred to as singular points and the 
 vicinity of a singularity will be referred to as the interaction area.
 
-Any phase-integral type solution \eref{eq:phsint} is a local, not global solution of \eref{eq:gen}. 
+Any phase-integral type solution \eref{eq:phsint} is a local, not global, solution of \eref{eq:gen}. 
 The method of phase integrals allows the construction of a globally defined 
 asymptotic expression for the solution of a desired linear ordinary differential 
 equation. The method was first proposed by A.Zwaan in his dissertation in 1929 \cite{zwaan}. 
@@ -100,8 +101,12 @@ of \eref{eq:gen}\cite{heading,white} and the phase-integral method provides a si
 way to find these constants and to write the solution. Unfortunately, there are very few 
 cases when this method allows finding all the constants exactly, so approximations of different 
 kinds are commonly used \cite{white,ours}. This happens mostly because of a lack of 
-exact equations for the Stokes constants. In the present paper we provide a recipe to reduce the number 
-of independent Stokes constants for a particular problem using symmetries of \eref{eq:gen}.
+exact equations for the Stokes constants.
+ 
+The phase-integral approximation has an extensive application in quantum mechanics and other branches of
+physics, along with many attempts to improve its accuracy\cite{dunham,dingle73,berry90,berry91,sergeenko96,delabaere97,sergeenko02,mirnov10,poor16,esposito09,aleixo00}. 
+In the present paper we provide a recipe to reduce the number 
+of independent Stokes constants for a particular problem using symmetries of \eref{eq:gen}. 
 
 The paper is organized as follows. 
 In \sref{sec:mtrxfrm} the matrix formulation of Heading`s rules is given. Such formulation appears
@@ -706,10 +711,29 @@ Wiley, NY (1962)
 
 \bibitem{ours} R.B. White, A.Kutlin {\it Bound state energies using Phase integral methods} 
 
-%\bibitem{froman1} Fr\"oman, N., and Fr\"oman, P. O., 1974, Ann Phys (NY) 83, 103–107. (Review: Zentralblatt
-%f¨ur Mathematik und ihre Grenzgebiete, Mathematics Abstracts 279, 190–191, 1974.)
-%
-%\bibitem{froman2} Fr\"oman, N., and Fr\"oman, P. O., 1974, Nuovo Cim 20B, 121–132.
+\bibitem{dunham} L. Dunham, J. Phys. Rev. X. 41. 713-720. 10.1103/PhysRev.41.713 (1932).
+ 
+\bibitem{dingle73} R.B. Dingle {\it Asymmpotic Expansions: Their Derivation and 
+Interpretation} Academic Press, London and New York (1973)
+
+\bibitem{berry90} M.V. Berry and C.J. Howlse, Proc.Roy.Soc.Lond.,A430,653 (1990)
+
+\bibitem{berry91} M.V. Berry, Asymmpotics, Superasymptotics,
+ Hyperasymptotics, in {\it Asymptotics Beyond All Orders}, H. Segur et al (eds.) Plenum Press NY (1991)
+
+\bibitem{sergeenko96} M.N. Sergeenko, Physical Review A. [53] 3798 (1996)
+
+\bibitem{delabaere97} E. Delabaere, H. Dillinger, and F. Pham, J. Math. Phys. [38] 6126 (1997)
+
+\bibitem{sergeenko02} M.N. Sergeenko, ArXiv:quant-ph/0206179v1 (2002)
+
+\bibitem{mirnov10} A. Mirnov and A. Morozov, Journal of High Energy Physics 2010:40 (2010)
+
+\bibitem{poor16} A.K. Kashani-Poor, ArXiv:1604.01690v3 (2016)
+
+\bibitem{esposito09} G. Esposito and P. Santorelli J. Phys. A: Math. Theor. 42 395203 (2009)
+
+\bibitem{aleixo00} A.N.F. Aleixo et al J. Phys. A: Math. Gen. 33 1503 (2000)
 
 \bibitem{symm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, 
 Math. Proc. Camb. Phil. Soc. \textbf{104}, 181–191
