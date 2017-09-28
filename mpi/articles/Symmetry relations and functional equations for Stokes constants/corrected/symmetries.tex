@@ -15,7 +15,7 @@
 \def\g{\hat{g}}
 \def\h{\hat{h}}
 \def\psii{\bm\psi}
-\def\L{\widehat{L}}
+\def\LL{\widehat{L}}
 \def\lmbd{\bm{\lambda}}
 \def\Tp{\mathrm{T}}
 \def\unity{1}
@@ -50,7 +50,7 @@ and propose a concept of an effective Stokes diagram. We show that effective Sto
 domains which can be overlaid by a symmetry transformation are associated with the same 
 effective Stokes constant and can be described by the same analytical function. Basing on
 the derived symmetry relations we propose a way to write functional equations for 
-the effective Stokes constants. This work also contains an example of possible usage 
+the effective Stokes constants. This work also contains an example of usage 
 of the presented ideas in a case of a real physical problem.
 \end{abstract}
 
@@ -64,21 +64,25 @@ of the presented ideas in a case of a real physical problem.
 Consider an arbitrary ordinary linear differential equation written in the form of 
 a stationary one-dimensional Schr\"odinger equation:
 \begin{equation}
-\L(z,\lmbd)y(z,\lmbd)=0, \quad \L(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:gen}
+\LL(z,\lmbd)y(z,\lmbd)=0, \quad \LL(z,\lmbd)=\frac{\rmd^2}{\rmd z^2} + Q(z,\lmbd),   \label{eq:gen}
 \end{equation}
 where $\lmbd$ is a set of the problem`s parameters. Throughout the paper 
 $Q(z,\lmbd)$ will be referred to as a potential. It is often natural to describe two 
 linearly independent solutions of \eref{eq:gen} using so-called phase-integral 
 approximation. In the notation of Fr\"omans \cite{frbook}, it can be written as
 \begin{equation}
-y_\pm = \predexp \exp [\pm \rmi \w(z)], \quad \w(z)=\phsintgrl[\xi]{(z_0)}{z}.   \label{eq:phsint}
+y_\pm = \predexp \exp [\pm \rmi \w(z)], \quad \w(z)=\phsintgrl[\xi]{(z_0)}{z},   \label{eq:phsint}
 \end{equation}
+where the explicit form of $q(z)$ depends on the particular type of the approximation.
+The simplest and the best-known type is one of the WKBJ\cite{wkb1,wkb2,wkb3,wkbj}; 
+it takes the form \eref{eq:phsint} with $\phsintgrnd = \sqrt{Q(z,\lmbd)}$.
+
 The function $\w(z)$ is the phase integral, and therefore we call $\phsintgrnd[\xi]$ 
 the phase integrand. Also we will refer to $z_0$ as a basepoint. A meaning of the brackets in the 
 lower limit of integration is a bit tricky; such a notation was introduced by Fr\"omans \cite{frpaper} to make
-phase integral look similar for all orders of approximation. In the first order this integral is just
-a usual integral from $z_0$ to $z$. 
-
+phase integral look similar for all orders of approximation. In the lowest order and, particularly,
+in case of the WKBJ approximation, this integral is just a usual integral from $z_0$ to $z$.
+ 
 Provided that 
 \begin{equation}
 \varepsilon = q^{-3/2} \rmd^2 q^{-1/2}/\rmd z^2  + (Q - q^2)/q \ll 1,   \label{eq:cond}
@@ -177,7 +181,7 @@ where $s$ is a Stokes constant. The sign of the Stokes constant as well as its v
 depends on the chosen base of approximate solutions $y_\pm$ and particularly on the 
 basepoint $z_0$. We will use a plus sign if we cross the Stokes line in a counterclockwise 
 direction relatively to the basepoint and a minus sign otherwise. If the borderline lies in 
-a Stokes domain where $y_+$ is subdominant we must use $\S^{\Tp}$ instead of $\S$, where 'T' 
+a Stokes domain where $y_+$ is subdominant, we must use $\S^{\Tp}$ instead of $\S$, where 'T' 
 denotes the transpose operation.
 
 Obviously, $\psii$-vector in a given anti-Stokes domain depends on the chosen basepoint too. 
@@ -193,7 +197,7 @@ terms of $\psii$-vectors can be written as
 This is analogous to the reconnection formula in the traditional Heading`s form of the continuation 
 rules and we will refer to the operator as a reconnection operator.
 
-Finally, we have to introduce a $\C$-operator associated with crossing a branch cut. The explicit form 
+Finally, we have to introduce a $\C$ operator associated with crossing a branch cut. The explicit form 
 of the operator depends on the phase integrand $\phsintgrnd$. Here we derive it for the simplest case  
 assuming $\phsintgrnd^2$ to be a single valued function. Imagine the cut emanating from the $k^{th}$ order
 singularity of squared phase integrand (positive values of $k$ corresponds to zeros and negative to poles). 
@@ -310,6 +314,7 @@ some solution of the corresponding equation analytically along the path shown in
 if the singularities are close to each other, the phase-integral approximation fails between the pole
 and the right zero and $s_1$ loses its meaning. However, the phase-integral approximation still holds
 far away from all the singularities and $s$ from \fref{fig:effsd_2} remains computable and meaningful. 
+
 Certainly, assuming the effective Stokes constant to be analytical function of the problem`s parameters $\lmbd$
 and considering that every effective Stokes constant can be expressed in terms of the traditional constants 
 and corresponding phase integrals, we have to assume the traditional Stokes constant to be analytical
@@ -331,8 +336,8 @@ transformation of \eref{eq:gen}
 if for any its solution $y(z,\lmbd)$ there is another solution $\tilde{y}(z,\lmbd)$ such that
 $\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd)$, i.e.
 \begin{equation}
-\L(z,\lmbd)y(z,\lmbd) \equiv 0 \ \Longrightarrow\  
-\L(z,\lmbd) \left[ \f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd) \right] \equiv 0.   \label{eq:symdef}
+\LL(z,\lmbd)y(z,\lmbd) \equiv 0 \ \Longrightarrow\  
+\LL(z,\lmbd) \left[ \f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd) \right] \equiv 0.   \label{eq:symdef}
 \end{equation}
 For example, an Airy equation $\rmd^2 y(z)/\rmd z^2 - z y(z) = 0$ has two base symmetries: 
 $\{\g=\rme^{2 \rmi \pi/3},\f=\h=\unity\}$ and $\{\f=\g=c.c.,\h=\unity\}$, where 
@@ -375,7 +380,7 @@ solution \eref{eq:gensol} and how it changes the coefficients $c_\pm$.
 To understand a consequences of the symmetry`s presence look at \fref{fig:rst}. 
 First of all let`s keep track of the basepoints` movement under the continuous parameters` 
 transformation $\h_{cont}(\mu)$. Usually it is convenient to choose some singularity of the 
-potential as a basepoint, but the choice is not necessary for our discussion and we will assume 
+potential as a basepoint, but the choice is not essential for our discussion and we will assume 
 only that it somehow depends on the set of the problem`s parameters $\lmbd$. As long as under 
 this assumption our basepoint $a=a(\h_{cont}(\mu)\lmbd)=a(\mu)$, like the others, is a function 
 of the auxiliary variable $\mu$, the whole effective Stokes diagram continuously changes preserving its 
@@ -424,7 +429,7 @@ by only one multidimensional analytical complex function $s(\lmbd)$.
 
 Now let us take a closer look at the important special case of a complex conjugation symmetry. 
 For every potential which is real on the real axes the symmetry $\f=\g=\h=c.c.$ holds, 
-i.e. $\L^*(z^*,\lmbd^*)=\L(z,\lmbd)$ and
+i.e. $\LL^*(z^*,\lmbd^*)=\LL(z,\lmbd)$ and
 \begin{equation}
 \S^{(\Tp)} \left[ -s'^*(\lmbd^*) \right] = 
 \W \left[ a'^*(\lmbd^*),a(\lmbd) \right]
@@ -481,12 +486,8 @@ for the Weber equation \eref{eq:weber}}
 \label{fig:wsd}
 \end{figure} 
 
-The best-known type of the phase-integral approximation is the WKBJ (and often simply WKB) approximation, 
-so named after Wentzel, Kramers, Brillouin, and Jeffreys \cite{wkb1,wkb2,wkb3,wkbj}. 
-It takes the form \eref{eq:phsint} with $\phsintgrnd = \sqrt{Q(z,\lmbd)}$. Since it is the simplest one
-we will use it all throughout this section. Also in this section we will use the symbol 
+We will use WKBJ approximation all throughout this section. Also in this section we will use the symbol 
 $\W[\w] \equiv \W \left[\phsintgrl{a}{b} \right] \equiv \W[b,a]$ to underline a value of the phase integral. 
-
 
 Let us consider the Weber equation
 \begin{equation}
@@ -525,7 +526,7 @@ R = \frac{1}{s_{3/2}},\ T=\rmi\frac{\rme^{-\rmi w}}{s_{3/2}}.
 \end{equation}
 
 To find $s_{3/2}$, let`s try a traditional method described, for example, in \cite{frpaper, white}. 
-We can obtain desired equations for the Stokes constants using the single-valuedness of the general 
+We can obtain desired equations for the Stokes constants using a single-valuedness of the general 
 solution and analytically continue it around the origin far away from the interaction area along the
 curve $\gamma$ (\fref{fig:wsd}(c)):
 \begin{equation}
@@ -547,7 +548,10 @@ s_{1/2}s_{3/2} + e^{-2 \rmi w} + 1 = 0
 \label{eq:webtrad}
 \end{cases}.
 \end{equation}
-As we can see from the system, we cannot find $s_{3/2}$ using the traditional method - 
+The $\C$ operator is squared here because the Weber potential is asymptotic to $z^2$
+as $z$ goes to complex infinity.
+
+As we can see from the system \eref{eq:webtrad}, we cannot find $s_{3/2}$ using the traditional method - 
 we need at least one more restriction for the Stokes constants. In \cite{white} a 
 requirement of the flux conservation is used as the restriction 
 and it gives $s_{-1/2}=-s_{1/2}^*$ - it helps to determine the absolute value of the
@@ -645,7 +649,7 @@ p(x)p(-x)=2\cos(\pi x/2).
 \label{eq:pfunc}
 \end{equation}
 This functional equation is similar to Euler`s reflection formula \cite{gamma} and can be reduced 
-to it by substitutions $x=1-2t$ and $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$, where $u(x)u(-x)=1$. 
+to the formula by substitutions $x=1-2t$ and $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$, where $u(x)u(-x)=1$. 
 The function $u(x)$ can be found from the boundary conditions of \eref{eq:pfunc}. Indeed, we know 
 exactly \cite{white} that $s_{3/2}(0)=\rmi\sqrt{2}$. We also can assume, according to the approximation of 
 isolated singularities\cite{white,ours}, that every Stokes constant approaches an imaginary 
@@ -702,6 +706,14 @@ This work was supported by the Russian Science Foundation (grant No~14-12-01007)
 
 \bibitem{frbook} Fr\"oman N. and Fr\"oman P.O. \textit{Physical Problems Solved by the Phase-Integral Method} (Cambridge: Cambridge University Press, 2002)
 
+\bibitem{wkb1} G. Wentzel, Zeit. f. Phys. \textbf{38}, 518 (1926).
+
+\bibitem{wkb2} H. A. Kramers, Zeit. f. Phys. \textbf{39}, 828 (1926).
+
+\bibitem{wkb3} L. Brillion, C. R. Acad. Sci. Paris \textbf{183}, 24 (1926).
+
+\bibitem{wkbj} H. Jeffries, Philos. Mag. [7] 33, 451 (1942)
+
 \bibitem{frpaper} Fr\"oman N., Fr\"oman P.O. and Lundborg B. \textit{The Stokes constants for a cluster of transition
 points} Math. Proc. Cambridge Philos. Soc. \textbf{104} (1988), 153-179.
 
@@ -743,14 +755,6 @@ Interpretation} Academic Press, London and New York (1973)
 
 \bibitem{symm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, 
 Math. Proc. Camb. Phil. Soc. \textbf{104}, 181–191
-
-\bibitem{wkb1} G. Wentzel, Zeit. f. Phys. \textbf{38}, 518 (1926).
-
-\bibitem{wkb2} H. A. Kramers, Zeit. f. Phys. \textbf{39}, 828 (1926).
-
-\bibitem{wkb3} L. Brillion, C. R. Acad. Sci. Paris \textbf{183}, 24 (1926).
-
-\bibitem{wkbj} H. Jeffries, Philos. Mag. [7] 33, 451 (1942)
 
 \bibitem{gamma} M. Abramowitz and I. A. Stegun, eds., 
 {\it Handbook of Mathematical Functions With Formulas, Graphs, and Mathematical Tables}, 
