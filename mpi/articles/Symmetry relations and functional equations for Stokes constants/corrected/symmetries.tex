@@ -1,8 +1,8 @@
 \documentclass[atmp]{ipart_v1}
+
 \usepackage{bm}
 \usepackage{graphicx}
 \usepackage{caption}
-%\usepackage{cite}
 
 \def\rmd{\mathrm{d}}
 \def\rme{\mathrm{e}}
@@ -36,12 +36,6 @@
 \title[Symmetry relations for effective Stokes constants]{Effective Stokes diagram, symmetry relations and functional equations for effective Stokes constants}
 \author[A.G. Kutlin]{A.G. Kutlin}
 
-%\address{Institute of Applied Physics of Russian Academy of Sciences, 46 Ulyanov str., 603950 Nizhny Novgorod, Russia}
-%\ead{anton.kutlin@gmail.com}
-
-
-%\date{\today}
-
 \begin{abstract}
 We consider an arbitrary ordinary linear differential equation of the second order and study 
 how its symmetries affect the Stokes constants associated with its general solution. 
@@ -53,10 +47,6 @@ the derived symmetry relations we propose a way to write functional equations fo
 the effective Stokes constants. This work also contains an example of usage 
 of the presented ideas in a case of a real physical problem.
 \end{abstract}
-
-%\pacs{02.30.Hq,02.30.Mv}
-
-%\noindent{\it Keywords\/}: Stokes phenomenon, phase-integral method, Stokes constants
 
 \maketitle
 
@@ -116,7 +106,7 @@ kinds are commonly used \cite{white,ours}. This happens mostly because of a lack
 exact equations for the Stokes constants.
  
 The phase-integral approximation has an extensive application in quantum mechanics and other branches of
-physics, along with many attempts to improve its accuracy\cite{dunham,dingle73,berry90,berry91,sergeenko96,delabaere97,sergeenko02,mirnov10,poor16,esposito09,aleixo00}. 
+physics, along with many attempts to improve its accuracy\cite{ours,dunham,dingle73,berry90,berry91,sergeenko96,delabaere97,sergeenko02,mirnov10,poor16,esposito09,aleixo00}. 
 In the present paper we provide a recipe to reduce the number 
 of independent Stokes constants for a particular problem using symmetries of \eref{eq:gen}. 
 
@@ -130,7 +120,6 @@ essential for all following discussion on the subject of symmetry relations.
 In \sref{sec:smmtrs} the symmetry relations are obtained from simple considerations. 
 In \sref{sec:weber} the relations are used to find the exact form of reflection and 
 transmission coefficients for the Weber equation. 
-%In section \ref{BLCKHL} the relations are used for a problem with multiple parameters.
 And, finally, in \sref{sec:cnclsns} are the conclusions. 
 
 \section{Matrix formulation of the Heading`s rules of analytical continuation \label{sec:mtrxfrm}}
@@ -163,11 +152,9 @@ of these rules can be found in \cite{heading, white}. For us it is convenient to
 these rules into the matrix form for ease of reference.
 
 Let's define a two-dimensional vector space consisting of vectors
-%\[
 \begin{equation}
 \psii= \left(\begin{array}{*{2}{c}} c_+ \\ c_- \end{array}\right).
 \end{equation}
-%\]
 Then assume that we have two neighbouring anti-Stokes domains $1$ and $2$, and there are 
 corresponding $\psii$-vectors in the domains. Assume also that $y_+$ is dominant in the Stokes 
 domain containing a borderline separating these anti-Stokes domains. 
@@ -213,7 +200,6 @@ it can be written as
 \C =  \left(\begin{array}{*{2}{c}} 0 & -\rmi \\ -\rmi & 0 \end{array}\right).    \label{eq:C}
 \end{equation}
 Analogous result was obtained in \cite{frbook}. Note that branching of the asymptotic solutions has nothing to do with an actual branching  of  an exact solution.
-%As you can see, the need for the introduction of the $\C$-operator connected with the branching of the asymptotic solutions has nothing to do with a real branching structure of an exact solution. So, keeping in mind this simple rule we will omit any such cuts in the Stokes diagram and use cuts only to determine branches of $\phsintgrnd$ which is necessary for correct definition of phase integrals. 
 
 \section{Effective Stokes diagram \label{sec:effsd}}
 Imagine a Stokes domain with several Stokes lines emerging from the common basepoint.
@@ -250,9 +236,9 @@ be described by the \textit{effective Stokes constant} $s$ despite the number of
 \begin{figure}
 \centering
 \noindent
-\includegraphics[width=\textwidth]{stuff/effsd_1.png}
+\includegraphics[width=\textwidth]{effsd_1.png}
 \caption{
-Stokes diagrams for $q(z,E)=\sqrt{z^4-E}$
+Stokes diagrams for $q(z,E)=\sqrt{z^4-E}$; Stokes lines are dashed
 \\
 (a) A traditional Stokes diagram; dots mark the zeros of the phase integrand
 \\
@@ -279,16 +265,12 @@ Choosing what points to connect by the effective Stokes line we will indicate wh
 will be used in the given Stokes domain (\fref{fig:effsd_1}). Also it can be useful to indicate 
 values of the phase integrals instead of plotting multiple branch cuts.
 
-%One of the advantages of the effective Stokes diagram is that it is much simpler than the 
-%usual one---almost every Stokes (anti-Stokes) domain contains only one Stokes (anti-Stokes) line. 
-%Another advantage is that we can easily calculate how many independent unknowns our problem actually has. 
-
 \begin{figure}
 \centering
 \noindent
-\includegraphics[width=\textwidth]{stuff/effsd_2.png}
+\includegraphics[width=\textwidth]{effsd_2.png}
 \caption{
-Stokes diagrams for $q(z,g)=\sqrt{-z + g^2/z}$
+Stokes diagrams for $q(z,g)=\sqrt{-z + g^2/z}$; Stokes lines are dashed
 \\
 (a) A traditional Stokes diagram; star marks the pole of the phase integrand. 
 \\
@@ -341,7 +323,6 @@ $\tilde{y}(z,\lmbd)=\f(z,\lmbd)y(\g(z,\lmbd)z,\h(z,\lmbd)\lmbd)$, i.e.
 \end{equation}
 For example, an Airy equation $\rmd^2 y(z)/\rmd z^2 - z y(z) = 0$ has two base symmetries: 
 $\{\g=\rme^{2 \rmi \pi/3},\f=\h=\unity\}$ and $\{\f=\g=c.c.,\h=\unity\}$, where 
-%$\unity$ is a unity operator and 
 $c.c.$ stands 
 for complex conjugation. The main difference between these two symmetries is that the second 
 one changes a direction of a complex variable`s phase increase and the first one does not. 
@@ -372,7 +353,7 @@ solution \eref{eq:gensol} and how it changes the coefficients $c_\pm$.
 \begin{figure}
 \centering
 \noindent
-\includegraphics[width=\textwidth]{stuff/rs.png}
+\includegraphics[width=\textwidth]{rs.png}
 \caption{Effective Stokes diagram`s evolution corresponding to the symmetry transformation}
 \label{fig:rst}
 \end{figure}
@@ -446,7 +427,7 @@ to agree to include this minus sign into the $\f$ operator acting on the effecti
 \begin{figure}
 \centering
 \noindent
-\includegraphics[width=\textwidth]{stuff/cs.png}
+\includegraphics[width=\textwidth]{cs.png}
 \caption{Effective Stokes diagram`s evolution corresponding to the conjugation 
 symmetry transformation when both conjugate effective Stokes lines have the same 
 basepoint and $\g^{-1}a(\h\lmbd)=a(\lmbd)$}
@@ -480,7 +461,7 @@ differs from unity.
 \begin{figure}
 \centering
 \noindent
-\includegraphics[width=\textwidth]{stuff/wsd.png}
+\includegraphics[width=\textwidth]{wsd.png}
 \caption{Stokes field (a), anti-Stokes field (b) and an effective Stokes diagram (c) 
 for the Weber equation \eref{eq:weber}}
 \label{fig:wsd}
@@ -560,7 +541,7 @@ a such simple situation as the Weber equation the traditional approach cannot fu
 resolve the problem.
  
 Actually the flux conservation is a consequence of the real-valuedness and analyticity 
-of the potential $x^2-\delta^2$ and hence the same relation can be obtained from the 
+of the potential $z^2-\delta^2$ and hence the same relation can be obtained from the 
 conjugation symmetry using \eref{eq:cnjgtn}. Moreover, first two equations from \eref{eq:webtrad} 
 are just a consequence of a symmetry $\{\g=\rme^{\rmi\pi},\h=\f=\unity\}$---and it is clear 
 because the symmetry is just a rotation and can be seen even from the usual analytical continuation. 
@@ -615,7 +596,7 @@ is single-valued in a sense $f(x)=f(x \rme^{2\rmi\pi})$.
 \begin{figure}
 \centering
 \noindent
-\includegraphics[width=\textwidth]{stuff/wrs.png}
+\includegraphics[width=\textwidth]{wrs.png}
 \caption{Evolution of the Stokes field and effective Stokes lines 
 under the continuous parameter`s transformation $\h_{cont}(\mu)=\rme^{\rmi\pi\mu}$}
 \label{fig:webrs}
@@ -727,7 +708,7 @@ points} Math. Proc. Cambridge Philos. Soc. \textbf{104} (1988), 153-179.
 \bibitem{heading} J. Heading. {\it An Introduction to Phase Integral Methods} 
 Wiley, NY (1962)
 
-\bibitem{ours} R.B. White, A.Kutlin {\it Bound state energies using Phase integral methods} 
+\bibitem{ours} R.B. White, A.G. Kutlin, arXiv:1704.01170 (2017)
 
 \bibitem{dunham} L. Dunham, J. Phys. Rev. X. 41. 713-720. 10.1103/PhysRev.41.713 (1932).
  
@@ -751,7 +732,7 @@ Interpretation} Academic Press, London and New York (1973)
 
 \bibitem{esposito09} G. Esposito and P. Santorelli J. Phys. A: Math. Theor. 42 395203 (2009)
 
-\bibitem{aleixo00} A.N.F. Aleixo et al J. Phys. A: Math. Gen. 33 1503 (2000)
+\bibitem{aleixo00} A.N.F. Aleixo et al J. Phys. A: Math. Gen. [33] 1503 (2000)
 
 \bibitem{symm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, 
 Math. Proc. Camb. Phil. Soc. \textbf{104}, 181–191
