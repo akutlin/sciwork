@@ -37,7 +37,8 @@
 \author[A.G. Kutlin]{A.G. Kutlin}
 
 \begin{abstract}
-We consider an arbitrary ordinary linear differential equation of the second order and study 
+We consider the phase integral method applied to
+an arbitrary ordinary linear differential equation of the second order and study 
 how its symmetries affect the Stokes constants associated with its general solution. 
 We reformulate the well-known Heading's rules for analytical continuation in a matrix form 
 and propose a concept of an effective Stokes diagram. We show that effective Stokes 
@@ -231,7 +232,7 @@ Note that for any $s'$ there is such $s''$ that $\S[s']\W[b,a]=\W[b,a]\S[s'']$, 
 we can change the order of $\S$ and $\W$ operators. Hence,
 every such set of operators can always be replaced by a single combination $\S[s_l] \W[a_n,a_0]$ or, 
 if someone prefers different ordering, $\W[a_n,a_0] \S[s_r]$. Consequently, every Stokes domain can 
-be described by the \textit{effective Stokes constant} $s$ despite the number of Stokes lines it contains. 
+be described by the \textit{effective Stokes constant} $s$ despite the number of Stokes lines it contains.
 
 \begin{figure}
 \centering
@@ -248,7 +249,7 @@ Stokes diagrams for $q(z,E)=\sqrt{z^4-E}$; Stokes lines are dashed
 \label{fig:effsd_1}
 \end{figure} 
 
-The idea of the effective Stokes constant allows us to introduce a notion of the effective Stokes line.
+The concept of the effective Stokes constant allows us to introduce a notion of the effective Stokes line.
 Since every Stokes domain can be described by the single effective Stokes constant, we can visualize this fact 
 by plotting a single effective Stokes line instead of a set of traditional Stokes lines. 
 Similarly, every set of anti-Stokes lines located in the same anti-Stokes
@@ -264,6 +265,12 @@ Stokes diagram, taking into account the specifics of a particular problem.
 Choosing what points to connect by the effective Stokes line we will indicate what basepoints 
 will be used in the given Stokes domain (\fref{fig:effsd_1}). Also it can be useful to indicate 
 values of the phase integrals instead of plotting multiple branch cuts.
+
+One can argue that the F-matrix method, developed by Fr\"omans\cite{frbook}, 
+operates with the same thing as the effective Stokes constant defined above; and he will be right. 
+Nevertheless, there is an important difference between the effective Stokes constant and the Stokes constant
+used in the F-matrix method. We assume effective Stokes constant to be analytical function with respect to 
+the problem`s parameters $\lmbd$.
 
 \begin{figure}
 \centering
@@ -283,21 +290,21 @@ becomes not applicable}
 \label{fig:effsd_2}
 \end{figure}  
 
-The concept of the effective Stokes constant is crucial for the following discussion. 
-In contrast to the traditional one, such Stokes constant is always a computable quantity
-providing the phase-integral approximation is applicable; one 
-can easily calculate it by comparing asymptotics of an exact solution on the 
-neighbouring anti-Stokes lines. For the traditional Stokes constant, it is present only if the
-corresponding singularity is far away from any others. 
-For example, let`s take a look at \fref{fig:effsd_2}. Comparing \fref{fig:effsd_2}(a) with \fref{fig:effsd_2}(b),
+As it follows from the definition of the effective Stokes constant, it always can be expressed
+in terms of traditional Stokes constants and corresponding phase integrals. However, it
+stays meaningful even then the traditional Stokes constants do not.
+Let`s look at \fref{fig:effsd_2}. Comparing \fref{fig:effsd_2}(a) with \fref{fig:effsd_2}(b),
 one can notice that the effective Stokes constant $s$ is actually a combination of
-two traditional constants $s_1$ and $s_2$. If we want to calculate, for example, $s_1$, we have to continue 
-some solution of the corresponding equation analytically along the path shown in  \fref{fig:effsd_2}(c). Nevertheless,
-if the singularities are close to each other, the phase-integral approximation fails between the pole
+two traditional constants $s_1$ and $s_2$. To calculate, for example, $s_1$, 
+we have to continue some solution of the corresponding equation analytically along 
+the path $\gamma_2$ shown in \fref{fig:effsd_2}(c) and compare the solution`s phase-integral asymptotics 
+on the neighbouring anti-Stokes lines; such a procedure was implemented, for example, in \cite{ours}. 
+If the singularities are close to each other, the phase-integral approximation fails between the pole
 and the right zero and $s_1$ loses its meaning. However, the phase-integral approximation still holds
-far away from all the singularities and $s$ from \fref{fig:effsd_2} remains computable and meaningful. 
+far away from all the singularities and $s$ from \fref{fig:effsd_2}(b) remains computable and meaningful. 
 
-Certainly, assuming the effective Stokes constant to be analytical function of the problem`s parameters $\lmbd$
+We assume effective Stokes constant to be analytical function with respect to the problem`s parameters $\lmbd$.
+Certainly, assuming this 
 and considering that every effective Stokes constant can be expressed in terms of the traditional constants 
 and corresponding phase integrals, we have to assume the traditional Stokes constant to be analytical
 function as well. Under this assumptions we can analytically continue every traditional Stokes constant
