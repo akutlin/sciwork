@@ -2,7 +2,7 @@
 
 \usepackage{bm}
 \usepackage{graphicx}
-\usepackage{caption}
+\usepackage{anyfontsize}
 
 \def\LL{\widehat{L}}
 \def\rmd{\mathrm{d}}
@@ -20,7 +20,6 @@
 \def\W{\widehat{W}}
 \def\C{\widehat{C}}
 
-
 \def\T{\mathrm{T}}
 \def\unity{1}
 \def\Re{\mathrm{Re}}
@@ -31,14 +30,15 @@
 \newcommand\Eref[1]{Equation \ref{#1}}
 \newcommand\fref[1]{figure \ref{#1}}
 \newcommand\sref[1]{section \ref{#1}}
+\newcommand\Aref[1]{Appendix \ref{#1}}
 
 \newcommand\phsintgrnd[1][z]{q(#1,\lmbd)}
 \newcommand\predexp[1][z]{q(#1,\lmbd)^{-1/2}}
 \newcommand\phsintgrl[3][z]{\int_{#2}^{#3} \phsintgrnd[#1] \rmd #1}
 
 \begin{document}
-\title[Symmetry relations for F-matrices]
-{Symmetry relations for connection matrices in the phase-integral method}
+\title[Symmetry relations for connection matrices]
+{Generalized symmetry relations for connection matrices \\ in the phase-integral method}
 \author[A.G. Kutlin]{A.G. Kutlin}
 
 \begin{abstract}
@@ -51,12 +51,25 @@ diagram which can be a useful tool of analysing of difficult equations. We show 
 Stokes domains which can be overlaid by a symmetry transformation are associated with the same 
 effective Stokes constant and can be described by the same analytical function. Basing on
 the derived symmetry relations we propose a way to write functional equations for 
-the effective Stokes constants. We discuss a possibility of a generalization of the derived symmetry 
-relations in case of an arbitrary order liner system of the ordinary linear differential equations. 
+the effective Stokes constants. Finally, we provide a generalization of the derived symmetry 
+relations for the case of an arbitrary order liner system of the ordinary linear differential equations. 
 This work also contains an example of usage of the presented ideas in a case of a real physical problem.
 \end{abstract}
 
 \maketitle
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Introduction \label{sec:intro}}
 Consider an arbitrary ordinary linear second-order differential equation 
@@ -100,53 +113,192 @@ but may have abrupt changes on the so-called Stokes lines
 changes have a form of a single-parameter linear transform \cite{heading}; 
 the parameter is called the Stokes constant. 
 Knowing all Stokes constants associated with a particular 
-equation gives the ability to obtain a globally defined approximate solution 
-of \eref{eq:gen} and the phase integral method provides a simple 
+equation gives an ability to obtain a globally defined approximate solution 
+of \eref{eq:gen}, and the phase integral method provides a simple 
 way to do it \cite{heading,rwbook}. Unfortunately, there are very few 
 cases when this method allows finding all the constants exactly, so approximations of different 
-kinds are commonly used \cite{rwbook,ours}. This happens mostly because of a lack of 
-exact equations for the Stokes constants.
+kinds are commonly used \cite{rwbook,ours}. This happens mostly because of a lack of exact 
+equations for the Stokes constants.
 
 The phase-integral approximation has an extensive application in quantum mechanics and other 
 branches of physics, along with many attempts to improve its accuracy
 \cite{ours,dunham,dingle73,berry90,berry91,sergeenko96,delabaere97,sergeenko02,mirnov10,poor16,esposito09,aleixo00}. 
 In the present paper we provide a recipe to reduce the number 
-of independent Stokes constant with use of symmetries of \eref{eq:gen}. 
+of independent Stokes constants with use of symmetries of \eref{eq:gen}. 
 
 The paper is organized as follows. 
-In \sref{sec:fmtrsymm} the matrix formulation of Heading`s rules is given. Such formulation appears
-to be much more convenient for our purposes then the traditional one, which can be found, 
-for example, in \cite{rwbook}.
-In \sref{sec:effsd} a concept of an effective Stokes diagram is presented. This concept is a natural
-consequence of the matrix formulation. The idea of an effective Stokes constant is
-essential for all following discussion on the subject of symmetry relations.
-In \sref{sec:scsymm} the symmetry relations are obtained from simple considerations. 
-In \sref{sec:weber} the relations are used to find the exact form of reflection and 
-transmission coefficients for the Weber equation. 
+In \sref{sec:fmtrintro} we recall briefly the F-matrix formalism and introduce a concept of the 
+effective Stokes constant. We also give a matrix formulation of the well-known Heading`s rules for
+analytical continuation; such formulation appears to be much more convenient for our purposes then 
+the traditional one, which can be found, for example, in \cite{rwbook}.
+In \sref{sec:fmtrsymm} we derive the symmetry relations for the connection matrices in the most
+general form from simple considerations.
+In \sref{sec:scsymm} we simplify the relations by reducing F-matrix to its limiting form and
+obtain the symmetry relations for the effective Stokes constants. In this section we also discuss
+a possibility of writing functional equations for effective Stokes constants.
+In \sref{sec:effsd} a concept of an effective Stokes diagram is presented; this concept is a natural
+consequence of the effective Stokes constants` usage.
+In \sref{sec:weber} we present an example of a real physical problem solved with our technique; 
+the symmetry relations for effective Stokes constants are used to find the exact 
+form of reflection and transmission coefficients for the Weber equation. 
+In \sref{sec:discuss} we discuss an applicability of the symmetry relations derived in \sref{sec:fmtrsymm}
+for the case of an arbitrary order system of ordinary linear differential equations.
 And, finally, in \sref{sec:cnclsns} are the conclusions. 
 
-\section{Symmetry relations for connection matrices \label{sec:fmtrsymm}}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Connection matrices and effective Stokes constants \label{sec:fmtrintro}}
 As it was mentioned in the previous section, the coefficients $c_\pm$ 
-vary from one domain of the complex plane to another. Taking into consideration
-a linearity of \eref{eq:gen}, these variations can by described formally by means 
+vary from one point of the complex plane to another. Taking into consideration
+the linearity of \eref{eq:gen}, these variations can by described formally by means 
 of the F-matrices \cite{frbook}:
 \begin{eqnarray}
 \psii(z_2) = \F(z_2,z_1) \psii(z_1),
+\label{eq:fmtrdef}
 \end{eqnarray}
-where $\psii(z) = [{c_+(z),c_-(z)}]^{\T}$ and 'T' denotes the transpose operation. As long as the
-general solution of \eref{eq:gen} can have branch points, F-matrix can depend on the particular path 
-$\gamma$ of analytical continuation; so, we will indicate the path by writing $F(\gamma)$ if necessary. 
-F-matrix also depends on the chosen system of the base phase-integral 
-approximate solutions $y_\pm$ and, particularly, on the chosen basepoint $z_0$. 
-However, it does not depend on the initial/boundary conditions 
-of \eref{eq:gen} and in principle can be obtained exactly from the corresponding differential 
-equation \cite{frbook} for any particular system of base functions \eref{eq:phsint}; 
-then, the approximate general solution \eref{eq:gensol} with $c_\pm=c_\pm(z)$ becomes exact. 
+where $\psii(z) = [{c_+(z),c_-(z)}]^{\T}$ and 'T' denotes the transpose operation.
+In principle, F-matrix can be obtained exactly from the corresponding differential 
+equation \cite{frbook}; then, the approximate solution \eref{eq:gensol} 
+with $c_\pm=c_\pm(z)$ becomes exact.  
+
+F-matrix does not depend on the $\psii-$vectors, i.e. on the initial/boundary conditions 
+of \eref{eq:gen}, and represents properties of its general solution. 
+As long as the general solution may have branch points, 
+F-matrix can depend on the particular path $\gamma$ of analytical continuation; 
+we will indicate the path by writing $\F[\gamma]$ instead of $\F(z_2,z_1)$, if necessary.
+ 
+F-matrix also depends on the chosen system of approximate solutions $y_\pm$ and, 
+particularly, on the chosen basepoint $z_0$. Consider equation \eref{eq:gen} and some definite
+type of the phase integral approximation with $q(z,\lmbd)$ as a phase integrand 
+and $z_0$ as a basepoint. Then, consider two points $z_{1,2}(\lmbd)$ of the complex plane 
+and an oriented curve $\gamma(\lmbd)$ connecting these points; 
+according to the definition \eref{eq:fmtrdef} of the F-matrix, 
+$\F[\gamma(\lmbd)]$ relates coefficients $c_\pm$ on the ends of the curve. We say 
+that $\F_{q,z_0}[\gamma(\lmbd)]$ performs an analytical continuation of the general solution of \eref{eq:gen} 
+along the oriented curve $\gamma(\lmbd)$ in the system $\{q,z_0\}$; we will indicate the
+system by the corresponding subscript of the F-matrix, if necessary.
+
+Consider equation \eref{eq:gen} and two F-matrices, $\F_{q,z_0}[\gamma]$ and $\F_{q,\tilde{z}_0}[\gamma]$, 
+performing an analytical continuation of the general solution along the oriented curve $\gamma$; the matrices
+represent the same analytical continuation, but written with use of different basepoints. They can be related as
+\begin{equation}
+\F_{q,\tilde{z}_0}[\gamma] = \W[\tilde{z}_0,z_0]\F_{q,z_0}[\gamma]\W[z_0,\tilde{z}_0],
+\label{eq:bpchange} 
+\end{equation}
+where
+\begin{equation}
+\W[b,a] =  
+\left(\begin{array}{*{2}{c}}
+\rme^{\rmi \phsintgrl{(a)}{(b)}} & 0 \\ 0 & \rme^{-\rmi \phsintgrl{(a)}{(b)}} 
+\end{array}\right);
+\label{eq:W}
+\end{equation}
+this follows directly from \eref{eq:fmtrdef} and \eref{eq:phsint}. 
+
+Then, consider the same differential equation, but different F-matrices $\F_{q,z_0}[\gamma]$ and $\F_{-q,z_0}[\gamma]$;
+this is the simplest nontrivial example of F-matrices, representing the same analytical continuation, but written
+with use of different phase integrands. Accurate to insignificant constant multiplier connected with slow
+$\predexp$ dependency, these two systems of base phase-integral approximate solutions differ by their order;
+the difference can be naturally described by a permutation matrix $\P$:
+\begin{equation}
+\F_{-q,z_0}[\gamma] = \P\F_{q,z_0}[\gamma]\P^{-1}, \quad
+\P =
+\left(\begin{array}{*{2}{c}}
+0 & 1 \\ 1 & 0 
+\end{array}\right) 
+\label{eq:qchange} 
+\end{equation}
+The permutation matrix in this relation maps the system $\{q,z_0\}$ to the system $\{-q,z_0\}$, but the direction
+of the mapping is insignificant in case of $2 \times 2$ matrices because $\P^{-1} = \P$. 
+
 In a limit \eref{eq:cond} of small epsilon, F-matrix represents the linear transformation
 mentioned in \sref{sec:intro} and can be approximately expressed in terms of the corresponding
-Stokes constants and phase integrals. In this section we derive symmetry relations for F-matrices
-and then, in a limit of small epsilon, we obtain corresponding relations for the Stokes constants.
- 
+Stokes constants and phase integrals. As long as the limiting form of F-matrix is more common
+and more convenient from the practical point of view, we will end the present section with 
+its detailed description.
+
+Let's start with some basic definitions. Here and below we will refer to a point $z$ of the complex
+plane as a singular point if epsilon from \eref{eq:cond} is infinitely large in such a point. 
+At every point $z$ of the complex plane except the singularities we will distinguish two 
+orthogonal directions. Let's define the Stokes direction 
+as a direction with $\Re \left[ \phsintgrnd \rmd z \right]=0$ and the anti-Stokes direction 
+as a direction with $\Im \left[ \phsintgrnd \rmd z \right]=0$. We will also use a notion of 
+the Stokes (anti-Stokes) field as a set of Stokes (anti-Stokes) directions for the entire 
+complex plane. Following \cite{heading, rwbook}, we introduce Stokes (anti-Stokes) lines as a 
+paths along Stokes (anti-Stokes) field emanating from the singularities. 
+Any domain of the complex plane bounded by the Stokes (anti-Stokes) lines and containing no other 
+Stokes (anti-Stokes) lines will be referred to as the anti-Stokes (Stokes) domain. Particularly, if 
+$q^2(z,\lmbd) \sim z^n$ as $z$ goes to complex infinity, then there are $n+2$ Stokes 
+(anti-Stokes) domains in the vicinity of the infinity - we will call such domains the Stokes 
+(anti-Stokes) wedges. Asymptotic phase-integral solutions \eref{eq:phbase} oscillate along anti-Stokes 
+lines with constant flow and increase (or decrease) exponentially with constant phase along Stokes lines. 
+The increasing (decreasing) solution will be called dominant (subdominant) in a given Stokes domain. 
+Also, the complex plane with singular points, Stokes and anti-Stokes lines and branch cuts associated 
+with a branching structure of asymptotic solutions \eref{eq:phsint} will be referred to as a Stokes diagram.
+
+Consider a Stokes domain and the F-matrix associated with crossing this domain in a 
+counterclockwise direction relatively to the chosen basepoint. According to estimates 
+made by Fr\"oman and Fr\"oman \cite{frbook}, in a limit \eref{eq:cond} of small epsilon 
+such F-matrix can be approximately written as either $\S[s]$ or $\S[s]^{\T}$, where
+\begin{equation}
+\S[s] = \left(\begin{array}{*{2}{c}} 1 & 0 \\ s & 1 \end{array}\right)    
+\end{equation}
+and $s$ is a Stokes constant associated with the domain. 
+In the present paper we will call such a constant as an \textit{effective Stokes constant} 
+to emphasize its difference from the traditional one. Indeed, there can be multiple Stokes 
+lines in the Stokes domain, and every such line is associated with its own traditional Stokes 
+constant \cite{heading, rwbook}, whereas the effective Stokes constant is associated with 
+the whole Stokes domain. It is also worth to mention that every effective Stokes constant can be 
+expressed in terms of the traditional ones; it becomes clear from the reasoning presented in \Aref{app1}.
+
+We will refer to $\S$ as a Stokes operator. As it can be inferred from the Fr\"omans estimates,
+we must use $\S$ for the Stokes domain where $y_+$ is dominant and $\S^{\T}$ otherwise. The rules
+for the Stokes operator are analogous to the traditional Heading`s rules for analytical 
+continuation, presented, for example, in \cite{heading, rwbook}. As it follows from the previous discussion
+and from the Heading`s rules itself, both traditional and effective Stokes constants depend on basepoint.
+In \cite{heading, rwbook} the change of the basepoint is called 'reconnection', thus we will
+refer to $W[b,a]$ introduced by \Eref{eq:W} as a reconnection operator.
+
+Aside from crossing Stokes line and changing basepoint, the Heading`s rules include the rule for crossing a 
+branch cut associated with the branching structure of the phase-integral approximate solutions \eref{eq:phbase}.
+According to Fr\"oman and Fr\"oman \cite{frbook}, the operator, describing crossing a branch cut emerging 
+from the first order zero of the squared phase integrand $q^2(z,\lmbd)$ in a positive direction, takes the form
+\begin{equation}
+\C =  \left(\begin{array}{*{2}{c}} 0 & -\rmi \\ -\rmi & 0 \end{array}\right).    
+\label{eq:C}
+\end{equation}
+In case of the different order of the branch point the operator must be raised to an appropriate power.
+
+With help of the three operators, $\S$, $\W$ and $\C$, the reader can perform any analytical continuation far
+away from any singularities; the matrix formulation of the traditional Heading`s rules appears
+to be much more convenient for our purposes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Symmetry relations for the connection matrices \label{sec:fmtrsymm}}
+
 Let`s clarify what we mean by a symmetry of a given equation. Here we introduce three operators
 $\f(z,\lmbd)$, $\g(z,\lmbd)$ and $\h(z,\lmbd)$ such that
 \begin{equation}
@@ -172,184 +324,211 @@ As it follows from the definition,
 $\tilde{y}(z,\lmbd)$ as well as $y(z,\lmbd)$ can be written in the form \eref{eq:gensol},
 but with different coefficients $c_\pm$ and $\tilde{c}_\pm$ correspondingly. 
 This difference and, as a consequence, restrictions on the connection matrices 
-can be obtained directly by applying the symmetry transformation to \eref{eq:phbase}, 
-but we prefer more intuitive derivation.
+can be obtained directly by applying the symmetry transformation to \eref{eq:phbase} as it was 
+done in \cite{frsymm} for the special case analysed by Fr\"omans, but we prefer more intuitive derivation.
 
-Consider some solution of \eref{eq:gen}, its analytical continuation along the 
-oriented curve $\gamma(\lmbd)$, and the corresponding F-matrix:
+Let`s choose some definite type of the phase-integral approximation with $q(z,\lmbd)$ 
+as the phase integrand; this phase integrand will be used all throughout the present section. 
+Consider $y(z,\lmbd)$, some solution of \eref{eq:gen}, and its analytical continuation
+along the oriented curve $\gamma(\lmbd)$, performed in the system $\{q,z_0\}$:
 \begin{equation}
-y(z,\lmbd):\ \gamma(\lmbd)\ \longrightarrow\ \F(\gamma(\lmbd),\lmbd). 
+y(z,\lmbd):\ \gamma(\lmbd)\ \longrightarrow\ \F_{q,z_0}[\gamma(\lmbd),\lmbd]. 
 \end{equation}
-Since the matrix does not depend on the particular initial/boundary conditions,
-it can be used for analytical continuation of another solution of \eref{eq:gen}:
+Then, consider another solution of \eref{eq:gen}, $\tilde{y}(z,\lmbd)$, and its
+analytical continuation along the same curve, but performed with use of different basepoint:
 \begin{equation}
-\tilde{y}(z,\lmbd):\ \gamma(\lmbd)\ \longrightarrow\ \F(\gamma(\lmbd),\lmbd). 
+\tilde{y}(z,\lmbd):\ \gamma(\lmbd)\ \longrightarrow\ \F_{q,\tilde{z}_0}[\gamma(\lmbd),\lmbd]. 
 \end{equation}
-On the other hand, if the solution $\tilde{y}(z,\lmbd)$ connected with $y(z,\lmbd)$ through
+As it follows from the previous discussion, $\F_{q,z_0}[\gamma(\lmbd),\lmbd]$ and 
+$\F_{q,\tilde{z}_0}[\gamma(\lmbd),\lmbd]$ represents the same operation in different bases and
+can be related with use of reconnection operator. From the other hand, and this is much more important, 
+if the solution $\tilde{y}(z,\lmbd)$ connected with $y(z,\lmbd)$ through
 the symmetry transformation $\{\f(z,\lmbd),\g(z,\lmbd),\h(z,\lmbd)\}$, its analytical continuation
-along the curve can be obtained directly from the continuation of $y(z,\lmbd)$ by formal application
-of the symmetry transformation:
+along the curve $\gamma(\lmbd)$ can be obtained directly from the 
+corresponding continuation of $y(z,\lmbd)$ by formal application of the symmetry transformation:
 \begin{equation}
 \tilde{y}(z,\lmbd) \equiv \f y(\g z,\h \lmbd):\ 
-\gamma(\lmbd)\ \longrightarrow\ \f\F(\g\gamma(\h\lmbd),\h\lmbd). 
+\gamma(\lmbd)\ \longrightarrow\ \f\F_{q,z_0}[\g\gamma(\h\lmbd),\h\lmbd]. 
 \end{equation}
 We underline that this continuation is performed along the same curve $\gamma(\lmbd)$ as it was in 
-the previous cases because any curve is an ordered set of allowed values of $z$, not $\g z$. Thus, 
-$\f\F(\g\gamma(\h\lmbd),\h\lmbd)$ and $\F(\gamma(\lmbd),\lmbd)$ represent the same analytical continuation, but
-performed with use of different systems of base approximate phase-integral solutions \eref{eq:phbase}; 
-in its turn, the solutions can differ only by their basepoints` locations and a sign of the phase 
-integral $\w(z,\lmbd)$. A presence or absence of the sign difference reflects one of two possible 
-mappings: $y_\pm \rightarrow \tilde{y}_\pm$ or $y_\pm \rightarrow \tilde{y}_\mp$;
-such mappings can be naturally described by a permutation matrix $\P$.
+the previous cases because any curve is the ordered set of allowed values of $z$, not $\g z$. Thus, 
+$\f\F_{q,z_0}[\g\gamma(\h\lmbd),\h\lmbd]$ and $\F_{q,\tilde{z}_0}[\gamma(\lmbd),\lmbd]$ represent the 
+same analytical continuation, but performed with use of different systems of base approximate phase-integral 
+solutions \eref{eq:phbase}. It is crucial that the systems can differ not only by the basepoints` location,
+but also by the functions $y_\pm$. Indeed, accurate to insignificant constant multiplier connected with slow
+$\predexp$ dependency, there are two possible mappings implemented by the symmetry transformation: 
+$y_\pm \rightarrow y_\pm$, or $y_\pm \rightarrow y_\mp$; such mappings were considered in the previous section 
+and can be described by a permutation matrix $\P$.
  
 Now we are ready to write the final relation for the F-matrices. A formula
 expressing this relation is shown below:
 \begin{equation}
 \begin{split}
-\P^{-1} \left\{ \f \F \left(\g \gamma(\h \lmbd), \h \lmbd \right) \right\} &\P=
+\P^{-1} \left\{ \f \F_{q,z_0} \left[\g \gamma(\h \lmbd), \h \lmbd \right] \right\} &\P=
  \\
-   \W \left( \g^{-1} \tilde{z}_0(\h\lmbd), z_0(\lmbd) \right)&
-   \F \left( \gamma(\lmbd), \lmbd \right)
-   \W \left( z_0(\lmbd), \g^{-1} \tilde{z}_0(\h\lmbd) \right),
+   \W \left[ \g^{-1} z_0(\h\lmbd), \tilde{z}_0(\lmbd) \right]&
+   \F_{q,\tilde{z}_0} \left[ \gamma(\lmbd), \lmbd \right]
+   \W \left[ \tilde{z}_0(\lmbd), \g^{-1} z_0(\h\lmbd) \right].
 \end{split}
-\label{eq:fmtrsym}
+\label{eq:fmtrsymm}
 \end{equation}
-where
-\begin{equation}
-\W(b,a) =  
-\left(\begin{array}{*{2}{c}}
-\rme^{\rmi \phsintgrl{(a)}{(b)}} & 0 \\ 0 & \rme^{-\rmi \phsintgrl{(a)}{(b)}} 
-\end{array}\right)
-\label{eq:W}
-\end{equation}
-is a matrix, representing the change of the basepoints. The inverse operator $\g^{-1}$ 
-in the formula appears due to the variable exchange in the phase integral:
+The inverse operator $\g^{-1}$ in the formula appears due to the variable exchange in the phase integral:
 \begin{equation}
 \g \int_{(z_0)}^z q(\xi) \rmd \xi = \int_{(z_0)}^{\g z} q(\xi) \rmd \xi 
 = \int_{(\g^{-1}z_0)}^{z} q(\g\xi) \rmd \g\xi.
 \end{equation}
 
-The relation \eref{eq:fmtrsym} has a fairly transparent structure. Indeed, assume we chose
-$y_\pm$ as a base system of phase integral approximate solutions and $\g^{-1} \tilde{z}_0(\h\lmbd)$
-as a basepoint. To implement the analytical continuation in such a base
-we have to either change the basepoint to $z_0$ and apply $\F(\gamma(\lmbd),\lmbd)$ 
-(right hand side of \eref{eq:fmtrsym}) or change $y_\pm$ to $\tilde{y}_\pm$ and apply
-$\f \F \left(\g \gamma(\h \lmbd), \h \lmbd \right)$ (left hand side of \eref{eq:fmtrsym}); our relation
-reflects the equivalence of these two approaches.
+The relation \eref{eq:fmtrsymm} has a fairly transparent structure. Indeed, assume we chose $y_\pm$ 
+as a base system of phase integral approximate solutions with $\g^{-1} z_0(\h\lmbd)$ as a basepoint. 
+To implement the analytical continuation in such a base with use of known F-matrices 
+$\f\F_{q,z_0}[\g\gamma(\h\lmbd),\h\lmbd]$ and $\F_{q,\tilde{z}_0}[\gamma(\lmbd),\lmbd]$, 
+we have to either change the basepoint from $\g^{-1} z_0(\h\lmbd)$ to $\tilde{z}_0$ and apply
+$\F_{q,\tilde{z}_0}[\gamma(\lmbd),\lmbd]$ (right hand side of \eref{eq:fmtrsymm}) 
+or choose the right order of base functions $y_\pm$ and apply $\f\F_{q,z_0}[\g\gamma(\h\lmbd),\h\lmbd]$
+(left hand side of \eref{eq:fmtrsymm}); our relation reflects the equivalence of these two approaches.
 
 The change of the basepoint implies the integration along some path in the complex plane;
-thus, the resulting relation can depend on the path if the phase integrand have poles
+thus, the resulting relation may depend on the path if the phase integrand have poles
 or branch points. This fact forces us to consider not only the final result of the 
-symmetry transformation but even how exactly it was performed; i.e. we have to parametrize
+symmetry transformation, but even how exactly it was performed; i.e. we have to parametrize
 $\g$ and $\h$ operators. This can be done by introducing of an auxiliary variable $\mu$ varying 
 from $0$ to $1$ such that, for example, $\g_{cont}(\mu)=\unity+\mu (\g-\unity)$, and $\g_{cont}(1)=\g$. 
-The integration path now can be determined 
-in the following way: we have to decide what path we would use to change a basepoint 
-from $z_0(\lmbd)$ to $\tilde{z}_0(\lmbd)$ and then trace how it deforms under our transformation. 
+The integration path now can be determined in the following way: we have to decide what path 
+we would use to change a basepoint from $z_0(\lmbd)$ to $\tilde{z}_0(\lmbd)$ and then trace how 
+it deforms under our transformation. 
 
-The relation \eref{eq:fmtrsym} is actually a generalization of the symmetry relations obtained by
+The relation \eref{eq:fmtrsymm} is actually a generalization of the symmetry relations obtained by
 Fr\"oman and Fr\"oman \cite{frpaper}. It takes the form presented in their article
 with $\{\f = \g = \h = c.c.\}$, where $c.c.$ stands for the complex conjugation, for the
 first case they considered and with $\{\g = -\unity; \f = \h = \unity\}$ for the second case.
 
-\section{Effective Stokes constants and Stokes diagram \label{sec:effsd}}
-The symmetry relation \eref{eq:fmtrsym} is exact and quite general, but it is not very useful
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Symmetry relations and functional equations for effective Stokes constants \label{sec:scsymm}}
+
+%\begin{figure}
+%\centering
+%\noindent
+%\includegraphics[width=\textwidth]{rs.png}
+%\caption{Effective Stokes diagram`s evolution corresponding to the symmetry transformation}
+%\label{fig:rst}
+%\end{figure}
+
+
+%\begin{figure}
+%\centering
+%\noindent
+%\includegraphics[width=\textwidth]{cs.png}
+%\caption{Effective Stokes diagram`s evolution corresponding to the conjugation 
+%symmetry transformation when both conjugate effective Stokes lines have the same 
+%basepoint and $\g^{-1}a(\h\lmbd)=a(\lmbd)$}
+%\label{fig:cst}
+%\end{figure} 
+
+The symmetry relation \eref{eq:fmtrsymm} is exact and quite general, but it is not very useful
 from the practical point of view because F-matrices are usually used in a limit \eref{eq:cond} of
 small epsilon; thus, analogous symmetry relations for the Stokes constants appears to be more
-convenient. In the present section we introduce the concepts of effective Stokes constant and
-effective Stokes diagram and prepare the ground for the further simplifications.
+convenient. In the present section we obtain the symmetry relations for the effective Stokes constants 
+and discuss the consequences of the relations.
 
-Let's start with some basic definitions. Here and below we will refer to a point $z$ of the complex
-plane as a singular point if epsilon from \eref{eq:cond} is infinitely large in such a point. At every point $z$ 
-of the complex plane except the singularities we will distinguish two orthogonal directions. 
-Let's define the Stokes direction 
-as a direction with $\Re \left[ \phsintgrnd \rmd z \right]=0$ and the anti-Stokes direction 
-as a direction with $\Im \left[ \phsintgrnd \rmd z \right]=0$. We will also use a notion of 
-the Stokes (anti-Stokes) field as a set of Stokes (anti-Stokes) directions for the entire 
-complex plane. Following \cite{heading, rwbook}, we introduce Stokes (anti-Stokes) lines as a 
-paths along Stokes (anti-Stokes) field emanating from the potential`s singularities. 
-Any domain of the complex plane bounded by the Stokes (anti-Stokes) lines and containing no other 
-Stokes (anti-Stokes) lines will be referred to as the anti-Stokes (Stokes) domain. Particularly, if 
-the potential $R(z,\lmbd) \sim z^n$ as $z$ goes to complex infinity, then there are $n+2$ Stokes 
-(anti-Stokes) domains in the vicinity of the infinity - we will call such domains the Stokes 
-(anti-Stokes) wedges. Asymptotic phase-integral solutions \eref{eq:phsint} oscillate along anti-Stokes 
-lines with constant flow and increase (or decrease) exponentially with constant phase along Stokes lines. 
-The increasing (decreasing) solution will be called dominant (subdominant) in a given Stokes domain. 
-Also, the complex plane with singular points, Stokes and anti-Stokes 
-lines and branch cuts associated with a branching structure of asymptotic solutions \eref{eq:phsint} 
-will be referred to as a Stokes diagram.
-
-Consider a Stokes domain and the F-matrix associated with crossing this domain in a 
-counterclockwise direction relatively to the chosen basepoint. According to estimates 
-made by Fr\"oman and Fr\"oman \cite{frbook}, in a limit \eref{eq:cond} of small epsilon, 
-such F-matrix can be approximately written as either $\S[s]$ or $\S[s]^{\T}$, where
+Using the relation \eref{eq:fmtrsymm} for F-matrices, its limiting form described in the \sref{sec:fmtrintro} 
+and the rules for the Stokes operators, we obtain:
 \begin{equation}
-\S(s) = \left(\begin{array}{*{2}{c}} 1 & 0 \\ s & 1 \end{array}\right),    
+\S^{(\T)} \left[ \f s(\h\lmbd) \right] = 
+\W \left[ \g^{-1}z_0(\h\lmbd), \tilde{z}_0(\lmbd) \right]
+\S^{(\T)} \left[ \tilde{s}(\lmbd) \right]
+\W \left[ \tilde{z}_0(\lmbd), \g^{-1}z_0(\h\lmbd) \right],
+\label{eq:gensym}
 \end{equation}
-'T' denotes to the transpose operation and $s$ is a Stokes constant associated with the domain. 
-In the present paper we will call such a constant as an \textit{effective Stokes constant} 
-to emphasize its difference from the traditional one. Indeed, there can be multiple Stokes 
-lines in the Stokes domain, and every such line is associated with its own traditional Stokes 
-constant \cite{heading, rwbook}, whereas the effective Stokes constant is associated with 
-the whole Stokes domain.
+where $s$ and $\tilde{s}$ are effective Stokes constant with $z_0$ and $\tilde{z}_0$ as a basepoints 
+correspondingly, and $\S^{(\T)}$ can be either $\S$ or $\S^{\T}$. The choice in the right hand side 
+of \eref{eq:gensym} must be made on the basis of general rules from \sref{sec:fmtrintro}: 
+we use $\S$ for the Stokes domain associated with $\tilde{s}(\lmbd)$ if $y_+$ is dominant 
+and $\S^{\T}$ otherwise. In the left hand side of \eref{eq:gensym} we have to use the 
+same form as in the right hand side; the rule is a consequence of the permutation
+matrix presence in \eref{eq:fmtrsymm}.
 
-We will refer to $\S$ as a Stokes operator. As it can be inferred from the Fr\"omans estimates,
-we must use $\S$ for the Stokes domain where $y_+$ is dominant and $\S^{\T}$ otherwise. The rules
-for the Stokes operator are analogous to the traditional Heading`s rules for analytical 
-continuation, presented, for example, in \cite{heading, rwbook}. As it follows from the previous discussion
-and from the Heading`s rules itself, both traditional and effective Stokes constants depend on the basepoint.
-In \cite{heading, rwbook} the change of the basepoint is called 'reconnection', thus we will
-call $W(b,a)$, introduced in the previous section by \Eref{eq:W}, a reconnection operator.
+The relation obtained above allows us to take a fresh look at the nature of the 
+different effective Stokes constants. Two different Stokes domains which can be overlapped by the 
+transformation $\g$ are actually associated with the same effective Stokes constant but 
+taken in the different points of the parameters` space. In particular, every set of Stokes 
+wedges can be described by only one multidimensional analytical complex function $s(\lmbd)$.
 
-It is worth to mention that every effective Stokes constant can be expressed in terms of the
-traditional ones. It becomes clear from the following reasoning.
-
-Imagine a Stokes domain with several traditional Stokes lines 
-emerging from the common basepoint. Crossing this domain in terms of the traditional Stokes constants
-implies multiple sequential applications of either $\S$ or $\S^{\T}$ operators. 
-But, as we can see by a direct calculation, Stokes operators $\S$ as well as $\S^{\T}$ 
-form a multiplicative group:
+Consider an important special case of a complex conjugation symmetry, 
+analysed by Fr\"omans \cite{frsymm}. 
+For every equation which is real on the real axis the symmetry $\f=\g=\h=c.c.$ holds, 
+i.e. $\LL^*(z^*,\lmbd^*)=\LL(z,\lmbd)$ and
 \begin{equation}
-\S(s_2)\S(s_1) = \S(s_2 + s_1), \quad
-\S^{\T}(s_2)\S^{\T}(s_1) = \S^{\T}(s_2 + s_1).
+\S^{(\T)} \left[ - s^*(\lmbd^*) \right] = 
+\W \left[ z_0^*(\lmbd^*), \tilde{z}_0(\lmbd) \right]
+\S^{(\T)} \left[ \tilde{s}(\lmbd) \right]
+\W \left[ \tilde{z}_0(\lmbd), z_0^*(\lmbd^*) \right].
+\label{eq:cnjgtn}
 \end{equation}
-Consequently, every such set of traditional Stokes constants can be replaced by a single one;
-the single Stokes constant is just a sum of the traditional constants.
+A minus sign before the effective Stokes constant in the left hand side of \eref{eq:cnjgtn} is a result 
+of the complex conjugation symmetry; it appears for any transformation $\g$ which changes the direction
+of analytical continuation relative to the chosen basepoint since the Stokes constant is defined for the 
+counterclockwise direction.
+If $\tilde{z}_0(\lmbd) = z_0^*(\lmbd^*)$ and $\lmbd$ is real, we obtain a result 
+$s^*(\lmbd) = - \tilde{s}(\lmbd)$, which can be inferred from the symmetry relations presented in \cite{frsymm}. 
+If furthermore $s = \tilde{s}$, we get an important and extremely simple relation $ s^*(\lmbd) = - s(\lmbd)$, 
+i.e. such effective Stokes constant is purely imaginary providing $\lmbd$ is real.
 
-Now consider the reconnection operator $\W$. As it follows from the properties of the phase integral, 
-these operators also form a multiplicative group:
+Another important case of \eref{eq:gensym} is a case with $\g=\unity$ and $z_0(\lmbd) = \tilde{z}_0(\lmbd)$:
 \begin{equation}
-\W(c,b)\W(b,a) = \W(c,a).
+\S^{(\T)} \left[ \f s(\h\lmbd) \right] = 
+\W \left[ z_0(\h\lmbd), z_0(\lmbd) \right]
+\S^{(\T)} \left[ s(\lmbd) \right]
+\W \left[ z_0(\lmbd), z_0(\h\lmbd) \right].
+\label{eq:func}
 \end{equation}
-And, completely analogous to the situation discussed above, every set of sequential changes of the basepoint
-can be described by a single reconnection operator.
+Such case is relevant for every equation. The obtained relation is a functional 
+equation for the considered effective Stokes constant. Usually such equation helps to illuminate 
+a branching structure of the effective Stokes constant and write it as a new single-valued function 
+multiplied by the known multivalued one. It is worth mention that even simple formal 
+symmetries like $\{\h=\rme^{2\rmi\pi},\g=\f=\unity\}$ may give nontrivial functional equations; 
+it happens always when the reconnection operator differs from unity.
 
-Finally, imagine a Stokes domain with multiple Stokes lines and multiple basepoints. Crossing this 
-domain in terms of $\S$ and $\W$ operators looks like
-\begin{equation}
-\S[s_n]\W[a_n,a_{n-1}]\S[s_{n-1}]\W[a_{n-1},a_{n-2}]\ ...\ \S[s_1]\W[a_1,a_0]\S[s_0].
-\end{equation}
-Note that for any $s'$ there is such $s''$ that $\S[s']\W[b,a]=\W[b,a]\S[s'']$, therefore
-we can change the order of $\S$ and $\W$ operators. Hence,
-every such set of operators can always be replaced by a single combination $\S[s_l] \W[a_n,a_0]$ or, 
-if someone prefers different ordering, $\W[a_n,a_0] \S[s_r]$. Consequently, every Stokes domain can 
-be described by the effective Stokes constant $s$ despite the number of Stokes lines it contains.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Effective Stokes diagram \label{sec:effsd}}
 
 \begin{figure}
 \centering
 \noindent
 \includegraphics[width=\textwidth]{effsd_1.png}
 \caption{
-Stokes diagrams for $q(z,g)=\sqrt{-z + g^2/z}$; Stokes lines are dashed
-\\
-(a) A traditional Stokes diagram; star marks the pole of the phase integrand. 
-\\
+Stokes diagrams for $q(z,g)=\sqrt{-z + g^2/z}$; Stokes lines are dashed. 
+(a) A traditional Stokes diagram; dots and stars indicate correspondingly zeros and poles of the phase integrand.
 (b) An effective Stokes diagram with a specified path of analytical continuation $\gamma_1$. 
-\\
 (c) An effective Stokes diagram with a different path of analytical continuation $\gamma_2$.
-The Stokes constant is meaningful only if $g \gg 1$ and all the singularities are far away 
+The Stokes constant $s_1$ is meaningful only if $g \gg 1$ and all the singularities are far away 
 from each other---otherwise the phase-integral approximation itself fails between 
-the pole and the right zero and the exect F-matrix must be used}
+the pole and the right zero and the exact F-matrix must be used}
 \label{fig:effsd_1}
 \end{figure}  
 
@@ -376,12 +555,9 @@ values of the phase integrals instead of plotting multiple branch cuts.
 \noindent
 \includegraphics[width=\textwidth]{effsd_2.png}
 \caption{
-Stokes diagrams for $q(z,E)=\sqrt{z^4-E}$; Stokes lines are dashed
-\\
-(a) A traditional Stokes diagram; dots mark the zeros of the phase integrand
-\\
-(b) An effective Stokes diagram with a specified path of analytical continuation $\gamma$
-\\
+Stokes diagrams for $q(z,E)=\sqrt{z^4-E}$; Stokes lines are dashed.
+(a) A traditional Stokes diagram; dots mark the zeros of the phase integrand.
+(b) An effective Stokes diagram with a specified path of analytical continuation $\gamma$.
 (c) An effective Stokes diagram with the same path of analytical continuation but different basepoints}
 \label{fig:effsd_2}
 \end{figure} 
@@ -390,87 +566,22 @@ The main purpose of the effective Stokes diagram is to indicate clearly and tran
 basepoint is used to cross a given Stokes domain. For some values of parameters $\lmbd$, such
 diagram can be similar to the traditional one, but for other values the diagrams will differ
 for sure because effective Stokes line is always emerge from the same basepoint $z_0(\lmbd)$
-while a traditional one follows the Stokes field.
+while a traditional one follows the Stokes field. Moreover, effective Stokes diagram
+is less detailed than the traditional one and can be more convenient for the analysis of 
+complicated equations.
 
-\section{Symmetry relations and functional equations for effective Stokes constants \label{sec:scsymm}}
 
-\begin{figure}
-\centering
-\noindent
-\includegraphics[width=\textwidth]{rs.png}
-\caption{Effective Stokes diagram`s evolution corresponding to the symmetry transformation}
-\label{fig:rst}
-\end{figure}
 
-In this section we obtain the symmetry relations for the effective Stokes constants and discuss
-the consequences of the relations. Using the relation \eref{eq:fmtrsym} for F-matrices, 
-its limiting form described in the previous section and the rules for the Stokes operators we obtain:
-\begin{equation}
-\f \S^{(\T)} \left[ s'(\h\lmbd) \right] = 
-\W \left[ \g^{-1}\tilde{z}_0(\h\lmbd), z_0(\lmbd) \right]
-\S^{(\T)} \left[ s(\lmbd) \right]
-\W \left[ z_0(\lmbd), \g^{-1}\tilde{z}_0(\h\lmbd) \right],
-\label{eq:gensym}
-\end{equation}
-where $\S^{(\T)}$ can be either $\S$ or $\S^{\T}$. The choice in the right hand side 
-of \eref{eq:gensym} must be made on the basis of general rules from \sref{sec:effsd}: 
-we use $\S$ for the Stokes domain associated with $s(\lmbd)$ if $y_+$ is dominant 
-and $\S^{\T}$ otherwise. In the left hand side of \eref{eq:gensym} we have to use the 
-same form as in the right hand side; the rule is a consequence of the permutation
-matrix presence in \eref{eq:fmtrsym}.
 
-The relation obtained above allows us to take a fresh look at the nature of the 
-different Stokes constants. Two different Stokes domains which can be overlapped by the 
-transformation $\g$ are actually associated with the same effective Stokes constant but 
-taken in the different points of the parameters` space (\fref{fig:rst}). In particular, every set of Stokes 
-wedges can be described by only one multidimensional analytical complex function $s(\lmbd)$.
 
-Now let us take a closer look at the important special case of a complex conjugation symmetry. 
-For every potential which is real on the real axis the symmetry $\f=\g=\h=c.c.$ holds, 
-i.e. $\LL^*(z^*,\lmbd^*)=\LL(z,\lmbd)$ and
-\begin{equation}
-\S^{(\T)} \left[ -s'^*(\lmbd^*) \right] = 
-\W \left[ a'^*(\lmbd^*),a(\lmbd) \right]
-\S^{(\T)} \left[ s(\lmbd) \right]
-\W \left[ a(\lmbd),a'^*(\lmbd^*) \right].
-\label{eq:cnjgtn}
-\end{equation}
-A minus sign before the effective Stokes constant in the left hand side of \eref{eq:cnjgtn} is a result 
-of the complex conjugation symmetry; it appears for any transformation $\g$ which changes the direction
-of circumvention relative to the chosen basepoint since the Stokes constant is defined for the 
-counterclockwise direction.
 
-\begin{figure}
-\centering
-\noindent
-\includegraphics[width=\textwidth]{cs.png}
-\caption{Effective Stokes diagram`s evolution corresponding to the conjugation 
-symmetry transformation when both conjugate effective Stokes lines have the same 
-basepoint and $\g^{-1}a(\h\lmbd)=a(\lmbd)$}
-\label{fig:cst}
-\end{figure} 
 
-If $a(\lmbd)=a'^*(\lmbd^*)$ as in \fref{fig:cst}, and $\lmbd$ is real, we obtain a result 
-$s^*(\lmbd)=-s'(\lmbd)$ which can be inferred from the symmetry relations presented in \cite{symm}. 
-If furthermore $s=s'$ we get an important and extremely simple relation $s^*(\lmbd)=-s(\lmbd)$, 
-i.e. such effective Stokes constant is purely imaginary providing $\lmbd$ is real.
 
-Another important case of \eref{eq:gensym} is a case with $\g=\unity$:
-\begin{equation}
-\S^{(\T)} \left[ \f s(\h\lmbd) \right] = 
-\W \left[ a(\h\lmbd),a(\lmbd) \right]
-\S^{(\T)} \left[ s(\lmbd) \right]
-\W \left[ a(\lmbd),a(\h\lmbd) \right].
-\label{eq:func}
-\end{equation}
-Such case is relevant for every potential. The obtained relation is a functional 
-equation for the considered effective Stokes constant. Usually such equation helps to illuminate 
-a branching structure of the effective Stokes constant and write it as a new single-valued function 
-multiplied by the known multivalued one. 
-It is worth mention that even simple formal 
-symmetries like $\{\h=\rme^{2\rmi\pi},\g=\f=\unity\}$
-can give nontrivial functional equations; it happens always when the reconnection operator
-differs from unity.
+
+
+
+
+
 
 \section{Example: the Weber equation \label{sec:weber}}
 
@@ -485,29 +596,6 @@ for the Weber equation \eref{eq:weber}}
 
 We will use WKBJ approximation all throughout this section. Also in this section we will use the symbol 
 $\W[\w] \equiv \W \left[\phsintgrl{a}{b} \right] \equiv \W[b,a]$ to underline a value of the phase integral.
-
-In this section we will need to perform analytical continuation of the general solution and consider
-branch cuts of the asymptotic base functions. Thus, we must complete $\S$ and $\W$ operators with
-the last one associated with crossing the brunch cut. These three operators will form a full set
-needed to completely reformulate the Heading`s rules to the matrix form.
-
-The explicit form of the desired $\C$ operator 
-depends on the phase integrand $\phsintgrnd$. Here we derive it for the simplest case  
-assuming $\phsintgrnd^2$ to be a single valued function. Imagine the cut emanating from the $k^{th}$ order
-singularity of squared phase integrand (positive values of $k$ corresponds to zeros and negative to poles). 
-Place this singularity into the origin. Then assume we want to cross the cut in the counterclockwise  
-direction from domain $1$ to domain $2$. To do it, we have to change our variable 
-from $z$ to $z \rme^{2\rmi\pi}$. Such a change will affect both pre-exponential 
-slow $\predexp$ dependency and the phase integral in the exponent of the asymptotic 
-base. Specifically, to implement these changes we have to replace $\predexp$ by $(-\rmi)^k \predexp$ 
-and $\int \phsintgrnd \rmd z$ by $(-1)^k \int \phsintgrnd \rmd z$. In compact matrix form 
-it can be written as
-\begin{equation}
-\psii_2 = \C^k \psii_1, \quad
-\C =  \left(\begin{array}{*{2}{c}} 0 & -\rmi \\ -\rmi & 0 \end{array}\right).    \label{eq:C}
-\end{equation}
-Analogous result was obtained in \cite{frbook}. Note that branching of the asymptotic 
-solutions has nothing to do with an actual branching  of  an exact solution.
 
 Now let us consider the Weber equation
 \begin{equation}
@@ -528,7 +616,7 @@ where $\psii_0$ is a $\psii$-vector in an anti-Stokes wedge containing a ray $Ar
 First of all, scattering characteristics must be written through the 
 Stokes constants. To do this, we must analytically continue our boundary 
 condition \eref{eq:wbound} to $z$ with $Arg(z)=\pi$. 
-Using \fref{fig:wsd} and the rules from \sref{sec:effsd} we write
+Using \fref{fig:wsd} and the rules from \sref{sec:fmtrintro}, we write
 \begin{equation}
 \psii_{\pi} = 
 \S \left[ s_{3/2} \right]
@@ -548,7 +636,7 @@ R = \frac{1}{s_{3/2}},\ T=\rmi\frac{\rme^{-\rmi w}}{s_{3/2}}.
 To find $s_{3/2}$, let`s try a traditional method described, for example, in \cite{frpaper, rwbook}. 
 We can obtain desired equations for the Stokes constants using a single-valuedness of the general 
 solution and analytically continue it around the origin far away from the interaction area along the
-curve $\gamma$ (\fref{fig:wsd}(c)):
+oriented curve $\gamma$ (\fref{fig:wsd}(c)):
 \begin{equation}
 \unity = 
 \C^2
@@ -568,8 +656,8 @@ s_{1/2}s_{3/2} + e^{-2 \rmi w} + 1 = 0
 \label{eq:webtrad}
 \end{cases}.
 \end{equation}
-The $\C$ operator is squared here because the Weber potential is asymptotic to $z^2$
-as $z$ goes to complex infinity.
+The $\C$ operator is squared here because the squared phase integrand $R(z,\lmbd)$ 
+is asymptotic to $z^2$ as $z$ goes to complex infinity.
 
 As we can see from the system \eref{eq:webtrad}, we cannot find $s_{3/2}$ using the traditional method - 
 we need at least one more restriction for the Stokes constants. In \cite{rwbook} a 
@@ -579,24 +667,24 @@ reflection coefficient, but its phase stays unknown. This example shows that eve
 a such simple situation as the Weber equation the traditional approach cannot fully 
 resolve the problem.
  
-Actually the flux conservation is a consequence of the real-valuedness and analyticity 
-of the potential $z^2-\delta^2$ and hence the same relation can be obtained from the 
-conjugation symmetry using \eref{eq:cnjgtn}. Moreover, first two equations from \eref{eq:webtrad} 
+Actually the flux conservation is a consequence of the real-valuedness and regularity of the coefficients 
+of the Weber equation and hence the same relation can be obtained from the 
+complex conjugation symmetry using \eref{eq:cnjgtn}. Moreover, first two equations from \eref{eq:webtrad} 
 are just a consequence of a symmetry $\{\g=\rme^{\rmi\pi},\h=\f=\unity\}$---and it is clear 
 because the symmetry is just a rotation and can be seen even from the usual analytical continuation. 
 So, the only original equation in the system \eref{eq:webtrad} is the last one---it cannot 
 be obtained from any other considerations. But these are not the only consequences of the 
 equation`s symmetries, so let`s write them all.
 
-The first nontrivial symmetry relation can be obtained from the rotation symmetry 
+The first nontrivial symmetry relation can be obtained from the symmetry 
 $\{\g=\h=\rmi,\f=\unity\}$. It can overlap, for example, Stokes domains associated with
 $s_{1/2}$ and $s_{-1/2}$. Both of the Stokes constants have the same 
-basepoint $a(\delta)=\delta$ and $\g^{-1}a(\h\delta)=(-\rmi)\rmi\delta=\delta$, so
+basepoint $z_0(\delta)=\delta$ and $\g^{-1}z_0(\h\delta)=(-\rmi)\rmi\delta=\delta$, so
 \begin{equation}
 \S \left[ s_{1/2}(\rmi \delta) \right] = 
-\W \left[ a(\delta), a(\delta) \right]
+\W \left[ \delta, \delta \right]
 \S \left[ s_{-1/2}(\delta) \right]
-\W \left[ a(\delta), a(\delta) \right],
+\W \left[ \delta, \delta \right],
 \end{equation}
 or
 \begin{equation}
@@ -604,19 +692,19 @@ s_{1/2}(\rmi \delta) = s_{-1/2}(\delta).
 \label{eq:websym_1}
 \end{equation}
 Considering \eref{eq:webtrad}, we can 
-see now that all four Stokes wedges can be described by only one function as 
-was mentioned in the previous section. 
+see now that all four Stokes wedges can be described by only one function as it
+was mentioned in the \sref{sec:scsymm}. 
 
-Now let's take a look at the another rotation symmetry $\{\h=\rme^{\rmi\pi},\g=\f=\unity\}$. 
-As it was written in the previous section, such a symmetry gives rise to a functional 
+Now consider another symmetry $\{\h=\rme^{\rmi\pi},\g=\f=\unity\}$. 
+As it was written in the \sref{sec:scsymm}, such a symmetry gives rise to a functional 
 equation which can help to illuminate a branching structure of the Stokes constant. 
 For definiteness we will talk about $s_{3/2}$. To understand what to choose as endpoints 
 in the phase integrals in \eref{eq:func}, let`s parametrize $\h$ as $\h_{cont}(\mu)=\rme^{\rmi\pi\mu}$ 
-and look at \fref{fig:webrs}. For $s_{3/2}$ a basepoint $a(\delta)=\delta \rme^{\rmi\pi}$ 
+and look at \fref{fig:webrs}. For $s_{3/2}$ a basepoint $z_0(\delta)=\delta \rme^{\rmi\pi}$ 
 and the question is how it is changing under our transformation. Using \fref{fig:webrs} 
 we can see that finally it arrives at the point $z=\delta$, but the phase difference between the
 initial and the final positions matters because it defines an integration path.
-That is why we have to write $a(\h\delta)=\delta \rme^{2\rmi\pi}$ and
+That is why we have to write $z_0(\h\delta)=\delta \rme^{2\rmi\pi}$ and
 \begin{equation}
 \S \left[ s_{3/2}(\delta \rme^{\rmi\pi}) \right] = 
 \W \left[- \w \right]
@@ -646,11 +734,11 @@ Stokes constants in the upper half of the complex plane with the constants in th
 In particular, according to \eref{eq:cnjgtn},
 \begin{equation}
 \S \left[ -s_{1/2}^*(\delta^*) \right] = 
-\W \left[ b^*(\delta^*),a(\delta) \right]
+\W \left[ z_0^*(\delta^*), \tilde{z}_0(\delta) \right]
 \S \left[ s_{-1/2}(\delta) \right]
-\W \left[ a(\delta),b^*(\delta^*) \right],
+\W \left[ \tilde{z}_0(\delta),z_0^*(\delta^*) \right],
 \end{equation}
-and, since $b(\delta)=a(\delta)=\delta$,
+and, since $z_0(\delta)=\tilde{z}_0(\delta)=\delta$,
 \begin{equation}
 s_{1/2}^*(\delta^*)=-s_{-1/2}(\delta).
 \label{eq:websym_3}
@@ -669,7 +757,7 @@ p(x)p(-x)=2\cos(\pi x/2).
 \label{eq:pfunc}
 \end{equation}
 This functional equation is similar to Euler`s reflection formula \cite{gamma} and can be reduced 
-to the formula by substitutions $x=1-2t$ and $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$, where $u(x)u(-x)=1$. 
+to the formula by substitutions $p(x)=u(x)\sqrt{2\pi}/\Gamma(1/2+x/2)$ and $x=1-2t$, where $u(x)u(-x)=1$. 
 The function $u(x)$ can be found from the boundary conditions of \eref{eq:pfunc}. Indeed, we know 
 exactly \cite{rwbook} that $s_{3/2}(0)=\rmi\sqrt{2}$. We also can assume, according to the approximation of 
 isolated singularities\cite{rwbook,ours}, that every Stokes constant approaches an imaginary 
@@ -692,35 +780,152 @@ the Weber problem---it can be verified using
 an exact solution of \eref{eq:weber} as it was done in \cite{ours}. 
 Now the desired scattering characteristics \eref{eq:RT} can be found.
 
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Discussion on the possible generalizations \label{sec:discuss}}
+
+As we can see from the example of the Weber equation, the technique of relating different 
+Stokes constants basing on the symmetry relations presented in the paper is rather powerful. 
+The relations were obtained for the case of the second-order differential equation, 
+but appears to be much more general.
+
+Consider an arbitrary order system of the first order linear ordinary differential equations:
+\begin{equation}
+\frac{\rmd}{\rmd z} \bm{y}(z,\lmbd) = \bm{M}(z,\lmbd) \bm{y}(z,\lmbd),
+\label{eq:mgen}
+\end{equation}
+where $\bm{y}$ is a vector of functions to determine and $\bm{M}(z,\lmbd)$ is a square matrix of corresponding dimension.
+Assume we can write an approximate phase-integral local solution of \eref{eq:mgen} in the way
+similar to the case of the second-order equation \eref{eq:gen}:
+\begin{subequations}
+\label{eq:mphsint}
+\begin{eqnarray}
+\bm{y}(z,\lmbd) \sim \bm{c} \cdot \bm{\tilde{y}}(z,\lmbd), \label{eq:mgensol}
+\\
+\bm{\tilde{y}}_i(z,\lmbd) = \bm{A}(z,\lmbd) \exp [\rmi \w_i(z,\lmbd)], \label{eq:mphbase}
+\\
+\w_i(z,\lmbd)=\int_{(z_0)}^z q_i(z,\lmbd) \rmd z, \label{eq:mphase}
+\end{eqnarray}
+\end{subequations}
+where $\bm{A}$ is a polarization vector, $\bm{c}$ is a vector of coefficients (analogue of $c_\pm$), 
+$\bm{\tilde{y}}$ is a vector of approximate phase-integral solutions \eref{eq:mphbase} (analogue of $y_\pm$), 
+and '$\cdot$' denotes for their inner product.
+Then, introducing F-matrix and defining symmetry completely analogous to \sref{sec:fmtrintro} and \sref{sec:fmtrsymm},
+we can exploit exactly the same reasoning and arrive to exactly the same symmetry relation with the only one difference:
+in general, the multidimensional permutation matrix $\P$ is not involutory and, in contrast to the case of
+the second-order differential equation, a direction of mapping matters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
 \section{Conclusion \label{sec:cnclsns}}
 
 The method of phase integrals is a beautiful and powerful method of a linear ordinary 
 differential equations` asymptotic analysis, but its range of applicability is highly 
 restricted to relatively simple problems; more complicated problems need additional equations 
 for the Stokes constants. The analysis, presented in this paper, allows the reader to find 
-functional relations between different Stokes constants and thus to reduce the number of unknowns.
+functional relations between connection matrices and thus to reduce the number of unknowns.
 
-The main result of the present work is stated by \Eref{eq:gensym}. This result, 
-like any others obtained in the paper, is valid for any approximation of the 
-phase integral type, not only for WKBJ approximation. To obtain this result 
-we transformed Heading`s rules \cite{heading,rwbook} into the matrix form; 
-it helped to achieve simplicity and automate the procedure of analytical continuation. 
-We also proposed the idea of an effective Stokes diagram which can be a useful tool 
-for simplifying the computations in case of complicated equations. 
-We showed that the idea of the effective Stokes constant is crucial in context of symmetry relations;
-such relations cannot be written in a general case without this idea. 
-Effective Stokes constant is assumed to be analytical function with respect to 
-the parameters of the problem. 
-We also showed that every differential 
-equation has some formal symmetries (e.g. $\{\h=\rme^{2\rmi\pi},\g=\f=\unity\}$) which may lead
-to nontrivial relations for the Stokes constants. 
+The main result of the present work is stated by \Eref{eq:fmtrsymm}. This result, 
+like any other obtained in the paper, is valid for any approximation of the 
+phase integral type, not only for WKBJ approximation. Furthermore, this result 
+holds not only for the second-order, but also for the arbitrary order system 
+of linear ordinary differential equations. 
 
-The functional equations which can be obtained using \Eref{eq:gensym} are likely to be as 
+The symmetry relation \eref{eq:fmtrsymm} for the F-matrix is quite general, but not very useful 
+from the practical point of view. To overcome the difficulty, we rewrote the relation with use of 
+the limiting form of the F-matrix and the concept of effective Stokes constant. The rewritten
+symmetry relation is stated by \Eref{eq:gensym}; we also introduced a concept of effective Stokes diagram
+which can be a useful tool for the analysis of complicated equations. 
+
+We showed that Stokes domains which can be overlapped by the variable transformation $\g$ are actually 
+associated with the same effective Stokes constant and can be described by the same analytical function. 
+We showed that every differential equation has some formal symmetries (e.g. $\{\h=\rme^{2\rmi\pi},\g=\f=\unity\}$) 
+which may lead to nontrivial relations for the Stokes constants. We also showed that the symmetry relations allows the 
+reader to write functional equation for the effective Stokes constants; such functional equations
+help to illuminate a branching structure of the effective Stokes constant and write it as a new single-valued 
+function multiplied by the known multivalued one.
+
+The functional relations which can be obtained using \Eref{eq:fmtrsymm} are likely to be as 
 complex as the initial differential equation; however, they are strict and can be used as 
 a basis for the construction of perturbation theory (will be a matter of a separate paper).
 
 \section*{Acknowledgments}
-This work was supported by the Russian Science Foundation (grant No~14-12-01007). 
+This work was supported by the Russian Science Foundation (grant No~14-12-01007). The author is grateful to
+Dr.A.G.Shalashov for careful reading of the manuscript and useful comments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\appendix
+
+\section{Connection between traditional and \\ effective Stokes constants \label{app1}}
+
+Imagine a Stokes domain with several traditional Stokes lines 
+emerging from the common basepoint. Crossing this domain in terms of the traditional Stokes constants
+implies multiple sequential applications of either $\S$ or $\S^{\T}$ operators. 
+But, as we can see by a direct calculation, Stokes operators $\S$ as well as $\S^{\T}$ 
+form a multiplicative group:
+\begin{equation}
+\S[s_2]\S[s_1] = \S[s_2 + s_1], \quad
+\S^{\T}[s_2]\S^{\T}[s_1] = \S^{\T}[s_2 + s_1].
+\end{equation}
+Consequently, every such set of traditional Stokes constants can be replaced by a single one;
+the single Stokes constant is just a sum of the traditional constants.
+
+Now consider the reconnection operator $\W$. As it follows from the properties of the phase integral, 
+these operators also form a multiplicative group:
+\begin{equation}
+\W[c,b]\W[b,a] = \W[c,a].
+\end{equation}
+And, completely analogous to the situation discussed above, every set of sequential changes of the basepoint
+can be described by a single reconnection operator.
+
+Finally, imagine a Stokes domain with multiple Stokes lines and multiple basepoints. Crossing this 
+domain in terms of $\S$ and $\W$ operators looks like
+\begin{equation}
+\S[s_n]\W[a_n,a_{n-1}]\S[s_{n-1}]\W[a_{n-1},a_{n-2}]\ ...\ \S[s_1]\W[a_1,a_0]\S[s_0].
+\end{equation}
+Note that for any $s'$ there is such $s''$ that $\S[s']\W[b,a]=\W[b,a]\S[s'']$, therefore
+we can change the order of $\S$ and $\W$ operators. Hence,
+every such set of operators can always be replaced by a single combination $\S[s_l] \W[a_n,a_0]$ or, 
+if someone prefers different ordering, $\W[a_n,a_0] \S[s_r]$. Consequently, every Stokes domain can 
+be described by the effective Stokes constant $s$ despite the number of Stokes lines it contains.
+
 
 \begin{thebibliography}{30}
 
@@ -737,7 +942,7 @@ This work was supported by the Russian Science Foundation (grant No~14-12-01007)
 \bibitem{frpaper} Fr\"oman N., Fr\"oman P.O. and Lundborg B. \textit{The Stokes constants for a cluster of transition
 points} Math. Proc. Cambridge Philos. Soc. \textbf{104} (1988), 153-179.
 
-\bibitem{zwaan} Zwaan A., \textit{Intensit\"aten im Ca-Funkenspektrum}, Academish proefschrift thesis (Utrecht, 1929)
+%\bibitem{zwaan} Zwaan A., \textit{Intensit\"aten im Ca-Funkenspektrum}, Academish proefschrift thesis (Utrecht, 1929)
 
 \bibitem{stokes} Stokes, G. G., Trans. Camb. Phil. Soc. \textbf{10}, 105 (1857).
 
@@ -773,7 +978,7 @@ Interpretation} Academic Press, London and New York (1973)
 
 \bibitem{aleixo00} A.N.F. Aleixo et al J. Phys. A: Math. Gen. [33] 1503 (2000)
 
-\bibitem{symm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, 
+\bibitem{frsymm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, 
 Math. Proc. Camb. Phil. Soc. \textbf{104}, 181–191
 
 \bibitem{gamma} M. Abramowitz and I. A. Stegun, eds., 
