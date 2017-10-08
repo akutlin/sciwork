@@ -8,8 +8,8 @@
 \def\rme{\mathrm{e}}
 \def\rmd{\mathrm{d}}
 
-\def\psii{\bm\psi}
-\def\R{\widehat{\mathcal{R}}}
+\def\psii{\bm{\psi}}
+\def\R{\bm{\mathcal{R}}}
 \def\T{\mathrm{T}}
 \def\Tr{\mathrm{Tr}}
 \def\w{\omega}
@@ -21,7 +21,7 @@
 
 \begin{document}
 
-\title{On a new exact relation for the Stokes constants for a solution of 
+\title{On a new exact relation for the connection matrices in case of 
 a linear second-order ODE with non-analytic coefficients}
 \author{Anton Kutlin}
 \email{anton.kutlin@gmail.com}
@@ -31,12 +31,13 @@ a linear second-order ODE with non-analytic coefficients}
 \date{\today}
 
 \begin{abstract}
-We consider an ordinary linear second-order differential equation with non-analytical coefficients.
-We propose a universal technique based on the Frobenius method which allows to obtain new exact relation 
-between Stokes constants providing the differential equation has one regular singular point.
-We also propose a way to write approximate relations between Stokes constants providing the differential 
-equation has multiple regular singular points located far away from each other.
-The well-known Budden problem is solved by this technique as an illustration of its usage.
+We consider the phase-integral method applied to an arbitrary ordinary linear second-order differential 
+equation with non-analytical coefficients. We propose a universal technique based on the Frobenius method 
+which allows to obtain new exact relation between connection matrices associated with its general solution.
+The technique allows the reader to write an exact algebraic equation for the Stokes constants providing 
+the differential equation has one regular singular point. We also propose a way to write approximate relations 
+between Stokes constants in case of multiple regular singular points located far away from each other.
+The well-known Budden problem is solved with help of this technique as an illustration of its usage.
 \end{abstract}
 
 \pacs{02.30.Hq,02.30.Mv}
@@ -51,7 +52,7 @@ a stationary one-dimensional Schr\"odinger equation:
 \frac{\rmd^2 y}{\rmd z^2} + Q(z)y = 0.   \label{eq:gen}
 \end{eqnarray}
 The function $Q(z)$ will be referred to as a potential. An approximate local solution 
-of equation \eqref{eq:gen} could be obtained with use of the phase integral approximation\cite{frbook}. 
+of equation \eqref{eq:gen} can be obtained with use of the phase-integral approximation\cite{frbook}. 
 Provided that 
 \begin{eqnarray}
 \varepsilon = q^{-3/2} \rmd^2 q^{-1/2}/\rmd z^2  + (Q - q^2)/q \ll 1,   \label{eq:cond}
@@ -93,7 +94,7 @@ differ from one domain of the complex plane to another
 changes happen on the so-called Stokes lines and have a form of a single-parameter 
 linear transform\cite{heading}. The parameter associated with a particular Stokes line 
 is called the Stokes constant. Knowing all Stokes constants associated with a particular 
-equation gives the ability to obtain a globally defined approximate solution 
+equation make it possible to obtain a globally defined approximate solution 
 of \eqref{eq:gen} (see \onlinecite{heading,rwbook}). A standard technique\cite{frpaper} used to obtain
 equations for the Stokes constants is based on the assumption of a single-valuedness of
 an exact general solution. This assumption fails in case of equations with regular singular points\cite{cbbook}, thus
@@ -157,6 +158,7 @@ the coefficients $a_{\pm}$. Taking into consideration a linearity of equation \e
 the connection between $a_{\pm}$ and $b_{\pm}$ can be written in a simple matrix form as
 \begin{eqnarray}
 \psii_b = \R \psii_a,
+\label{eq:rotation}
 \end{eqnarray}
 where $\psii_a = [{a_+,a_-}]^{\T}$, $\psii_b = [{b_+,b_-}]^{\T}$ and 'T' denotes the transpose operation.
 The matrix $\R$ represents the $2\pi-$rotation operator; it is known in terms of
@@ -165,15 +167,20 @@ the Stokes constants and corresponding phase integrals.
 According to the reasoning above we can conclude
 that we know exactly one of the $2\pi-$rotation matrix`s eigenvalues---the eigenvalue is 
 equal to $\rme^{2 \rmi \pi f_1}$. Actually, we know another eigenvalue too. 
-As it can be inferred from, for example, the matrix formulation 
-of the Heading`s rules\cite{aksymm}, $\det\R=1$ and the second eigenvalue is equal 
+As it can be inferred from, for example, the F-matrix method\cite{frbook}, $\det\R=1$ and the second eigenvalue is equal 
 to $\rme^{-2 \rmi \pi f_1}$. Now we can finally write the desired exact equation for the Stokes constants:
 \begin{eqnarray}
 \Tr\R = \rme^{2 \rmi \pi f_1} + \rme^{-2 \rmi \pi f_1} = 2 \cos(2 \pi f_1).
 \label{eq:main}
 \end{eqnarray}
 In contrast to any known approximation, this equation reflects an actual brunching structure 
-of the general solution of equation \eqref{eq:gen}.
+of the general solution of equation \eqref{eq:gen}. 
+
+We defined the $2\pi$-rotation operator with help of the Heading`s rules and Stokes constants. However, 
+according to \eqref{eq:rotation}, an existence of $\psii_a$ and $\psii_b$ is enough to the definition of
+the operator regardless how exactly the $\psii-$vectors can be found. Since in the considered case of a 
+single regular singular point a representation of the $2\pi-$rotation operator through the Stokes constants 
+is exact, the equation for the Stokes constants is exact either. 
 
 It is worth mentioning that $K$ from equation \eqref{eq:fgensol} may or may not be equal to zero. In the
 former case, one can notice that we can infer the second eigenvalue of $\R$ right from the
@@ -190,13 +197,13 @@ whence follows $\det\R=1$ and all the reasoning that led to equation \eqref{eq:m
 Consider a differential equation described the standard problem of penetration and 
 resonant absorption of an electromagnetic wave, analyzed by Budden:\cite{white-chen,budden}
 \begin{eqnarray}
-\frac{\rmd^2 y(z)}{\rmd z^2} + (1+c/z)y = 0,  
+\frac{\rmd^2 y(z)}{\rmd z^2} + (1 + \frac{c}{z})y = 0,  
 \label{eq:budden}
 \end{eqnarray}
 where $y(z)$ is a complex amplitude of an electromagnetic wave.
 The Budden problem is a problem of determination of the absorption in equation \eqref{eq:budden}. 
 It can be solved exactly with use of an integral representation of the solution \cite{rwbook}.
-Here we will examine this problem using the phase integral method and the technique presented above. 
+Here we will examine this problem using the phase-integral method and the technique presented above. 
 
 Since the WKBJ approximation is the simplest one,
 we will use it all throughout this section. According to equation \eqref{eq:phsint}, 
@@ -320,13 +327,13 @@ This nontrivial exact equation couldn't have been obtained from any other consid
 still have only one equation and two unknowns. To proceed further we have to find one another
 relation between the Stokes constants; and it could be done with use of the symmetry 
 of equation \eqref{eq:budden}. The Budden potential is real on the real axis and
-this fact allows to write\cite{aksymm,frsymm} that
+this fact allows us to write\cite{aksymm,frsymm} that
 \begin{eqnarray}
 s_+ = -s_-^*.
 \label{eq:symmetry}
 \end{eqnarray}
 Now, considering equations \eqref{eq:scattr}, \eqref{eq:fbudres} and \eqref{eq:symmetry}, we can
-finally write that
+finally obtain 
 \begin{eqnarray}
 A = e^{-\pi c}(1-e^{-\pi c}).
 \label{eq:fabsorp}
@@ -379,17 +386,14 @@ prevents us from writing any exact equation in the manner of Sec.\ref{sec:frob} 
 we cannot infer any information about the $2\pi-$rotation operator. However, providing some
 zeros of the potential grouped around the singular regular point forming a cluster and this cluster is
 well-isolated from any other singularities, we can analytically continue our general solution
-around this cluster and write an equation analogous to equation \eqref{eq:main}. This equation
-is approximate since it completely ignores a presence of the singularities do not belong to
-the cluster under the consideration; the equation becomes more precise as the cluster
-becomes more isolated. 
-
-Here we are to clarify what we mean by a 'well-isolation'. We will call the cluster
-well-isolated if for any anti-Stokes line emerging from the cluster there is a point $z$ belonging 
-to the line such that $\varepsilon(z)$ from condition \eqref{eq:cond} is sufficiently small. In other words,
-we claim that our approximate equation for the cluster is applicable providing a phase integral
-approximation itself is applicable for any point of the path chosen for the analytical continuation 
-around the cluster.
+around this cluster and write an equation analogous to equation \eqref{eq:main}. Such an equation
+is exact provided we use an exact representation of the analytical continuation operator, but
+for the Stokes constants it is approximate since the representation of the operator
+through the Stokes constants is approximate; the equation becomes more precise as the cluster
+becomes more isolated. The precision of the equation can be inferred from the Fr\"omans estimates 
+for the limiting form of the connection matrices\cite{frbook}; we claim that the approximate equation 
+for the Stokes constants is applicable providing a phase-integral approximation itself is applicable 
+for any point of the path chosen for the analytical continuation around the cluster.
  
 \section{Conclusion \label{sec:con}}
 The method of phase integrals is a beautiful and powerful method of a linear ordinary 
@@ -400,8 +404,10 @@ are based on the assumption of a single-valuedness of a general solution. This a
 in case of a differential equation with regular singular points. We provide an alternative universal
 technique based on the Frobenius method which allows to overcome this difficulty and to obtain the 
 desired equation even in case of the regular singular point`s presence. 
-Our technique let the reader write an exact algebraic equation in case
+Our technique let the reader write an exact algebraic equation for the Stokes constants in case
 of a single regular singular point and an approximate equation when there are more than one such points.
+The equation written in its general form without a specific representation of the operator of the analytical
+continuation around regular singular point is always exact regardless how many poles the potential has. 
 
 To conclude with, we have to mention that our method is formally applicable to equations without any regular
 singular points; in this case, equation \eqref{eq:main} takes the form $\Tr \R = 2$. Certainly, this equation,
@@ -412,6 +418,17 @@ for example, in Ref.\onlinecite{aksymm}, two remaining equations follow from the
 \begin{acknowledgments}
 This work was supported by RFBR (project No~15-02-07600).
 \end{acknowledgments}
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{thebibliography}{30}
 
