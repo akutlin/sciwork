@@ -23,7 +23,7 @@
 
 \title{On a new exact relation for the connection matrices in case of 
 a linear second-order ODE with non-analytic coefficients}
-\author{Anton Kutlin}
+\author{A.G. Kutlin}
 \email{anton.kutlin@gmail.com}
 \affiliation{Institute of Applied Physics of Russian Academy of Sciences, 
 46 Ulyanov str., 603950 Nizhny Novgorod, Russia}
@@ -73,7 +73,7 @@ it takes the form \eqref{eq:phsint} with $\phsintgrnd = \sqrt{Q(z)}$.
 
 The function $\w(z)$ is the phase integral, and therefore we call $\phsintgrnd[\xi]$ 
 the phase integrand. A meaning of the brackets in the lower limit of integration in \eqref{eq:phsintgrl}
-is a bit tricky; such a notation was introduced by Fr\"omans \cite{frpaper} to make
+is a bit tricky; such a notation was introduced by Fr\"oman and Fr\"oman\cite{frpaper} to make
 phase integral look similar for all orders of approximation. In the lowest order and, particularly,
 in case of the WKBJ approximation, this integral is just a usual integral from $z_0$ to $z$. 
 
@@ -197,7 +197,7 @@ whence follows $\det\R=1$ and all the reasoning that led to equation \eqref{eq:m
 Consider a differential equation described the standard problem of penetration and 
 resonant absorption of an electromagnetic wave, analyzed by Budden:\cite{white-chen,budden}
 \begin{eqnarray}
-\frac{\rmd^2 y(z)}{\rmd z^2} + (1 + \frac{c}{z})y = 0,  
+\frac{\rmd^2 y(z)}{\rmd z^2} + \left( 1 + \frac{c}{z} \right) y = 0,  
 \label{eq:budden}
 \end{eqnarray}
 where $y(z)$ is a complex amplitude of an electromagnetic wave.
@@ -250,7 +250,7 @@ Following Heading\cite{heading}, define $(a,z)_{d,s}$ and $[a,b]$ as
 \left[a,b\right] = \exp \left( \rmi \int_a^b \sqrt{Q} \rmd z \right), 
 \end{eqnarray}
 where subscripts $d$ and $s$ indicate correspondingly dominant and subdominant solutions 
-in a given area of the complex plane. Let`s place the cut between $z=0$ and $z=-c$ 
+in a given area of the complex plane. Let`s place a cut between $z=0$ and $z=-c$ 
 along the real axis as shown on Fig.\ref{fig:diagram}. Begin from the large positive $z$ 
 with $y=(0,z)$ we obtain:
 \begin{equation}
@@ -282,7 +282,7 @@ R = -s_-, \quad T = e^{-\frac{\pi c}{2}}.
 \end{eqnarray}
 
 To find $s_-$ and, thus, find $A$, we may use the branching structure preserving 
-equation \eqref{eq:main} obtained in the previous section. The $2\pi-$rotation operator $\R$
+equation \eqref{eq:main} obtained in the previous section. The matrix $\R$ representing $2\pi-$rotation operator
 can be found from the analytical continuation of the general solution of \eqref{eq:budden}
 around the origin along the curve $\gamma$ (Fig.\ref{fig:diagram}). 
 Starting with $y=a_+(0,z) + a_-(z,0)$ from large positive $z$, 
@@ -378,7 +378,7 @@ which do not preserve the global structure of the solution with a branch point.
 
 \section{Approximate equation for the Stokes constants in case of multiple singular regular points \label{sec:approx}}
 
-Now consider equation \eqref{eq:gen} with multiple singular regular points and place one of the points
+Now consider equation \eqref{eq:gen} with multiple regular singular points and place one of the points
 to the origin of the complex plane. A solution of such an equation still can be written in
 the Frobenius form \eqref{eq:frobform}, but the Taylor series in \eqref{eq:fy_1} and \eqref{eq:fy_2}
 are necessarily converge only up to the nearest pole of the potential\cite{cbbook}. This fact
@@ -411,7 +411,7 @@ continuation around regular singular point is always exact regardless how many p
 
 To conclude with, we have to mention that our method is formally applicable to equations without any regular
 singular points; in this case, equation \eqref{eq:main} takes the form $\Tr \R = 2$. Certainly, this equation,
-as well as two more, can be obtained from the traditional approach. However, we claim that this is the only equation
+as well as two more, can be obtained from the traditional approach\cite{frbook}. However, we claim that this is the only equation
 directly connected with the analytical continuation around the cluster of singularities; as it was shown,
 for example, in Ref.\onlinecite{aksymm}, two remaining equations follow from the symmetry relations.
 
@@ -463,7 +463,8 @@ Scientists and Engineers} (Springer, 1999), pp 68-76.
 
 \bibitem{budden} Budden, K. G., Phil. Trans. Royal Soc. London 290, 405 (1979).
 
-\bibitem{aksymm}  A.G. Kutlin, \textit{Effective Stokes diagram, symmetry relations and functional equations for effective Stokes constants}
+\bibitem{aksymm}  A.G. Kutlin, \textit{Generalized symmetry relations for connection matrices in the
+  phase-integral method}
 
 \bibitem{frsymm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, Math Proc Camb Phil Soc 104, 181–191
 
