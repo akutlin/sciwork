@@ -13,7 +13,7 @@
 \def\T{\mathrm{T}}
 \def\Tr{\mathrm{Tr}}
 \def\w{\omega}
-\def\mytextwidth{0.45\textwidth}
+\def\mytextwidth{0.77\textwidth}
 
 \newcommand\phsintgrnd[1][z]{q(#1)}
 \newcommand\predexp[1][z]{q(#1)^{-1/2}}
@@ -34,7 +34,7 @@ a linear second-order ODE with non-analytic coefficients}
 We consider the phase-integral method applied to an arbitrary ordinary linear second-order differential 
 equation with non-analytical coefficients. We propose a universal technique based on the Frobenius method 
 which allows to obtain new exact relation between connection matrices associated with its general solution.
-The technique allows the reader to write an exact algebraic equation for the Stokes constants providing 
+The technique allows the reader to write an exact algebraic equation for the Stokes constants provided 
 the differential equation has one regular singular point. We also propose a way to write approximate relations 
 between Stokes constants in case of multiple regular singular points located far away from each other.
 The well-known Budden problem is solved with help of this technique as an illustration of its usage.
@@ -122,9 +122,9 @@ can be written in a form of the Frobenius series\cite{cbbook}:
 \begin{eqnarray}
 y(z) = A y_1(z)+B y_2(z), \label{eq:fgensol}
 \\
-y_1(z) = z^{f_1}\sum_{n=0}^{\infty}{a_n z^n}, \label{eq:fy_1}
-\\
-y_2(z) = z^{f_2}\sum_{n=0}^{\infty}{b_n z^n} + K \ln(z) y_1(z), \label{eq:fy_2}
+y_1(z) = z^{f_1}\sum_{n=0}^{\infty}{a_n z^n},
+\quad
+y_2(z) = z^{f_2}\sum_{n=0}^{\infty}{b_n z^n} + K \ln(z) y_1(z), \label{eq:fy}
 \end{eqnarray}
 \end{subequations}
 where $A$ and $B$ are arbitrary constants depending on particular boundary/initial conditions,  
@@ -136,7 +136,7 @@ f(f-1)+Q_{-2}=0,   \label{eq:indicial}
 \end{eqnarray}
 where $Q_{-2}$ is a coefficient before the inverse square of the complex variable $z$ in the Laurent series
 of the potential. Since $z=0$ is the only singular point of the equation \eqref{eq:gen}, the Taylor 
-series from \eqref{eq:fy_1} and \eqref{eq:fy_2} have infinite radii of convergence and the
+series from \eqref{eq:fy} have infinite radii of convergence and the
 Frobenius form \eqref{eq:frobform} is valid for any point of the entire complex plane.
 
 Now consider a solution \eqref{eq:fgensol} with $A=1$ and $B=0$, i.e. $y(z)=y_1(z)$. 
@@ -246,7 +246,7 @@ The analytical continuation can be performed with use of the Heading`s rules.
 Following Heading\cite{heading}, define $(a,z)_{d,s}$ and $[a,b]$ as
 \begin{eqnarray}
 (a,z)_{d,s} = Q^{-1/4}\exp \left( \rmi \int_a^z \sqrt{Q} \rmd z \right),
-\\
+\quad
 \left[a,b\right] = \exp \left( \rmi \int_a^b \sqrt{Q} \rmd z \right), 
 \end{eqnarray}
 where subscripts $d$ and $s$ indicate correspondingly dominant and subdominant solutions 
@@ -269,11 +269,7 @@ numeration of the complex plane`s areas in Fig.\ref{fig:diagram}.
 All integrals here were evaluated below the cut and give $[0,-c]=\rme^{\frac{\pi c}{2}}$. As it
 can be seen now from the continuation and the definition of the scattering characteristics,
 \begin{equation}
-\begin{split}
-y(z | Arg(z) = -\pi) &\sim 
-\\
-\rme^{\frac{\pi c}{2}}(&-c,z)_d - s_-\rme^{\frac{\pi c}{2}}(z,-c)_s,
-\end{split}
+y(z | Arg(z) = -\pi) \sim \rme^{\frac{\pi c}{2}}(-c,z)_d - s_-\rme^{\frac{\pi c}{2}}(z,-c)_s,
 \end{equation}
 and
 \begin{eqnarray}
@@ -361,7 +357,7 @@ approximation\cite{rwbook}, reflection and transmission coefficients are
 \begin{eqnarray}
 R \approx 
 -\rmi \frac{2 \rme^{\frac{\pi c}{2}} - \rme^{-\frac{\pi c}{2}}}{2 \rme^{\frac{\pi c}{2}} + \rme^{-\frac{\pi c}{2}}},
-\\
+\quad
 T \approx -\rmi \frac{2}{2 \rme^{\frac{\pi c}{2}} + \rme^{-\frac{\pi c}{2}}},
 \end{eqnarray}
 and for absorption
@@ -376,14 +372,14 @@ but not when $c \ll 1$. The limit of $c\rightarrow 0$ is clearly wrong; in this 
 and there should be no reflection and absorption. The error is due to the use of the Stokes constants, 
 which do not preserve the global structure of the solution with a branch point. 
 
-\section{Approximate equation for the Stokes constants in case of multiple singular regular points \label{sec:approx}}
+\section{Approximate equation for the Stokes constants in case of multiple regular singular points \label{sec:approx}}
 
 Now consider equation \eqref{eq:gen} with multiple regular singular points and place one of the points
 to the origin of the complex plane. A solution of such an equation still can be written in
-the Frobenius form \eqref{eq:frobform}, but the Taylor series in \eqref{eq:fy_1} and \eqref{eq:fy_2}
+the Frobenius form \eqref{eq:frobform}, but the Taylor series in \eqref{eq:fy}
 are necessarily converge only up to the nearest pole of the potential\cite{cbbook}. This fact
 prevents us from writing any exact equation in the manner of Sec.\ref{sec:frob} because
-we cannot infer any information about the $2\pi-$rotation operator. However, providing some
+we cannot infer any information about the $2\pi-$rotation operator. However, provided some
 zeros of the potential grouped around the singular regular point forming a cluster and this cluster is
 well-isolated from any other singularities, we can analytically continue our general solution
 around this cluster and write an equation analogous to equation \eqref{eq:main}. Such an equation
@@ -392,7 +388,7 @@ for the Stokes constants it is approximate since the representation of the opera
 through the Stokes constants is approximate; the equation becomes more precise as the cluster
 becomes more isolated. The precision of the equation can be inferred from the Fr\"omans estimates 
 for the limiting form of the connection matrices\cite{frbook}; we claim that the approximate equation 
-for the Stokes constants is applicable providing a phase-integral approximation itself is applicable 
+for the Stokes constants is applicable provided a phase-integral approximation itself is applicable 
 for any point of the path chosen for the analytical continuation around the cluster.
  
 \section{Conclusion \label{sec:con}}
