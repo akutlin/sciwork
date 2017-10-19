@@ -92,7 +92,7 @@ y_\pm(z) = \predexp \exp [\pm \rmi \w(z)], \label{eq:phbase}
 \end{eqnarray}
 \end{subequations}
 where the explicit form of $q(z)$ depends on the order and particular type of the approximation.
-The simplest and the best-known type is one of the WKBJ\cite{wkb1,wkb2,wkb3,wkbj}; 
+The simplest and the best-known type is one of the WKBJ \cite{wkb1,wkb2,wkb3,wkbj}; 
 it takes the form \eref{eq:phsint} with $\phsintgrnd = \sqrt{R(z,\lmbd)}$. 
 
 The function $\w(z)$ is the phase integral, and therefore we call $\phsintgrnd[\xi]$ 
@@ -121,10 +121,22 @@ cases when this method allows finding all the constants exactly, so approximatio
 kinds are commonly used \cite{rwbook,ours}. This happens mostly because of a lack of the exact 
 equations for the Stokes constants.
 
-The phase-integral approximation has an extensive application in quantum mechanics and other 
-branches of physics, along with many attempts to improve its accuracy
-\cite{ours,dunham,dingle73,berry90,berry91,sergeenko96,delabaere97,sergeenko02,mirnov10,poor16,esposito09,aleixo00}. 
-In the present paper we provide a recipe to reduce the number 
+The phase-integral approximation has an extensive application in various fields of physics.
+It is widely used in quantum mechanics and nuclear physics to calculate energy spectrum and 
+study wave functions for both  
+Schr\"odinger \cite{serg96,serg02,aleixo00} 
+and Dirac \cite{esp09} equations. 
+It is successfully used in plasma physics to study electromagnetic waves` 
+scattering characteristics \cite{gosp17, kut17}
+as long as many problems in this area can be reduced to a problem of 
+linear coupling \cite{shal08,shal10,shal12}. 
+It is also useful in other branches of physics such as 
+high-energy physics \cite{poor16} 
+or general relativity \cite{ander92,manor77,rojas07}.
+Among the publications devoted to the phase-integral method there are both 
+classical monographs \cite{dingle73,berry91,rwbook,heading,frbook} 
+and modern attempts to improve its accuracy \cite{ours,delabaere97}. 
+In the present paper we provide a way to reduce the number 
 of independent Stokes constants with use of symmetries of \eref{eq:gen}. 
 
 The paper is organized as follows. 
@@ -936,61 +948,128 @@ be described by the effective Stokes constant $s$ despite the number of Stokes l
 
 \begin{thebibliography}{30}
 
-\bibitem{frbook} Fr\"oman N. and Fr\"oman P.O. \textit{Physical Problems Solved by the Phase-Integral Method} (Cambridge: Cambridge University Press, 2002)
+\bibitem{frbook} 
+N.~Fr\"oman and P.~O. Fr\"oman, 
+\textit{Physical Problems Solved by the Phase-Integral Method}, 
+Cambridge University Press, Cambridge, (2002).
 
-\bibitem{wkb1} G. Wentzel, Zeit. f. Phys. \textbf{38}, 518 (1926).
+\bibitem{wkb1} G.~Wentzel, 
+\textit{Eine Verallgemeinerung der Quantenbedingungen f\"ur die Zwecke der Wellenmechanik},
+Zeit. f. Phys., \textbf{38}, 518, (1926).
 
-\bibitem{wkb2} H. A. Kramers, Zeit. f. Phys. \textbf{39}, 828 (1926).
+\bibitem{wkb2} H.~A. Kramers, 
+\textit{Wellenmechanik und halbzahlige Quantisierung},
+Zeit. f. Phys., \textbf{39}, 828, (1926).
 
-\bibitem{wkb3} L. Brillion, C. R. Acad. Sci. Paris \textbf{183}, 24 (1926).
+\bibitem{wkb3} L.~Brillion, 
+\textit{La m\'echanique ondulatoire de Schr\"odinger; une m\'ethode
+g\'en\'erale de r\'esolution par approximations successives},
+C. R. Acad. Sci. Paris, \textbf{183}, 24, (1926).
 
-\bibitem{wkbj} H. Jeffries, Philos. Mag. [7] 33, 451 (1942)
+\bibitem{wkbj} H.~Jeffries, 
+\textit{On Certain Approximate Solutions of Lineae Differential Equations of the Second Order},
+Proc. of London Math. Soc., \textbf{23}, 428–436, (1923).
 
-\bibitem{frpaper} Fr\"oman N., Fr\"oman P.O. and Lundborg B. \textit{The Stokes constants for a cluster of transition
-points} Math. Proc. Cambridge Philos. Soc. \textbf{104} (1988), 153-179.
+\bibitem{frpaper} N.~Fr\"oman, P.~O. Fr\"oman and B. Lundborg, 
+\textit{The Stokes constants for a cluster of transition points}, 
+Math. Proc. Cambridge Philos. Soc., \textbf{104}, 153-179, (1988).
 
-%\bibitem{zwaan} Zwaan A., \textit{Intensit\"aten im Ca-Funkenspektrum}, Academish proefschrift thesis (Utrecht, 1929)
+\bibitem{stokes} G.~G. Stokes, 
+\textit{On the discontinuity of arbitrary constants which appear in divergent developments},
+Trans. Camb. Phil. Soc. \textbf{10}, 105, (1857).
 
-\bibitem{stokes} Stokes, G. G., Trans. Camb. Phil. Soc. \textbf{10}, 105 (1857).
+\bibitem{rwbook} R.~B. White,
+\textit{Asymptotic Analysis of Differential Equations}, 
+Imperial College Press, (2010).
 
-\bibitem{rwbook} R. B. White,
- {\it Asymptotic Analysis of Differential Equations}, Imperial College Press, 2010.
+\bibitem{heading} J.~Heading, 
+\textit{An Introduction to Phase Integral Methods}, 
+Wiley, NY, (1962).
 
-\bibitem{heading} J. Heading. {\it An Introduction to Phase Integral Methods} 
-Wiley, NY (1962)
+\bibitem{serg96} M.~N. Sergeenko,
+\textit{Semiclassical wave equation and exactness of the WKB method},
+Physical Review A, \textbf{53}, 3798, (1996).
 
-\bibitem{ours} R.B. White, A.G. Kutlin, arXiv:1704.01170 (2017)
+\bibitem{serg02} M.~N. Sergeenko, 
+\textit{Zeroth WKB Approximation in Quantum Mechanics},
+\href{https://arxiv.org/abs/quant-ph/0206179}{{\tt arXiv:quant-ph/0206179}}.
 
-\bibitem{dunham} L. Dunham, J. Phys. Rev. X. 41. 713-720. 10.1103/PhysRev.41.713 (1932).
- 
-\bibitem{dingle73} R.B. Dingle {\it Asymmpotic Expansions: Their Derivation and 
-Interpretation} Academic Press, London and New York (1973)
+\bibitem{aleixo00} A.~N.~F. Aleixo et al, 
+\textit{Barrier Penetration for Supersymmetric Shape-Invariant Potentials},
+J. Phys. A: Math. Gen., \textbf{33}, 1503, (2000).
 
-\bibitem{berry90} M.V. Berry and C.J. Howlse, Proc.Roy.Soc.Lond.,A430,653 (1990)
+\bibitem{esp09} G.~Esposito and P.~Santorelli, 
+\textit{On the phase-integral method for the radial Dirac equation},
+J. Phys. A: Math. Theor., \textbf{42}, 395203, (2009).
 
-\bibitem{berry91} M.V. Berry, Asymmpotics, Superasymptotics,
- Hyperasymptotics, in {\it Asymptotics Beyond All Orders}, H. Segur et al (eds.) Plenum Press NY (1991)
+\bibitem{gosp17} E.~D. Gospodchikov, A.~G. Kutlin and A.~G. Shalashov, 
+\textit{Plasma heating and coupling of electromagnetic waves near the upper-hybrid resonance in high-$\beta$ devices},
+Plasma Phys. Control. Fusion., \textbf{59}(6), 06500, (2017).
 
-\bibitem{sergeenko96} M.N. Sergeenko, Physical Review A. [53] 3798 (1996)
+\bibitem{kut17} A.~G. Kutlin, E.~D. Gospodchikov and A.~G. Shalashov, 
+\textit{Linear coupling of the fast extraordinary wave to electrostatic plasma oscillations: a revised theory},
+accepted for publishing in Physics of Plasmas 12-Oct-2017.
 
-\bibitem{delabaere97} E. Delabaere, H. Dillinger, and F. Pham, J. Math. Phys. [38] 6126 (1997)
+\bibitem{shal08} A.~G. Shalashov,  E.~D. Gospodchikov,
+\textit{Linear coupling of electromagnetic waves in gyrotropic media}, 
+Phys. Review E, \textbf{78}, 065602, (2008).
 
-\bibitem{sergeenko02} M.N. Sergeenko, ArXiv:quant-ph/0206179v1 (2002)
+\bibitem{shal10} A.~G. Shalashov, E.~D. Gospodchikov, 
+\textit{On the O-X mode coupling in 3D sheared magnetic field},
+Plasma Phys. Control. Fusion, \textbf{52}, 115001, (2010). 
 
-\bibitem{mirnov10} A. Mirnov and A. Morozov, Journal of High Energy Physics 2010:40 (2010)
+\bibitem{shal12} A.~G. Shalashov, E.~D. Gospodchikov, 
+\textit{On the structure of Maxwell's equations in the region of 
+linear coupling of electromagnetic waves in weakly
+inhomogeneous anisotropic and gyrotropic media},
+Phys. Usp., \textbf{55}, 147-160, (2012).
 
-\bibitem{poor16} A.K. Kashani-Poor, ArXiv:1604.01690v3 (2016)
+\bibitem{poor16} A.~K. Kashani-Poor, 
+\textit{Quantization condition from exact WKB for difference equations},
+J. High Energ. Phys., 2016:180, (2016).
 
-\bibitem{esposito09} G. Esposito and P. Santorelli J. Phys. A: Math. Theor. 42 395203 (2009)
+\bibitem{ander92} N.~Andersson and S.~Linnaeus, 
+\textit{Quasinormal modes of a Schwarzschild black hole: Improved phase-integral treatment},
+10.1103/PhysRevD.46.4179, (1992).
 
-\bibitem{aleixo00} A.N.F. Aleixo et al J. Phys. A: Math. Gen. [33] 1503 (2000)
+\bibitem{manor77} Y.~Manor, 
+\textit{Caustics and energy flux in general relativity},
+J. Phys. A: Math. Gen., \textbf{10}, 765, (1977).
 
-\bibitem{frsymm} Fr\"oman, N., Fr\"oman, P. O., and Lundborg, B., 1988b, 
-Math. Proc. Camb. Phil. Soc. \textbf{104}, 181–191
+\bibitem{rojas07} C.~Rojas and V.~M. Villalba, 
+\textit{Computation of inflationary cosmological perturbations 
+in the power-law inflationary model using the phase-integral method},
+Phys. Rev. D, \textbf{75}, 063518, (2007).
 
-\bibitem{gamma} M. Abramowitz and I. A. Stegun, eds., 
-{\it Handbook of Mathematical Functions With Formulas, Graphs, and Mathematical Tables}, 
-NBS Applied Mathematics Series \textbf{55}, National Bureau of Standards, Washington, DC (1964).
+\bibitem{dingle73} R.~B. Dingle, 
+\textit{Asymmpotic Expansions: Their Derivation and Interpretation}, 
+Academic Press, London and New York, (1973).
+
+\bibitem{berry91} M.~V. Berry, 
+\textit{Asymmpotics, Superasymptotics, Hyperasymptotics} in 
+\textit{Asymptotics Beyond All Orders}, 
+H.~Segur et al (eds.), Plenum Press, NY, (1991).
+
+\bibitem{ours} R.~B. White and A.~G. Kutlin, 
+\textit{Bound State Energies using Phase Integral Analysis},
+\href{https://arxiv.org/abs/1704.01170}{{\tt arXiv:quant-ph/1704.01170}}.
+
+\bibitem{delabaere97} E.~Delabaere, H.~Dillinger and F.~Pham, 
+\textit{Exact semiclassical expansions for one-dimensional quantum oscillators},
+J. Math. Phys., \textbf{38}, 6126, (1997).
+
+\bibitem{frsymm} N.~Fr\"oman, P.~O. Fr\"oman and B.~Lundborg,
+\textit{Symmetry relations for connection matrices in the phase-integral method}, 
+Math. Proc. Camb. Phil. Soc., \textbf{104}, 181–191, (1988b).
+
+\bibitem{gamma} M.~Abramowitz and I.~A. Stegun, eds., 
+\textit{Handbook of Mathematical Functions With Formulas, Graphs, and Mathematical Tables}, 
+NBS Applied Mathematics Series \textbf{55}, National Bureau of Standards, Washington, DC, (1964).
 
 \end{thebibliography}
+
+\address{Institute of Applied Physics of Russian Academy of Sciences, \\ 
+46 Ulyanov str., 603950 Nizhny Novgorod, Russia\\
+\email{anton.kutlin@gmail.com}}
+
 \end{document}
